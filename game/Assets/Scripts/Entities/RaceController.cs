@@ -4,15 +4,7 @@ using UnityEngine;
 
 public class RaceController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    /* Array de transformaciones que definirán los puntos de salida. */
+    public Transform[] StartPositions;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
