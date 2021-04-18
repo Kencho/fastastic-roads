@@ -347,7 +347,7 @@ MonoBehaviour:
   - {fileID: 0}
   Driver: {fileID: 6099637567591360758, guid: cfe153e019fc99a48a34f209aa5d6d77, type: 3}
   NPCDrivers:
-  - {fileID: 0}
+  - {fileID: 1862099155135595575, guid: b404dda66f7b18c419129a3d6d509797, type: 3}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
