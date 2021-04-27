@@ -29,7 +29,8 @@ public class RaycastController : MonoBehaviour
     void Update()
     {
         CountRoadWheels();
-        Debug.Log(RCHTerrain.collider);
+        Debug.Log(LayerMask.LayerToName(RCHTerrain.collider.transform.gameObject.layer));
+        
     }
 
     int CountRoadWheels()
@@ -42,6 +43,7 @@ public class RaycastController : MonoBehaviour
             RoadWheels += Physics.Raycast(current.position, Vector3.down, out RaycastHit hit, RaycastDist) ? 1 : 0;
             RCHTerrain = hit;
             TerrainType = hit.collider;
+
         }
 
         return RoadWheels;
