@@ -13,24 +13,23 @@ public class RaycastController : MonoBehaviour
     /* Número asociado al layer "Road" (obtenido mediante GetMask). */
     private int RoadLayerMask = 64;
 
+    /* RaycastHit del vehículo respecto al terreno que pisa. */
+    private RaycastHit RCHTerrain;
+
+    /* Collider del RaycastHit que devuelve el tipo de terreno que pisa. */
+    private Collider TerrainType;
+
     // Start is called before the first frame update
     void Start()
     {
-        
-        // layerMask = LayerMask.GetMask("Road");
         
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(CountRoadWheels());
-        if (CountRoadWheels() >= 2) {
-
-        } else
-        {
-
-        }
+        CountRoadWheels();
+        Debug.Log(RCHTerrain.collider);
     }
 
     int CountRoadWheels()
@@ -40,7 +39,9 @@ public class RaycastController : MonoBehaviour
         for (int i = 0; i < Wheels.Length; i++)
         {
             Transform current = Wheels[i];
-            RoadWheels += Physics.Raycast(current.position, Vector3.down, out RaycastHit hit, RaycastDist, RoadLayerMask) ? 1 : 0;
+            RoadWheels += Physics.Raycast(current.position, Vector3.down, out RaycastHit hit, RaycastDist) ? 1 : 0;
+            RCHTerrain = hit;
+            TerrainType = hit.collider;
         }
 
         return RoadWheels;
