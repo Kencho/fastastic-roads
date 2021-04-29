@@ -16,8 +16,11 @@ public class RaycastController : MonoBehaviour
     /* RaycastHit del vehículo respecto al terreno que pisa. */
     private RaycastHit RCHTerrain;
 
-    /* Collider del RaycastHit que devuelve el tipo de terreno que pisa. */
-    private Collider TerrainType;
+    /* Collider del RaycastHit que devuelve el tipo de terreno que pisa el vehículo. */
+    private Collider TerrainCollider;
+
+    /* Número asociado al layer del terreno que pisa el vehículo. */
+    private int TerrainType;
 
     // Start is called before the first frame update
     void Start()
@@ -26,26 +29,25 @@ public class RaycastController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        CountRoadWheels();
-        Debug.Log(LayerMask.LayerToName(RCHTerrain.collider.transform.gameObject.layer));
-        
+        RaycastTerrain();
     }
 
-    int CountRoadWheels()
+    void RaycastTerrain()
     {
-        int RoadWheels = 0;
-
-        for (int i = 0; i < Wheels.Length; i++)
-        {
-            Transform current = Wheels[i];
-            RoadWheels += Physics.Raycast(current.position, Vector3.down, out RaycastHit hit, RaycastDist) ? 1 : 0;
+        if (Physics.Raycast(transform.position, Vector3.down, out RaycastHit hit, 3f)) {
             RCHTerrain = hit;
-            TerrainType = hit.collider;
+            TerrainCollider = RCHTerrain.collider;
+            TerrainType = TerrainCollider.transform.gameObject.layer;
 
+            if (LayerMask.LayerToName(TerrainType) == "Ground" || LayerMask.LayerToName(TerrainType) == "Road")
+            {
+                Debug.DrawRay(transform.position, Vector3.down * 10f, Color.green, Time.fixedDeltaTime);
+                Debug.Log(LayerMask.LayerToName(TerrainType));
+            }
         }
-
-        return RoadWheels;
+        else
+            Debug.DrawRay(transform.position, Vector3.down * 10f, Color.red, Time.fixedDeltaTime);
     }
 }
