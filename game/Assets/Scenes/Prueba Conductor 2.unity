@@ -422,9 +422,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f53750e196141ee4bb10bb82a9e91c40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!4 &173703335 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5439832212926951941, guid: f1b68603c81a16a4f87e40dfd80c2477,
@@ -584,9 +581,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f53750e196141ee4bb10bb82a9e91c40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!65 &435433361
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -695,9 +689,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f53750e196141ee4bb10bb82a9e91c40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!65 &527916580
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -901,9 +892,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f53750e196141ee4bb10bb82a9e91c40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!65 &1100744326
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1012,9 +1000,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f53750e196141ee4bb10bb82a9e91c40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!65 &1162481278
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1363,9 +1348,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f53750e196141ee4bb10bb82a9e91c40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!65 &1795394938
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -898,9 +898,9 @@ GameObject:
   - component: {fileID: 5999075437379064137}
   - component: {fileID: 5999075437379064136}
   - component: {fileID: 5999075437379064143}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Kart_Driver
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -9,7 +9,8 @@ public class Checkpoint : MonoBehaviour
 
     private void OnTriggerEnter(Collider collider)
     {
-        trackCheckpoints.DriverThroughCheckpoint(this);
+        if(collider.gameObject.transform.parent.gameObject.tag == "Player")
+            trackCheckpoints.DriverThroughCheckpoint(this);
     }
 
     public void SetTrackCheckpoints(TrackCheckpoints trackCheckpoints) {
