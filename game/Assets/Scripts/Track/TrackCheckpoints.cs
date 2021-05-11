@@ -10,6 +10,17 @@ public class TrackCheckpoints : MonoBehaviour
     /* Siguiente punto de control por el que se tiene que pasar. */
     private int nextCheckpoint = 0;
 
+    /* Vehículo conductor, o sease, aquel que manejamos. */
+    GameObject driver;
+
+    /* Posición del vehículo que manejamos. */
+    public static Vector3 driverPosition = new Vector3(-49.8921585f, -17.0823498f, 106.940109f);
+
+    /* Rotación del vehículo que manejamos. */
+    public static Quaternion driverRotation = Quaternion.Euler(0, 0.28f, 0);
+
+    public static Checkpoint checkpointFall;
+
     private void Awake()
     {
         Transform checkpointsTransform = transform.Find("Checkpoints");
@@ -30,8 +41,12 @@ public class TrackCheckpoints : MonoBehaviour
 
     public void DriverThroughCheckpoint(Checkpoint checkpoint)
     {
-        if(checkpointList.IndexOf(checkpoint) == nextCheckpoint)
+        checkpointFall = checkpoint;
+
+        if (checkpointList.IndexOf(checkpoint) == nextCheckpoint)
         {
+            driverPosition = checkpointList[nextCheckpoint].gameObject.transform.position;
+            driverRotation = checkpointList[nextCheckpoint].gameObject.transform.rotation;
             nextCheckpoint = (nextCheckpoint + 1) % checkpointList.Count;
             Debug.Log("¡Correcto!");
         } else

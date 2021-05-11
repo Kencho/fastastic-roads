@@ -22,12 +22,6 @@ public class RaycastController : MonoBehaviour
     /* Número asociado al layer del terreno que pisa el vehículo. */
     private int TerrainType;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void FixedUpdate()
     {

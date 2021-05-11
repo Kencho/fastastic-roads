@@ -7,7 +7,7 @@ public class RaceController : MonoBehaviour
     /* Array de transformaciones que definirán los puntos de salida. */
     public Transform[] StartPositions;
 
-    /* Vehículo del juego que conducimos. */
+    /* Vehículo que conducimos en la escena. */
     public GameObject Driver;
 
     /* Resto de vehículos de la escena. */
@@ -15,6 +15,9 @@ public class RaceController : MonoBehaviour
 
     /* Posición en el eje X de los vehículos en su instanciación. */
     private float PosicionX = 0;
+
+    /* Vehículo que conducimos en la escena para su reaparecimiento. */
+    private GameObject driverRespawn;
 
     void Start()
     {
@@ -28,5 +31,19 @@ public class RaceController : MonoBehaviour
                 Instantiate(NPCDrivers[i], new Vector3(PosicionX = StartPositions[i+1].position.x, StartPositions[i+1].position.y, StartPositions[i+1].position.z), Quaternion.Euler(StartPositions[i+1].eulerAngles.x, StartPositions[i + 1].eulerAngles.y, StartPositions[i + 1].eulerAngles.z));
             else
                 Instantiate(NPCDrivers[i], new Vector3(PosicionX += 5, 0, 0), Quaternion.identity);
+    }
+
+
+    void Update()
+    {
+        driverRespawn = GameObject.FindGameObjectWithTag("Player");
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            driverRespawn.transform.GetComponent<Rigidbody>().velocity = Vector3.zero;
+            driverRespawn.transform.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+            driverRespawn.transform.position = TrackCheckpoints.driverPosition;
+            driverRespawn.transform.rotation = TrackCheckpoints.driverRotation;
+        }
     }
 }
