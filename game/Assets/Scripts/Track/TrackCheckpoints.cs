@@ -10,6 +10,9 @@ public class TrackCheckpoints : MonoBehaviour
     /* Siguiente punto de control por el que se tiene que pasar. */
     private int nextCheckpoint = 0;
 
+    /* Variable de acceso global que indica el siguiente punto de control por el que se tiene que pasar. */
+    public static int nextCP;
+
     /* Vehículo conductor, o sease, aquel que manejamos. */
     GameObject driver;
 
@@ -19,15 +22,16 @@ public class TrackCheckpoints : MonoBehaviour
     /* Rotación del vehículo que manejamos. */
     public static Quaternion driverRotation = Quaternion.Euler(0, 0.28f, 0);
 
+    /* Checkpoint último por el que hemos pasado antes de caer al vacío con el vehículo. */
     public static Checkpoint checkpointFall;
 
     private void Awake()
     {
-        Transform checkpointsTransform = transform.Find("Checkpoints");
+        Transform checkpoints = transform.Find("Checkpoints");
 
         checkpointList = new List<Checkpoint>();
 
-        foreach (Transform checkpointTransform in checkpointsTransform)
+        foreach (Transform checkpointTransform in checkpoints)
         {
             Checkpoint checkpoint = checkpointTransform.GetComponent<Checkpoint>();
             
@@ -42,9 +46,11 @@ public class TrackCheckpoints : MonoBehaviour
     public void DriverThroughCheckpoint(Checkpoint checkpoint)
     {
         checkpointFall = checkpoint;
+        nextCP = nextCheckpoint;
 
         if (checkpointList.IndexOf(checkpoint) == nextCheckpoint)
         {
+
             driverPosition = checkpointList[nextCheckpoint].gameObject.transform.position;
             driverRotation = checkpointList[nextCheckpoint].gameObject.transform.rotation;
             nextCheckpoint = (nextCheckpoint + 1) % checkpointList.Count;
