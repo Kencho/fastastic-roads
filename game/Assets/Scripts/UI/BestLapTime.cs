@@ -25,8 +25,6 @@ public class BestLapTime : MonoBehaviour
         {
             if(!inicio && TrackCheckpoints.nextCP == 0)
             {
-                Debug.Log(BestMin + " " + BestSec + " " + BestMilli);
-
                 if (LapTime.MinuteCount < BestMin || LapTime.MinuteCount == BestMin && LapTime.SecondCount < BestSec || LapTime.MinuteCount == BestMin && LapTime.SecondCount == BestSec && int.Parse(LapTime.MilliCount.ToString("F0")) < BestMilli)
                 {
                     BestMin = LapTime.MinuteCount;
