@@ -19,6 +19,9 @@ public class RaceController : MonoBehaviour
     /* Vehículo que conducimos en la escena para su reaparecimiento. */
     private GameObject driverRespawn;
 
+    /* Número de vueltas a realizar en la contrarreloj. */
+    public static int lapNum = 4;
+
     void Start()
     {
         if(StartPositions.Length != 0 && StartPositions[0] != null)

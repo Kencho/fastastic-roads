@@ -50,7 +50,6 @@ public class TrackCheckpoints : MonoBehaviour
 
         if (checkpointList.IndexOf(checkpoint) == nextCheckpoint)
         {
-
             driverPosition = checkpointList[nextCheckpoint].gameObject.transform.position;
             driverRotation = checkpointList[nextCheckpoint].gameObject.transform.rotation;
             nextCheckpoint = (nextCheckpoint + 1) % checkpointList.Count;
