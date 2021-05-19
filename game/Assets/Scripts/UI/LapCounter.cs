@@ -17,7 +17,7 @@ public class LapCounter : MonoBehaviour
 
     void Awake()
     {
-        FinalLap.GetComponent<Text>().text = "/" + RaceController.lapNum;
+        FinalLap.GetComponent<Text>().text = "/" + RaceController.LapNumber;
     }
 
     void OnTriggerEnter()
@@ -28,7 +28,7 @@ public class LapCounter : MonoBehaviour
             CurrentLap.GetComponent<Text>().text = lapCounter.ToString();
         }
 
-        if(!finished && lapCounter == RaceController.lapNum + 1)
+        if(!finished && lapCounter == RaceController.LapNumber + 1)
         {
             finished = true;
             CurrentLap.GetComponent<Text>().text = "";
