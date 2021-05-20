@@ -6,6 +6,21 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Prueba Conductor 2.unity
-    guid: 9e90e943abb2c294ab5dc5125345a196
+    path: Assets/Scenes/MainMenu.unity
+    guid: cd53f1bc36901334582b35128049ba5b
+  - enabled: 1
+    path: Assets/Scenes/ModeSelectorMenu.unity
+    guid: 5b6cbd1bad98c814b82dca78aceb94a6
+  - enabled: 1
+    path: Assets/Scenes/TimeTrialCharacterSelector.unity
+    guid: f5f5becb81306eb48a058dd60afface7
+  - enabled: 1
+    path: Assets/Scenes/TimeTrialMapSelector.unity
+    guid: d164534be184ecd44ba4527ef31a8aea
+  - enabled: 1
+    path: Assets/Scenes/PostTimeTrialFinish.unity
+    guid: bd8e6f3628eb88a409171d696b1ccb5f
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: 7c0f309127ceff94194fd390cafcbb28
   m_configObjects: {}
