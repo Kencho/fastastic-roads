@@ -48,16 +48,12 @@ public class RaceController : MonoBehaviour
 
         if (!CountDown.stop && flag)
         {
-            driverRespawn.transform.GetComponent<KeyboardInput>().Horizontal = "";
-            driverRespawn.transform.GetComponent<KeyboardInput>().Vertical = "";
-
             flag = false;
+            driverRespawn.transform.GetComponent<KeyboardInput>().Blocked = true;
         } else if (CountDown.stop && !flag)
         {
-            driverRespawn.transform.GetComponent<KeyboardInput>().Horizontal = "Horizontal";
-            driverRespawn.transform.GetComponent<KeyboardInput>().Vertical = "Vertical";
-
             flag = true;
+            driverRespawn.transform.GetComponent<KeyboardInput>().Blocked = false;
         }
 
         if (CountDown.stop && Input.GetKeyDown(KeyCode.R))

@@ -7,7 +7,7 @@ namespace KartGame.KartSystems {
         public string Horizontal = "Horizontal";
         public string Vertical = "Vertical";
 
-        public override Vector2 GenerateInput() {
+        protected override Vector2 GenerateRawInput() {
             return new Vector2 {
                 x = Input.GetAxis(Horizontal),
                 y = Input.GetAxis(Vertical)

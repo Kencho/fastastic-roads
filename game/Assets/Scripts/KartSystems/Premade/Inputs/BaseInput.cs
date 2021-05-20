@@ -6,13 +6,20 @@ namespace KartGame.KartSystems
     public interface IInput
     {
         Vector2 GenerateInput();
+
+        bool Blocked { get; set; }
     }
 
     public abstract class BaseInput : MonoBehaviour, IInput
     {
-        /// <summary>
-        /// Override this function to generate an XY input that can be used to steer and control the car.
-        /// </summary>
-        public abstract Vector2 GenerateInput();
+        public bool Blocked { get; set; }
+
+        public Vector2 GenerateInput()
+        {
+            if (Blocked) return Vector2.zero;
+            return GenerateRawInput();
+        }
+
+        protected abstract Vector2 GenerateRawInput();
     }
 }
