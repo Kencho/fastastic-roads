@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using KartGame.KartSystems;
 
 public class RaceController : MonoBehaviour
@@ -11,8 +12,6 @@ public class RaceController : MonoBehaviour
     /* Vehículo que conducimos en la escena. */
     public GameObject Driver;
 
-    private GameObject DriverStop;
-
     /* Resto de vehículos de la escena. */
     public GameObject[] NPCDrivers = new GameObject[7];
 
@@ -20,13 +19,16 @@ public class RaceController : MonoBehaviour
     private float PosicionX = 0;
 
     /* Vehículo que conducimos en la escena para su reaparecimiento. */
-    private GameObject driverRespawn;
+    private GameObject DriverRespawn;
 
     /* Número de vueltas a realizar en la contrarreloj. */
     public static int LapNumber = 4;
 
     /* Flag para frenar el cambio continuo del componente en el Update. */
-    private bool flag = true;
+    private bool Flag = true;
+
+    /* Tiempo de espera al finalizar la carrera para el cambio de escena. */
+    private float WaitTime = 0;
 
     void Start()
     {
@@ -44,24 +46,32 @@ public class RaceController : MonoBehaviour
 
     void Update()
     {
-        driverRespawn = GameObject.FindGameObjectWithTag("Player");
+        DriverRespawn = GameObject.FindGameObjectWithTag("Player");
 
-        if (!CountDown.stop && flag)
+        if (!CountDown.stop && Flag)
         {
-            flag = false;
-            driverRespawn.transform.GetComponent<KeyboardInput>().Blocked = true;
-        } else if (CountDown.stop && !flag)
+            Flag = false;
+            DriverRespawn.transform.GetComponent<KeyboardInput>().Blocked = true;
+        } else if (CountDown.stop && !Flag)
         {
-            flag = true;
-            driverRespawn.transform.GetComponent<KeyboardInput>().Blocked = false;
+            Flag = true;
+            DriverRespawn.transform.GetComponent<KeyboardInput>().Blocked = false;
         }
 
         if (CountDown.stop && Input.GetKeyDown(KeyCode.R))
         {
-            driverRespawn.transform.GetComponent<Rigidbody>().velocity = Vector3.zero;
-            driverRespawn.transform.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
-            driverRespawn.transform.position = TrackCheckpoints.driverPosition;
-            driverRespawn.transform.rotation = TrackCheckpoints.driverRotation;
+            DriverRespawn.transform.GetComponent<Rigidbody>().velocity = Vector3.zero;
+            DriverRespawn.transform.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+            DriverRespawn.transform.position = TrackCheckpoints.driverPosition;
+            DriverRespawn.transform.rotation = TrackCheckpoints.driverRotation;
         }
+
+        if (LapCounter.finished)
+        {
+            WaitTime += Time.deltaTime;
+            DriverRespawn.transform.GetComponent<KeyboardInput>().Blocked = true;
+        }
+
+        if ((int)WaitTime == 4) SceneManager.LoadScene(4);
     }
 }

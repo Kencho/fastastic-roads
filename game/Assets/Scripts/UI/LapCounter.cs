@@ -5,15 +5,17 @@ using UnityEngine.UI;
 
 public class LapCounter : MonoBehaviour
 {
+    /* Vuelta en la que nos hallamos. */
     public GameObject CurrentLap;
 
+    /* Objetivo de vueltas final. */
     public GameObject FinalLap;
 
     /* Contador de vueltas. */
     private int lapCounter = 0;
 
     /* Booleano que indica el inicio de carrera. */
-    private bool finished = false;
+    public static bool finished = false;
 
     void Awake()
     {

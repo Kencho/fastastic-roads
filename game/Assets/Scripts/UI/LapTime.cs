@@ -16,7 +16,7 @@ public class LapTime : MonoBehaviour
 
     void Update()
     {
-        if (CountDown.stop)
+        if (CountDown.stop && !LapCounter.finished)
         {
             MilliCount += Time.deltaTime * 10;
             MilliDisplay = MilliCount.ToString("F0");
