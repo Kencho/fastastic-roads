@@ -30,18 +30,29 @@ public class RaceController : MonoBehaviour
     /* Tiempo de espera al finalizar la carrera para el cambio de escena. */
     private float WaitTime = 0;
 
+    /*  */
+    public Checkpoint FinishLine;
+
     void Start()
     {
+        GameObject vehicle;
+
         if (StartPositions.Length != 0 && StartPositions[0] != null)
-            Instantiate(Driver, new Vector3(PosicionX = StartPositions[0].position.x, StartPositions[0].position.y, StartPositions[0].position.z), Quaternion.Euler(StartPositions[0].eulerAngles.x, StartPositions[0].eulerAngles.y, StartPositions[0].eulerAngles.z));
+            vehicle = Instantiate(Driver, new Vector3(PosicionX = StartPositions[0].position.x, StartPositions[0].position.y, StartPositions[0].position.z), Quaternion.Euler(StartPositions[0].eulerAngles.x, StartPositions[0].eulerAngles.y, StartPositions[0].eulerAngles.z));
         else
-            Instantiate(Driver, new Vector3(PosicionX += 5, 0, 0), Quaternion.identity);
+            vehicle = Instantiate(Driver, new Vector3(PosicionX += 5, 0, 0), Quaternion.identity);
+
+        vehicle.SendMessage("SetLastCheckpoint", FinishLine);
 
         for (int i = 0; i < NPCDrivers.Length; i++)
+        {
             if (StartPositions[i] != null)
-                Instantiate(NPCDrivers[i], new Vector3(PosicionX = StartPositions[i+1].position.x, StartPositions[i+1].position.y, StartPositions[i+1].position.z), Quaternion.Euler(StartPositions[i+1].eulerAngles.x, StartPositions[i + 1].eulerAngles.y, StartPositions[i + 1].eulerAngles.z));
+                vehicle = Instantiate(NPCDrivers[i], new Vector3(PosicionX = StartPositions[i + 1].position.x, StartPositions[i + 1].position.y, StartPositions[i + 1].position.z), Quaternion.Euler(StartPositions[i + 1].eulerAngles.x, StartPositions[i + 1].eulerAngles.y, StartPositions[i + 1].eulerAngles.z));
             else
-                Instantiate(NPCDrivers[i], new Vector3(PosicionX += 5, 0, 0), Quaternion.identity);
+                vehicle = Instantiate(NPCDrivers[i], new Vector3(PosicionX += 5, 0, 0), Quaternion.identity);
+            
+            vehicle.SendMessage("SetLastCheckpoint", FinishLine);
+        }
     }
 
     void Update()

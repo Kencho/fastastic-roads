@@ -130,6 +130,7 @@ namespace KartGame.KartSystems
         List<StatPowerup> activePowerupList = new List<StatPowerup>();
         GameObject lastGroundCollided = null;
         ArcadeKart.Stats finalStats;
+        private Checkpoint lastCheckpoint;
 
         void Awake()
         {
@@ -489,6 +490,20 @@ namespace KartGame.KartSystems
         public void SetCanMove(bool move)
         {
             canMove = move;
+        }
+
+        public void SetLastCheckpoint(Checkpoint checkpoint)
+        {
+            lastCheckpoint = checkpoint;
+            Debug.Log(checkpoint.gameObject.name);
+        }
+
+        public void CrossCheckpoint(Checkpoint checkpoint)
+        {
+            if (checkpoint.IsPreviousCheckpoint(lastCheckpoint))
+            {
+                SetLastCheckpoint(checkpoint);
+            }
         }
     }
 }
