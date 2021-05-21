@@ -7,12 +7,22 @@ namespace KartGame.KartSystems
     {
         Vector2 GenerateInput();
 
+        bool RequestRespawn();
+
         bool Blocked { get; set; }
     }
 
     public abstract class BaseInput : MonoBehaviour, IInput
     {
         public bool Blocked { get; set; }
+
+        public bool RequestRespawn()
+        {
+            if (Blocked) return false;
+            return RequestRespawnRaw();
+        }
+
+        protected abstract bool RequestRespawnRaw();
 
         public Vector2 GenerateInput()
         {
