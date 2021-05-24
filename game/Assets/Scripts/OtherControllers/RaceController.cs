@@ -16,7 +16,13 @@ public class RaceController : MonoBehaviour
     public GameObject[] NPCDrivers = new GameObject[7];
 
     /* Posición en el eje X de los vehículos en su instanciación. */
-    private float PosicionX = 0;
+    private float PosicionX;
+
+    /* */
+    public static Vector3 initPosition;
+
+    /* */
+    public static Quaternion initRotation;
 
     /* Vehículo que conducimos en la escena para su reaparecimiento. */
     private GameObject DriverRespawn;
@@ -28,7 +34,7 @@ public class RaceController : MonoBehaviour
     private bool Flag = true;
 
     /* Tiempo de espera al finalizar la carrera para el cambio de escena. */
-    private float WaitTime = 0;
+    private float WaitTime;
 
     /*  */
     public Checkpoint FinishLine;
@@ -36,6 +42,7 @@ public class RaceController : MonoBehaviour
     void Start()
     {
         GameObject vehicle;
+        WaitTime = 0;
 
         if (StartPositions.Length != 0 && StartPositions[0] != null)
             vehicle = Instantiate(Driver, new Vector3(PosicionX = StartPositions[0].position.x, StartPositions[0].position.y, StartPositions[0].position.z), Quaternion.Euler(StartPositions[0].eulerAngles.x, StartPositions[0].eulerAngles.y, StartPositions[0].eulerAngles.z));
@@ -43,6 +50,8 @@ public class RaceController : MonoBehaviour
             vehicle = Instantiate(Driver, new Vector3(PosicionX += 5, 0, 0), Quaternion.identity);
 
         vehicle.SendMessage("SetLastCheckpoint", FinishLine);
+        initPosition = vehicle.transform.position;
+        initRotation = vehicle.transform.rotation;
 
         for (int i = 0; i < NPCDrivers.Length; i++)
         {

@@ -6,13 +6,18 @@ using KartGame.KartSystems;
 
 public class CountDown : MonoBehaviour
 {
-    private float currentTime = 4f;
+    private float currentTime = 3.9f;
     public static bool stop = false;
     public GameObject CountdownDisplay;
     public ArcadeKart Driver;
 
     public AudioSource ReadySound;
     public AudioSource GoSound;
+
+    void Start()
+    {
+        stop = false;
+    }
 
     void Update()
     {

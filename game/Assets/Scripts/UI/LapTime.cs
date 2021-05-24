@@ -14,6 +14,14 @@ public class LapTime : MonoBehaviour
     public GameObject SecondBox;
     public GameObject MilliBox;
 
+    void Start()
+    {
+        if (PauseGame.gameFinished) PauseGame.gameFinished = false;
+        MilliCount = 0;
+        SecondCount = 0;
+        MinuteCount = 0;
+    }
+
     void Update()
     {
         if (CountDown.stop && !LapCounter.finished)
@@ -29,13 +37,9 @@ public class LapTime : MonoBehaviour
             }
 
             if (SecondCount <= 9)
-            {
                 SecondBox.GetComponent<Text>().text = "0" + SecondCount + ".";
-            }
             else
-            {
                 SecondBox.GetComponent<Text>().text = "" + SecondCount + ".";
-            }
 
             if (SecondCount >= 60)
             {
@@ -44,13 +48,9 @@ public class LapTime : MonoBehaviour
             }
 
             if (MinuteCount <= 9)
-            {
                 MinuteBox.GetComponent<Text>().text = "0" + MinuteCount + ":";
-            }
             else
-            {
                 MinuteBox.GetComponent<Text>().text = "" + MinuteCount + ":";
-            }
         }
     }
 }

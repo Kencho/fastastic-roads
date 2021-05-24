@@ -18,6 +18,11 @@ public class BestLapTime : MonoBehaviour
     /* Booleano que indica si el checkpoint de inicio por el que pasamos es al principio de la carrera. */
     private bool inicio = true;
 
+    void Start()
+    {
+        inicio = true;
+    }
+
     void OnTriggerEnter()
     {
         if (inicio == true) inicio = false;

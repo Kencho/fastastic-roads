@@ -17,6 +17,11 @@ public class LapCounter : MonoBehaviour
     /* Booleano que indica el inicio de carrera. */
     public static bool finished = false;
 
+    void Start()
+    {
+        finished = false;
+    }
+
     void Awake()
     {
         FinalLap.GetComponent<Text>().text = "/" + RaceController.LapNumber;

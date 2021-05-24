@@ -17,15 +17,21 @@ public class TrackCheckpoints : MonoBehaviour
     GameObject driver;
 
     /* Posición del vehículo que manejamos. */
-    public static Vector3 driverPosition = new Vector3(-49.8921585f, -17.0823498f, 106.940109f);
+    public static Vector3 driverPosition;
 
     /* Rotación del vehículo que manejamos. */
-    public static Quaternion driverRotation = Quaternion.Euler(0, 0.28f, 0);
+    public static Quaternion driverRotation;
 
     /* Checkpoint último por el que hemos pasado antes de caer al vacío con el vehículo. */
     public static Checkpoint checkpointFall;
 
-    private void Awake()
+    void Start()
+    {
+        driverPosition = RaceController.initPosition;
+        driverRotation = RaceController.initRotation;
+    }
+
+    void Awake()
     {
         Transform checkpoints = transform.Find("Checkpoints");
 
