@@ -39,6 +39,8 @@ public class RaceController : MonoBehaviour
     /*  */
     public Checkpoint FinishLine;
 
+    public int raceId = 0;
+
     void Start()
     {
         GameObject vehicle;
@@ -50,6 +52,9 @@ public class RaceController : MonoBehaviour
             vehicle = Instantiate(Driver, new Vector3(PosicionX += 5, 0, 0), Quaternion.identity);
 
         vehicle.SendMessage("SetLastCheckpoint", FinishLine);
+        vehicle.SendMessage("SetRaceId", raceId);
+        Debug.Log("El id de vehículo conductor es: " + raceId);
+        raceId++;
         initPosition = vehicle.transform.position;
         initRotation = vehicle.transform.rotation;
 
@@ -61,6 +66,10 @@ public class RaceController : MonoBehaviour
                 vehicle = Instantiate(NPCDrivers[i], new Vector3(PosicionX += 5, 0, 0), Quaternion.identity);
             
             vehicle.SendMessage("SetLastCheckpoint", FinishLine);
+            vehicle.SendMessage("SetRaceId", raceId);
+            Debug.Log("El id del vehículo " + i + " es: " + raceId);
+            raceId++;
+            
         }
     }
 

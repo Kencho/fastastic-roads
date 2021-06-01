@@ -130,7 +130,11 @@ namespace KartGame.KartSystems
         List<StatPowerup> activePowerupList = new List<StatPowerup>();
         GameObject lastGroundCollided = null;
         ArcadeKart.Stats finalStats;
+        
+        /* Último checkpoint alcanzado. */
         private Checkpoint lastCheckpoint;
+        /* Identificador de corredor. */
+        private int RaceId { get; set; }
 
         void Awake()
         {
