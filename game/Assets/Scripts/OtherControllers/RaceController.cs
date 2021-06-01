@@ -67,7 +67,7 @@ public class RaceController : MonoBehaviour
             
             vehicle.SendMessage("SetLastCheckpoint", FinishLine);
             vehicle.SendMessage("SetRaceId", raceId);
-            Debug.Log("El id del vehículo " + i + " es: " + raceId);
+            Debug.Log("El id del vehículo NPC " + i + " es: " + raceId);
             raceId++;
             
         }

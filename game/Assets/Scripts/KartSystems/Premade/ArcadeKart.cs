@@ -134,7 +134,7 @@ namespace KartGame.KartSystems
         /* Último checkpoint alcanzado. */
         private Checkpoint lastCheckpoint;
         /* Identificador de corredor. */
-        private int RaceId { get; set; }
+        private int RaceId = 0;
 
         void Awake()
         {
@@ -500,6 +500,16 @@ namespace KartGame.KartSystems
         {
             lastCheckpoint = checkpoint;
             Debug.Log(checkpoint.gameObject.name);
+        }
+
+        public void SetRaceId(int raceId)
+        {
+            RaceId = raceId;
+        }
+
+        public int GetRaceId()
+        {
+            return RaceId;
         }
 
         public void CrossCheckpoint(Checkpoint checkpoint)
