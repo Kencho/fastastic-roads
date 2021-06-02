@@ -135,6 +135,12 @@ namespace KartGame.KartSystems
         private Checkpoint lastCheckpoint;
         /* Identificador de corredor. */
         private int RaceId = 0;
+        /* Controlador de carrera. */
+        [SerializeField]
+        private RaceController raceController;
+
+        [SerializeField]
+        private LapCounter lapCounter;
 
         void Awake()
         {
@@ -142,6 +148,7 @@ namespace KartGame.KartSystems
             m_Inputs = GetComponents<IInput>();
             suspensionNeutralPos = SuspensionBody.transform.localPosition;
             suspensionNeutralRot = SuspensionBody.transform.localRotation;
+
         }
 
         void FixedUpdate()
@@ -517,6 +524,8 @@ namespace KartGame.KartSystems
             if (checkpoint.IsPreviousCheckpoint(lastCheckpoint))
             {
                 SetLastCheckpoint(checkpoint);
+                raceController.CheckpointCrossed(this, checkpoint);
+                lapCounter.UpdateLapCounter(raceController.GetLapFromDriver(RaceId));
             }
         }
     }

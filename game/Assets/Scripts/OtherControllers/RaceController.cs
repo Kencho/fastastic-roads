@@ -28,7 +28,9 @@ public class RaceController : MonoBehaviour
     private GameObject DriverRespawn;
 
     /* Número de vueltas a realizar en la contrarreloj. */
-    public static int LapNumber = 4;
+    private static int lapNumber = 4;
+
+    public static int LapNumber { get => lapNumber; set => lapNumber = value; }
 
     /* Flag para frenar el cambio continuo del componente en el Update. */
     private bool Flag = true;
@@ -69,7 +71,6 @@ public class RaceController : MonoBehaviour
         initPosition = vehicle.transform.position;
         initRotation = vehicle.transform.rotation;
 
-        vehicleNumber++;
         Debug.Log("El tamaño de NPCDrivers es de: " + NPCDrivers.Length);
         for (int i = 0; i < NPCDrivers.Length; i++)
         {
@@ -85,7 +86,6 @@ public class RaceController : MonoBehaviour
                 Debug.Log("El id del vehículo NPC " + i + " es: " + raceId);
                 racerLaps[raceId] = 1;
                 raceId++;
-                vehicleNumber++;
             }
         }
 
@@ -121,5 +121,23 @@ public class RaceController : MonoBehaviour
         }
 
         if ((int)WaitTime == 4) SceneManager.LoadScene(4);
+    }
+
+    public void CheckpointCrossed(ArcadeKart arcadeKart, Checkpoint checkpointCrossed)
+    {
+        if (checkpointCrossed == FinishLine)
+        {
+            AddLapToDriver(arcadeKart.GetRaceId());
+        }
+    }
+
+    private void AddLapToDriver(int RaceId)
+    {
+        racerLaps[RaceId] = racerLaps[RaceId]++;
+    }
+
+    public int GetLapFromDriver(int RaceId)
+    {
+        return racerLaps[RaceId];
     }
 }

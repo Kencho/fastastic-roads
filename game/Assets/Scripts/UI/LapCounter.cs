@@ -11,6 +11,9 @@ public class LapCounter : MonoBehaviour
     /* Objetivo de vueltas final. */
     public GameObject FinalLap;
 
+    /* Gameobject correspondiente al vehículo conductor. */
+    private GameObject driver;
+
     /* Contador de vueltas. */
     private int lapCounter = 0;
 
@@ -27,15 +30,14 @@ public class LapCounter : MonoBehaviour
         FinalLap.GetComponent<Text>().text = "/" + RaceController.LapNumber;
     }
 
-    void OnTriggerEnter()
+    public void UpdateLapCounter(int KartLap)
     {
-        if (!finished && TrackCheckpoints.nextCP == 0)
+        if (!finished)
         {
-            lapCounter++;
-            CurrentLap.GetComponent<Text>().text = lapCounter.ToString();
+            CurrentLap.GetComponent<Text>().text = KartLap.ToString();
         }
 
-        if(!finished && lapCounter == RaceController.LapNumber + 1)
+        if (!finished && KartLap == RaceController.LapNumber + 1)
         {
             finished = true;
             CurrentLap.GetComponent<Text>().text = "";
