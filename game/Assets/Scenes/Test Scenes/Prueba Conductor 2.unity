@@ -597,7 +597,7 @@ GameObject:
   - component: {fileID: 1858361632}
   - component: {fileID: 1858361631}
   - component: {fileID: 1858361630}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FallingRespawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1092,7 +1092,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4923183209577574558}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Checkpoints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1194,7 +1194,7 @@ GameObject:
   - component: {fileID: 4923183209946087456}
   - component: {fileID: 4923183209946087457}
   - component: {fileID: 4923183209946087458}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Checkpoint 3
   m_TagString: Checkpoint
   m_Icon: {fileID: 0}
@@ -1312,7 +1312,7 @@ GameObject:
   - component: {fileID: 4923183210027223256}
   - component: {fileID: 4923183210027223257}
   - component: {fileID: 4923183210027223258}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Checkpoint 5
   m_TagString: Checkpoint
   m_Icon: {fileID: 0}
@@ -1332,7 +1332,7 @@ GameObject:
   - component: {fileID: 4923183210392619996}
   - component: {fileID: 4923183210392619997}
   - component: {fileID: 4923183210392619998}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Checkpoint 1
   m_TagString: Checkpoint
   m_Icon: {fileID: 0}
@@ -1456,7 +1456,7 @@ GameObject:
   - component: {fileID: 4923183210624002357}
   - component: {fileID: 4923183210624002358}
   - component: {fileID: 4923183210624002359}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Checkpoint 2
   m_TagString: Checkpoint
   m_Icon: {fileID: 0}
@@ -1642,7 +1642,7 @@ GameObject:
   - component: {fileID: 4923183210733131906}
   - component: {fileID: 4923183210733131907}
   - component: {fileID: 4923183210733131908}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Checkpoint 4
   m_TagString: Checkpoint
   m_Icon: {fileID: 0}
@@ -1783,7 +1783,7 @@ GameObject:
   - component: {fileID: 4923183211120163780}
   - component: {fileID: 4923183211120163779}
   - component: {fileID: 4923183211120163778}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Checkpoint Finish
   m_TagString: Checkpoint
   m_Icon: {fileID: 0}
@@ -1914,7 +1914,7 @@ GameObject:
   - component: {fileID: 1380794931590550460}
   - component: {fileID: 8439951395342501004}
   - component: {fileID: 7432692110116019800}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: COLLIDER CAIDA
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -54,7 +54,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3650320691223897538}
   m_Layer: 0
-  m_Name: Wheels
+  m_Name: WheelModels
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -67,16 +67,16 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2328676299299075951}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0.7500001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5999075435793123319}
   - {fileID: 5999075436308035500}
   - {fileID: 5999075436990580793}
   - {fileID: 5999075436725061669}
-  m_Father: {fileID: 5999075437379064139}
-  m_RootOrder: 4
+  m_Father: {fileID: 5999075437109471389}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2376609275954652337
 GameObject:
@@ -145,16 +145,16 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4370486705109000884}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0.7500001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5999075436565104789}
   - {fileID: 5999075435824113617}
   - {fileID: 5999075437468692797}
   - {fileID: 5999075437399387211}
-  m_Father: {fileID: 5999075437379064139}
-  m_RootOrder: 3
+  m_Father: {fileID: 5999075436654503922}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5999075435629438182
 GameObject:
@@ -186,7 +186,7 @@ Transform:
   - {fileID: 5999075436521299424}
   - {fileID: 5999075437396370976}
   m_Father: {fileID: 5999075437379064139}
-  m_RootOrder: 7
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5999075435762920736
 GameObject:
@@ -198,7 +198,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5999075435762920737}
   m_Layer: 0
-  m_Name: Follow Target
+  m_Name: FollowTarget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -216,7 +216,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5999075437379064139}
-  m_RootOrder: 6
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5999075435793123318
 GameObject:
@@ -592,7 +592,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5999075436521299431}
-  m_LocalRotation: {x: 0.12880547, y: 3.5231192e-15, z: -4.5760897e-16, w: 0.9916699}
+  m_LocalRotation: {x: 0.12880546, y: -0.000000029554066, z: 0.000000003838702, w: 0.9916699}
   m_LocalPosition: {x: -2.851, y: 6.258, z: -3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -756,7 +756,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5999075436654503922}
   - component: {fileID: 5999075436654503923}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: KartCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -773,7 +773,8 @@ Transform:
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0.75, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 6310158774498039420}
   m_Father: {fileID: 5999075437379064139}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
@@ -981,7 +982,8 @@ Transform:
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0.75, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 3650320691223897538}
   m_Father: {fileID: 5999075437379064139}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
@@ -1068,8 +1070,6 @@ Transform:
   - {fileID: 5999075437109471389}
   - {fileID: 5999075436654503922}
   - {fileID: 5999075435983443176}
-  - {fileID: 6310158774498039420}
-  - {fileID: 3650320691223897538}
   - {fileID: 5999075437471666915}
   - {fileID: 5999075435762920737}
   - {fileID: 5999075435629438183}
@@ -1143,6 +1143,8 @@ MonoBehaviour:
   RaycastDist: 0.3
   MinHeightThreshold: -9.42
   SuspensionBody: {fileID: 5999075437471666915}
+  raceController: {fileID: 0}
+  lapCounter: {fileID: 0}
 --- !u!114 &5999075437379064143
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1185,7 +1187,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5999075437396370983}
-  m_LocalRotation: {x: 0.12880547, y: 3.5231192e-15, z: -4.5760897e-16, w: 0.9916699}
+  m_LocalRotation: {x: 0.12880546, y: -0.000000029554066, z: 0.000000003838702, w: 0.9916699}
   m_LocalPosition: {x: -2.851, y: 6.258, z: -3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1380,7 +1382,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5999075437379064139}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6733350350134873760
 GameObject:
