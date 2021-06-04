@@ -198,6 +198,11 @@ namespace KartGame.KartSystems
                 {
                     Input = current;
                 }
+
+                if (m_Inputs[i].RequestRespawn())
+                {
+                    Respawn();
+                }
             }
         }
 
@@ -518,7 +523,7 @@ namespace KartGame.KartSystems
         {
             return RaceId;
         }
-
+        
         public void CrossCheckpoint(Checkpoint checkpoint)
         {
             if (checkpoint.IsPreviousCheckpoint(lastCheckpoint))
@@ -527,6 +532,14 @@ namespace KartGame.KartSystems
                 raceController.CheckpointCrossed(this, checkpoint);
                 lapCounter.UpdateLapCounter(raceController.GetLapFromDriver(RaceId));
             }
+        }
+
+        private void Respawn()
+        {
+            GetComponent<Rigidbody>().velocity = Vector3.zero;
+            GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+            transform.position = lastCheckpoint.transform.position;
+            transform.rotation = lastCheckpoint.transform.rotation;
         }
     }
 }

@@ -4,17 +4,14 @@ using UnityEngine;
 
 public class FallRespawn : MonoBehaviour
 {   
-    /* Vehículo conductor, o sease, aquel que manejamos. */
-    GameObject driver;
-
+    
     void OnTriggerEnter(Collider collider)
     {
-        driver = collider.gameObject.transform.parent.gameObject;
+        collider.SendMessageUpwards("Respawn");
+    }
 
-        if (driver.CompareTag("Player"))
-        {
-            driver.transform.position = TrackCheckpoints.checkpointFall.transform.position;
-            driver.transform.rotation = TrackCheckpoints.checkpointFall.transform.rotation;
-        }
+    void OnCollisionEnter(Collision collision)
+    {
+        collision.collider.SendMessageUpwards("Respawn");
     }
 }

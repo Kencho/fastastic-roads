@@ -106,14 +106,6 @@ public class RaceController : MonoBehaviour
             DriverRespawn.transform.GetComponent<KeyboardInput>().Blocked = false;
         }
 
-        if (CountDown.stop && Input.GetButtonDown("Respawn"))
-        {
-            DriverRespawn.transform.GetComponent<Rigidbody>().velocity = Vector3.zero;
-            DriverRespawn.transform.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
-            DriverRespawn.transform.position = TrackCheckpoints.driverPosition;
-            DriverRespawn.transform.rotation = TrackCheckpoints.driverRotation;
-        }
-
         if (LapCounter.finished)
         {
             WaitTime += Time.deltaTime;
