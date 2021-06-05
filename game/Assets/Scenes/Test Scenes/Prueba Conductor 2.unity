@@ -262,6 +262,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1141476313}
   - component: {fileID: 1141476312}
+  - component: {fileID: 1141476314}
   m_Layer: 0
   m_Name: RaceControl
   m_TagString: Untagged
@@ -312,6 +313,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1141476314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1141476311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a95c9c7ea8c9204da013d06739d30e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentLap: {fileID: 284480506}
+  FinalLap: {fileID: 2004966801}
 --- !u!1 &1246683986 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1632936246834014980, guid: 8669f6158a7c3754d9c5cca8e673a8cc,
@@ -1649,20 +1664,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &4923183211120163778
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4923183211120163833}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a95c9c7ea8c9204da013d06739d30e2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CurrentLap: {fileID: 284480506}
-  FinalLap: {fileID: 2004966801}
 --- !u!114 &4923183211120163779
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1782,7 +1783,6 @@ GameObject:
   - component: {fileID: 4923183211120163783}
   - component: {fileID: 4923183211120163780}
   - component: {fileID: 4923183211120163779}
-  - component: {fileID: 4923183211120163778}
   m_Layer: 8
   m_Name: Checkpoint Finish
   m_TagString: Checkpoint
@@ -1949,7 +1949,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7988099557688036272}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1

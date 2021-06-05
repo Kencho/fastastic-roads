@@ -524,13 +524,17 @@ namespace KartGame.KartSystems
             return RaceId;
         }
         
+        public void SetRaceController(RaceController raceController)
+        {
+            this.raceController = raceController;
+        }
+
         public void CrossCheckpoint(Checkpoint checkpoint)
         {
             if (checkpoint.IsPreviousCheckpoint(lastCheckpoint))
             {
                 SetLastCheckpoint(checkpoint);
                 raceController.CheckpointCrossed(this, checkpoint);
-                lapCounter.UpdateLapCounter(raceController.GetLapFromDriver(RaceId));
             }
         }
 

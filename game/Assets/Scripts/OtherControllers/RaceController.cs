@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using KartGame.KartSystems;
 
+[RequireComponent(typeof(LapCounter))]
 public class RaceController : MonoBehaviour
 {
     /* Array de transformaciones que definirán los puntos de salida. */
@@ -62,7 +63,8 @@ public class RaceController : MonoBehaviour
             vehicle = Instantiate(Driver, new Vector3(PosicionX = StartPositions[0].position.x, StartPositions[0].position.y, StartPositions[0].position.z), Quaternion.Euler(StartPositions[0].eulerAngles.x, StartPositions[0].eulerAngles.y, StartPositions[0].eulerAngles.z));
         else
             vehicle = Instantiate(Driver, new Vector3(PosicionX += 5, 0, 0), Quaternion.identity);
-        
+
+        vehicle.SendMessage("SetRaceController", this);
         vehicle.SendMessage("SetLastCheckpoint", FinishLine);
         vehicle.SendMessage("SetRaceId", raceId);
         racerLaps[raceId] = 1;
@@ -81,6 +83,7 @@ public class RaceController : MonoBehaviour
                 else
                     vehicle = Instantiate(NPCDrivers[i], new Vector3(PosicionX += 5, 0, 0), Quaternion.identity);
 
+                vehicle.SendMessage("SetRaceController", this);
                 vehicle.SendMessage("SetLastCheckpoint", FinishLine);
                 vehicle.SendMessage("SetRaceId", raceId);
                 Debug.Log("El id del vehículo NPC " + i + " es: " + raceId);
@@ -120,12 +123,13 @@ public class RaceController : MonoBehaviour
         if (checkpointCrossed == FinishLine)
         {
             AddLapToDriver(arcadeKart.GetRaceId());
+            GetComponent<LapCounter>().UpdateLapCounter(racerLaps[arcadeKart.GetRaceId()]);
         }
     }
 
     private void AddLapToDriver(int RaceId)
     {
-        racerLaps[RaceId] = racerLaps[RaceId]++;
+        racerLaps[RaceId]++;
     }
 
     public int GetLapFromDriver(int RaceId)

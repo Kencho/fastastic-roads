@@ -11,17 +11,16 @@ public class Checkpoint : MonoBehaviour
     /* Vehículo conductor, o sease, aquel que manejamos. */
     GameObject driver;
 
-    /* */
+    /* Array de checkpoints para guardar el checkpoint anterior al indicado. */
     public Checkpoint[] PrevCheckpoints;
 
     private void OnTriggerEnter(Collider collider)
     {
-        driver = collider.transform.parent.gameObject;
+        driver = GameObject.FindGameObjectWithTag("Player");
 
-        if (driver.CompareTag("Player"))
+        if (driver.CompareTag(collider.gameObject.transform.parent.gameObject.tag))
         {
             collider.gameObject.SendMessageUpwards("CrossCheckpoint", this);
-            trackCheckpoints.DriverThroughCheckpoint(this);
         }
     }
 
