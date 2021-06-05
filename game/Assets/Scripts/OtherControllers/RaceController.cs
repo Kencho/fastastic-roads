@@ -51,6 +51,9 @@ public class RaceController : MonoBehaviour
     /* Número de vehículos total en la partida. */
     private int vehicleNumber = 1;
 
+    /* Mejor tiempo en una vuelta. */
+    public BestLapTime bestLapTime;
+
     void Start()
     {
         GameObject vehicle;
@@ -123,6 +126,7 @@ public class RaceController : MonoBehaviour
         if (checkpointCrossed == FinishLine)
         {
             AddLapToDriver(arcadeKart.GetRaceId());
+            bestLapTime.Lap(arcadeKart);
             GetComponent<LapCounter>().UpdateLapCounter(racerLaps[arcadeKart.GetRaceId()]);
         }
     }

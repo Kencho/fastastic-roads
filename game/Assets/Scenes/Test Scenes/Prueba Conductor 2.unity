@@ -220,6 +220,27 @@ Transform:
   m_Father: {fileID: 1669904859}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &956729196 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1632936245298582820, guid: 8669f6158a7c3754d9c5cca8e673a8cc,
+    type: 3}
+  m_PrefabInstance: {fileID: 1939092792}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &956729197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 956729196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edb609e49d18f2f4081861e80059e7bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BestMinuteDisplay: {fileID: 1727514326}
+  BestSecondDisplay: {fileID: 1849754173}
+  BestMilliDisplay: {fileID: 1246683986}
 --- !u!1 &966828973
 GameObject:
   m_ObjectHideFlags: 0
@@ -299,6 +320,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   FinishLine: {fileID: 4923183211120163780}
+  bestLapTime: {fileID: 0}
 --- !u!4 &1141476313
 Transform:
   m_ObjectHideFlags: 0
@@ -1664,21 +1686,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &4923183211120163779
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4923183211120163833}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: edb609e49d18f2f4081861e80059e7bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  BestMinuteDisplay: {fileID: 1727514326}
-  BestSecondDisplay: {fileID: 1849754173}
-  BestMilliDisplay: {fileID: 1246683986}
 --- !u!114 &4923183211120163780
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1782,7 +1789,6 @@ GameObject:
   - component: {fileID: 4923183211120163782}
   - component: {fileID: 4923183211120163783}
   - component: {fileID: 4923183211120163780}
-  - component: {fileID: 4923183211120163779}
   m_Layer: 8
   m_Name: Checkpoint Finish
   m_TagString: Checkpoint
