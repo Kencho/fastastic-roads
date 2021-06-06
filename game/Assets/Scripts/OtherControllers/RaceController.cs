@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 using KartGame.KartSystems;
 
 [RequireComponent(typeof(LapCounter))]
+[RequireComponent(typeof(BestLapTime))]
 public class RaceController : MonoBehaviour
 {
     /* Array de transformaciones que definirán los puntos de salida. */
@@ -50,9 +51,6 @@ public class RaceController : MonoBehaviour
 
     /* Número de vehículos total en la partida. */
     private int vehicleNumber = 1;
-
-    /* Mejor tiempo en una vuelta. */
-    public BestLapTime bestLapTime;
 
     void Start()
     {
@@ -126,7 +124,7 @@ public class RaceController : MonoBehaviour
         if (checkpointCrossed == FinishLine)
         {
             AddLapToDriver(arcadeKart.GetRaceId());
-            bestLapTime.Lap(arcadeKart);
+            GetComponent<BestLapTime>().Lap(arcadeKart);
             GetComponent<LapCounter>().UpdateLapCounter(racerLaps[arcadeKart.GetRaceId()]);
         }
     }
