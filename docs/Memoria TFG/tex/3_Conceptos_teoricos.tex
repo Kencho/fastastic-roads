@@ -1,91 +1,47 @@
 	\capitulo{3}{Conceptos teóricos}
-El vehículo modelo de prueba se compone de: 
-\\- Cuatro ruedas (cuatro modelos) que contienen un WheelCollider cada uno (cuatro colliders en total) por separado. Los cuatro modelos de ruedas van en un grupo aparte llamado “Models” y los colliders en otro llamado “Colliders”.
-\\- Un centro de masa para indicar el centro de gravedad del vehículo, el cual irá en el grupo de “Colliders”.
-\\- La suspensión del vehículo va en otro módulo aparte vacío.
-\\\\
-\\\\
-En aquellos proyectos que necesiten para su comprensión y desarrollo de unos conceptos teóricos de una determinada materia o de un determinado dominio de conocimiento, debe existir un apartado que sintetice dichos conceptos.
 
-Algunos conceptos teóricos de \LaTeX \footnote{Créditos a los proyectos de Álvaro López Cantero: Configurador de Presupuestos y Roberto Izquierdo Amo: PLQuiz}.
+\section{Desarrollo de videojuegos}
 
-\section{Proyección ortográfica}
+El desarrollo de videojuegos es el proceso a seguir para la creación de un videojuego. En este proceso van incluidos multitud de disciplinas, pues abarca la programación, el diseño gráfico y la animación, el sonido y la música, entre otros, además de la parte que nos toca como es la programación.
+
+\subsection{Narrativa}
+
+Puesto que se trata de un videojuego de carreras, la narrativa está prácticamente ausente, no careciendo de importancia de igual manera, pues lo que se pretende con este juego a posteriori es el mostrar históricamente la implicación de las personajes en los vehículos que manejan.
+
+\subsection{Arte}
+
+Para la parte artística, el resto del equipo ha sido el encargado de crear los modelos 3D para los vehículos, escenarios y animaciones bajo el software de código abierto Blender. 
+
+Inicialmente, en el mismo motor Unity se creó un escenario de pruebas simple, cogiendo dos objetos de tipo cubo aplanados y estirados para hacer superficie sobre superficie. De esta manera, obteníamos un pequeño desnivel por el que, a continuación, bajo otro modelo de vehículo simple hecho a partir de cilindros como cuerpo y ruedas, realizábamos las pruebas.
+
+Más adelante, los compañeros me adjuntaron un escenario de pruebas similar al final en estructura, de manera que ahí podría ir haciendo pruebas con el vehículo, respecto a su configuración, así como todo lo relacionado con el HUD (conteo de vueltas, tiempo, cuenta atrás, ...) y otras características.
+
+\subsection{Programación}
+
+desarrollo y programación (fases, etc.)
+
+\section{Motor de videojuegos}
+
+El corazón de un videojuego es el motor. Como definición, se trata de una serie de rutinas de programación que forman el núcleo de un juego, permitiendo el diseño, la creación y el funcionamiento del mismo. También se llama motor de videojuegos al software que nos permite crearlos, del cual hemos hecho uso para desarrollar Fastastic Roads.
+
+Explicar cómo funcionan, peculiaridades, cuáles hay y por qué escojo Unity
+
+\subsubsection{Proyección ortográfica}
 
 En este tipo de proyección, el tamaño no indica la profundidad. Los objetos no se ven más pequeños si se alejan y las líneas paralelas en el espacio se renderizan como paralelas.
 
-\subsection{Subsecciones}
-
-Además de secciones tenemos subsecciones.
-
-
-\subsubsection{Subsubsecciones}
-
-Y subsubsecciones. 
-
-
-\section{Proyección en perspectiva}
+\subsubsection{Proyección en perspectiva}
 
 Las líneas paralelas en el espacio parecen tocarse en el infinito. Es la representación al “mundo real”.
 
-\section{Propiedades de la transformación}
+\subsubsection{Propiedades de la transformación}
+
 Las propiedades de la transformación se realizan en espacio global, es decir, son relativas a la escena en la que nos hallemos. En caso de que un objeto tenga un padre, estas propiedades serán en espacio local, lo que implica que su posición será relativa a la posición del padre y no de la escena en sí.
 
-\section{Imágenes}
+\section{C\#}
 
-Se pueden incluir imágenes con los comandos standard de \LaTeX, pero esta plantilla dispone de comandos propios como por ejemplo el siguiente:
+Peculiaridades y su uso en Unity.
 
-\imagen{escudoInfor}{Autómata para una expresión vacía}
+\section{Videojuegos de carreras} 
 
-
-
-\section{Listas de items}
-
-Existen tres posibilidades:
-
-\begin{itemize}
-	\item primer item.
-	\item segundo item.
-\end{itemize}
-
-\begin{enumerate}
-	\item primer item.
-	\item segundo item.
-\end{enumerate}
-
-\begin{description}
-	\item[Primer item] más información sobre el primer item.
-	\item[Segundo item] más información sobre el segundo item.
-\end{description}
-	
-\begin{itemize}
-\item 
-\end{itemize}
-
-\section{Tablas}
-
-Igualmente se pueden usar los comandos específicos de \LaTeX o bien usar alguno de los comandos de la plantilla.
-
-\tablaSmall{Herramientas y tecnologías utilizadas en cada parte del proyecto}{l c c c c}{herramientasportipodeuso}
-{ \multicolumn{1}{l}{Herramientas} & App AngularJS & API REST & BD & Memoria \\}{ 
-HTML5 & X & & &\\
-CSS3 & X & & &\\
-BOOTSTRAP & X & & &\\
-JavaScript & X & & &\\
-AngularJS & X & & &\\
-Bower & X & & &\\
-PHP & & X & &\\
-Karma + Jasmine & X & & &\\
-Slim framework & & X & &\\
-Idiorm & & X & &\\
-Composer & & X & &\\
-JSON & X & X & &\\
-PhpStorm & X & X & &\\
-MySQL & & & X &\\
-PhpMyAdmin & & & X &\\
-Git + BitBucket & X & X & X & X\\
-Mik\TeX{} & & & & X\\
-\TeX{}Maker & & & & X\\
-Astah & & & & X\\
-Balsamiq Mockups & X & & &\\
-VersionOne & X & X & X & X\\
-} 
+Físicas, colliders, triggers, cosas que son importantes y que no hay en otros videojuegos, etc.
