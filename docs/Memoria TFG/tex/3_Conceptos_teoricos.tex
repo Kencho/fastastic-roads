@@ -1,20 +1,20 @@
-	\capitulo{3}{Conceptos teóricos}
+\capitulo{3}{Conceptos teóricos}
 
 \section{Desarrollo de videojuegos}
 
-El desarrollo de videojuegos es el proceso a seguir para la creación de un videojuego. En este proceso van incluidos multitud de disciplinas, pues abarca la programación, el diseño gráfico y la animación, el sonido y la música, entre otros, además de la parte que nos toca como es la programación.
+El desarrollo de videojuegos es el proceso a seguir para la creación de un videojuego. En este proceso van incluidos multitud de disciplinas, pues abarca la programación, el diseño gráfico y la animación, el sonido y la música, entre otros, además de una de las partes esenciales como es la programación.
 
 \subsection{Narrativa}
 
-Puesto que se trata de un videojuego de carreras, la narrativa está prácticamente ausente, no careciendo de importancia de igual manera, pues lo que se pretende con este juego a posteriori es el mostrar históricamente la implicación de las personajes en los vehículos que manejan.
+Puesto que se trata de un videojuego de carreras, la narrativa está prácticamente ausente, no careciendo de importancia de igual manera, pues lo que se pretende con este juego a posteriori es el mostrar históricamente la implicación de las personajes en los vehículos que manejan, por ello aportando unas características especiales que el resto de vehículos no tienen.
 
 \subsection{Arte}
 
 Para la parte artística, el resto del equipo ha sido el encargado de crear los modelos 3D para los vehículos, escenarios y animaciones bajo el software de código abierto Blender. 
 
-Inicialmente, en el mismo motor Unity se creó un escenario de pruebas simple, cogiendo dos objetos de tipo cubo aplanados y estirados para hacer superficie sobre superficie. De esta manera, obteníamos un pequeño desnivel por el que, a continuación, bajo otro modelo de vehículo simple hecho a partir de cilindros como cuerpo y ruedas, realizábamos las pruebas.
+Inicialmente, en el mismo motor Unity se creó un escenario de pruebas simple, cogiendo dos objetos de tipo cubo aplanados y estirados para hacer superficie sobre superficie. De esta manera, se obtenía un pequeño desnivel por el que, a continuación, bajo otro modelo de vehículo simple hecho a partir de cilindros como cuerpo y ruedas, realizábamos las pruebas.
 
-Más adelante, los compañeros me adjuntaron un escenario de pruebas similar al final en estructura, de manera que ahí podría ir haciendo pruebas con el vehículo, respecto a su configuración, así como todo lo relacionado con el HUD (conteo de vueltas, tiempo, cuenta atrás, ...) y otras características.
+Más adelante, se obtuvo un escenario de pruebas similar al escenario final en estructura, de manera que ahí podría ir haciendo pruebas con el vehículo, respecto a su configuración, así como todo lo relacionado con el HUD (conteo de vueltas, tiempo, cuenta atrás, ...) y otras características.
 
 \subsection{Programación}
 
@@ -22,26 +22,34 @@ desarrollo y programación (fases, etc.)
 
 \section{Motor de videojuegos}
 
-El corazón de un videojuego es el motor. Como definición, se trata de una serie de rutinas de programación que forman el núcleo de un juego, permitiendo el diseño, la creación y el funcionamiento del mismo. También se llama motor de videojuegos al software que nos permite crearlos, del cual hemos hecho uso para desarrollar Fastastic Roads.
+El corazón de un videojuego es el motor. Como definición, se trata de una serie de rutinas de programación que forman el núcleo de un juego, permitiendo el diseño, la creación y el funcionamiento del mismo. Así mismo, se llama motor de videojuegos al software que nos permite crearlos, de los cuales, entre todos los disponibles, se ha hecho uso de Unity para desarrollar ``Fastastic Roads''.
 
 Explicar cómo funcionan, peculiaridades, cuáles hay y por qué escojo Unity
 
-\subsubsection{Proyección ortográfica}
-
-En este tipo de proyección, el tamaño no indica la profundidad. Los objetos no se ven más pequeños si se alejan y las líneas paralelas en el espacio se renderizan como paralelas.
-
 \subsubsection{Proyección en perspectiva}
 
-Las líneas paralelas en el espacio parecen tocarse en el infinito. Es la representación al “mundo real”.
+Las líneas paralelas en el espacio parecen tocarse en el infinito. Es la representación al ``mundo real''.
 
-\subsubsection{Propiedades de la transformación}
+\subsubsection{Sistema de coordenadas}
 
-Las propiedades de la transformación se realizan en espacio global, es decir, son relativas a la escena en la que nos hallemos. En caso de que un objeto tenga un padre, estas propiedades serán en espacio local, lo que implica que su posición será relativa a la posición del padre y no de la escena en sí.
+El sistema de coordenadas funciona en espacio global, es decir, las coordenadas son relativas a la escena en la que nos hallemos. En caso de que un objeto tenga un padre, estas serán en espacio local, lo que implica que su posición será relativa a la posición del padre y no de la escena en sí.
 
-\section{C\#}
+\subsubsection{Renderización gráfica}
 
-Peculiaridades y su uso en Unity.
+\subsubsection{Físicas}
+
+\subsubsection{Entradas}
+
+\subsubsection{Sonido}
+
+\subsubsection{Juego en red}
 
 \section{Videojuegos de carreras} 
 
-Físicas, colliders, triggers, cosas que son importantes y que no hay en otros videojuegos, etc.
+Como se ha mencionado anteriormente, hay multitud de géneros en los videojuegos. Entre ellos se encuentran los videojuegos de conducción, donde como su nombre indica, se tratan de juegos en los cuales se emula la conducción de un vehículo en un entorno virtual. 
+
+Esta conducción puede ser muy similar a la real, factor principal de los videojuegos simuladores de conducción, o puede ser ``arcade'', cuyo término era originario de las primeras máquinas recreativas (o {máquinas arcade}) y se utiliza también actualmente para designar un estilo de videojuegos que siguen los principios básicos que tenían esas máquinas, entre ellos el tener un diseño sencillo, controles fáciles de asimilar y dominar, niveles no muy extensos, con dificultad ascendente y con una escasa interrupción de juego entre niveles.
+
+El entorno virtual puede representarse de diversas formas, como son los circuitos cerrados, donde se pueden realizar distintas pruebas como carreras competitivas o a contrarreloj y otra serie de pruebas como minijuegos (saltos de altura con el vehículo, superar obstáculos, etc.) u otras, o los escenarios de ``mundo abierto'', en los cuales se pueden realizar también estás pruebas pero con un elemento diferenciador, el cual es la libertad de conducción por el escenario sin interrupciones de ningún tipo en la partida. Esto es, cuando se realiza una carrera en un videojuego de conducción que no es de mundo abierto, por lo general, se realiza una carrera específica y, al terminarla, finaliza la partida, bien mostrando unas estadísticas o volviendo directamente al menú hasta que se inicia una nueva partida, pero en uno de mundo abierto se puede terminar la carrera pero no la partida, pudiendo finalizar el juego cuando el usuario lo considere.
+
+En el caso de ``Fastastic Roads'', se trata de un videojuego de carreras arcade. Los circuitos son cerrados y, una vez finalizado el número de vueltas requerido, la partida finaliza hasta que decidamos empezar una nueva.
