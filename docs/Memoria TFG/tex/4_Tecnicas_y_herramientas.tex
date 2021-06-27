@@ -1,23 +1,59 @@
 \capitulo{4}{Técnicas y herramientas}
-Ante la variedad de motores de videojuegos, hubo que escoger uno entre todos los disponibles. Puesto que cada uno tiene sus virtudes y sus complejidades a la hora de realizar determinadas acciones, se decidió analizar tres de los principales usados en el mercado global de videojuegos y audiovisuales, los cuales eran CryEngine, Unity y Unreal Engine. La mayor ventaja que se le sacó al escogido finalmente, Unity, fue el conocimiento previo del lenguaje de programación en el que se realizan los scripts, el cual es C\#, a diferencia del que usan los otros dos motores, que es C++. Partiendo de esta premisa, se comenzó a trabajar en el proyecto.
+La decisión de escoger Unity como motor de videojuegos en el que trabajar fue motivada por el conocimiento previo del lenguaje que maneja para sus \textit{scripts}, el cual es C\#, frente al que usan los otros dos motores principales, Unreal Engine y CryEngine, el cual es C++.
 
-\section{Unity}
-
-Unity 
+Considerando esto, las herramientas así como las metodologías fueron escogidas teniendo en cuenta el posible flujo de trabajo que podía llevar el proyecto en adelante. En este apartado se procederá a explicarlas.
 
 \section{Lenguaje de programación C\#}
 
-Peculiaridades y su uso en Unity.
-Programación en Visual Studio
+C\# es un lenguaje de programación multiparadigma (soporta más de un paradigma de programación, esto es, una propuesta adoptada por multitud de programadores en cuanto a la resolución de determinados problemas claramente delimitados), desarrollado por Microsoft para su plataforma .NET.
+
+Su sintaxis deriva de C/C++ y utiliza el modelo de objetos de la plataforma de .NET, similar al de Java.
+
+Destaca respecto a otros lenguajes en varios aspectos:
+\begin{itemize}
+\tightlist
+    \item Es un lenguaje seguro. Si no se inicia una variable no puede ser utilizada.
+    \item Es sencillo. Frente a otros lenguajes como C++, C\# intenta simplificar la sintaxis para ser más consistente y más lógico.
+    \item Es accesible. La creación de componentes es directa, así como la referencia a esos componentes en código y el uso de espacios de nombres o \textit{namespaces}.
+    \item Es gratuito.
+\end{itemize}
+
+Unity tiene como lenguaje base para sus scripts C\#, por lo que para programar para este motor es la única opción disponible.
+
+\section{Visual Studio Community 2019}
+
+Como entorno de programación se decidió escoger Visual Studio. Se trata de un entorno de desarrollo integrado (IDE) para Windows y macOS. Es compatible con numerosos lenguajes de programación, tales como C\#, C++, .NET y otros. 
+
+Además, Unity tiene integración directa con Visual Studio, por lo que carga correctamente sus \textit{namespaces}, pudiendo hacer uso el usuario de todas las herramientas que ofrece de manera cómoda y sencilla.
 
 \section{LaTeX}
 
-\section{Metodologías}
+Para la documentación se ha hecho uso de LaTeX. Es un sistema de composición tipográfica (textos) de alta calidad, incluyendo funcionalidades diseñadas para la producción de documentación técnica y científica. Permite al usuario centrarse en el contenido de la documentación antes que en el diseño del mismo, pues ejerce de plantilla fija sin tener que preocuparse de formatear continuamente.
 
-\section{Control de versiones}
-GitHub
+En los inicios se planteó realizar la documentación en documento OpenOffice, pero la plantilla disponible hacía difícil añadir determinado contenido y formatearlo correctamente, por lo que se procedió a desarrollarla en LaTeX. 
 
-\section{Patrones de diseño}
+Los inconvenientes encontrados con este lenguaje han sido debido al desconocimiento del mismo, por lo que la escritura de algunos caracteres o estructuras errónea provocaba una compilación fallida.
 
-Esta parte de la memoria tiene como objetivo presentar las técnicas metodológicas y las herramientas de desarrollo que se han utilizado para llevar a cabo el proyecto. Si se han estudiado diferentes alternativas de metodologías, herramientas, bibliotecas se puede hacer un resumen de los aspectos más destacados de cada alternativa, incluyendo comparativas entre las distintas opciones y una justificación de las elecciones realizadas. 
-No se pretende que este apartado se convierta en un capítulo de un libro dedicado a cada una de las alternativas, sino comentar los aspectos más destacados de cada opción, con un repaso somero a los fundamentos esenciales y referencias bibliográficas para que el lector pueda ampliar su conocimiento sobre el tema.
+\section{Texmaker}
+
+Texmaker es un editor gratuito para escribir documentos de texto multiplataforma. Este editor incluye por defecto numerosas herramientas necesarias para desarrollar documentos con LaTeX, por lo que es una ventaja frente a otras disponibles debido a que no hay que descargar e instalar nuevas bibliotecas para su uso.
+
+Se escogió frente a otras plataformas, además, por su uso como programa \textit{offline}. Los inconvenientes encontrados han sido respecto a la hora de la compilación donde, en el caso de haber código erróneo, no marca adecuadamente dónde se encuentra el fallo, por lo que puede ser más costoso encontrarlo aún siendo muy leve.
+
+\section{Blender}
+
+Para el apartado artístico, el equipo ha hecho uso de Blender. Se trata de un programa multiplataforma dedicado especialmente al modelado, animación, creación de gráficos 3D y renderizado, además de composición digital. Además de ser una herramienta muy potente, es gratuito y de código abierto, lo cual permite a los usuarios notificar fallos y corregirlos con más rapidez y facilidad que otros \textit{software} dependientes de una única empresa.
+
+Aunque el proyecto de ``Fastastic Roads'', desde la parte de programación, no requería el uso de este programa, algunas veces ha sido necesario modificar la configuración de determinados modelos adjuntados para poder ser implementados correctamente en Unity. Es por ello que se cuenta el uso de Blender como partícipe en el proyecto.
+
+Hay otros programas disponibles en el mercado pero, además de ser, generalmente, de pago, no se ha utilizado ningún otro por el resto del equipo, por lo que ha sido lógico utilizar Blender sumado a las ventajas mencionadas atrás.
+
+\section{Kanban}
+
+Kanban es una metodología ágil para gestionar el trabajo. Se formuló como una aproximación al proceso evolutivo e incremental y al cambio de sistemas para las organizaciones de trabajo, estando más enfocado en llevar a cabo las tareas pendientes.
+
+De esta metodología, junto a alguna ventaja de SCRUM, se ha hecho uso para el desarrollo del proyecto.
+
+\section{GitHub}
+
+En el control de versiones se ha optado por el uso de GitHub. Se trata de una de las plataformas de desarrollo colaborativo más extendidas actualmente, permitiendo alojar proyectos utilizando el sistema de control de versiones Git. Esta plataforma permite gestionar las tareas a realizar mediante el uso de tablas estilo Kanban, la creación de una Wiki por cada proyecto, gráficos para ver cómo los desarrolladores trabajan en sus repositorios y más funciones.
