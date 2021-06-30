@@ -19,22 +19,15 @@ Inicialmente, debido al desconocimiento de este motor, se dedicaron los primeros
 
 \section{Metodología de desarrollo Kanban}
 
-Al tratarse de un proyecto en el cual el flujo de trabajo es continuo, la metodología que se ha seguido ha sido Kanban. Permite realizar las tareas a medida que van surgiendo y acabándolas según la importancia que tengan. Además, es una metodología más flexible que otras disponibles en el mercado, lo que ha permitido poder dedicar tiempo a investigar sobre el funcionamiento de las herramientas, ya que en el caso de usar otra metodología con ciclos predefinidos habría imposibilitado el correcto cumplimiento de las fechas.
+Al tratarse de un proyecto en el cual el flujo de trabajo es continuo, la metodología que se ha seguido ha sido Kanban. Permite realizar las tareas a medida que van surgiendo y acabándolas según la importancia que tengan. Además, es una metodología más flexible que otras existentes actualmente, lo que ha permitido poder dedicar tiempo a investigar sobre el funcionamiento de las herramientas, ya que en el caso de usar otra metodología con ciclos predefinidos habría imposibilitado el correcto cumplimiento de las fechas.
 
 El funcionamiento ha sido explicado en el capítulo 4 \hyperref[cap:tecnicas]{``Técnicas y Herramientas''}. Aplicándolo a este proyecto, ha permitido tener un margen de aprendizaje sobre el funcionamiento de Unity, incluyendo las pruebas realizadas con modelos, componentes y otros elementos.
 
-Mediante un tablero de proyecto con cuatro columnas, correspondientes a \textit{``To do''} o ``Por hacer'', \textit{``In progress''} o ``En progreso'', \textit{``QA/Testing''} o ``Control de calidad'' y \textit{``Done''} o ``Hecho'', el flujo de trabajo ha funcionado de la siguiente manera:
-\begin{itemize}
-\tightlist
-    \item En la columna de \textit{``To do''} se han ido creando las tareas a medida que se iban necesitando realizarlas. Muchos elementos en el proyecto no son necesarios hasta que se realizan otras tareas previas, a la vez que pueden ir surgiendo a medida que van necesitándose en el momento o acaban siendo pensadas. La tarea correspondiente tendrá una descripción, una duración estimada de tiempo que puede conllevar realizarla y una duración real en la que se marca el tiempo que se ha tardado en realizarla.
-    \item En \textit{``In progress''} se tienen todas las tareas que se están realizando. Puede haber varias a la vez, pues se pueden compaginar tengan correlación entre ellas o no, aunque lo ideal es dedicarse a unas pocas que, al menos, dependan entre ellas para no tener una carga de trabajo que no se pueda abarcar. Las tareas irán asignadas a uno o varios usuarios que estén realizándolas.
-    \item En la columna de \textit{``QA/Testing''} se tienen todas las tareas que estaban en progreso para evaluar. El usuario habrá marcado el tiempo que le ha llevado realmente realizarla. Si cumple el objetivo de la tarea correctamente, se da por finalizada. En caso de tener fallos o de requerir cambios, se devuelve a ``En progreso'', devolviendo la asignación al usuario o usuarios encargados de la misma.
-    \item Finalmente, en \textit{``Done''} se tienen todas las tareas dadas por finalizadas. El control de calidad habrá decidido que está correctamente terminada.
-\end{itemize}
-
 Este flujo de trabajo permite, además, ajustar en el futuro las estimaciones que haga respecto a nuevas tareas similares y tomar este histórico de valores como referencia para el coste de cuánto supondría, ayudando también a que usuarios de otros proyectos similares no tengan que obtener datos, sino que ya pueda partir de estas mediciones para saber cuánto tiempo puede conllevar realizarlas.
 
-De igual manera, sí que se llevaron a cabo \textit{sprints}, de una duración de de aproximadamente dos semanas por \textit{sprint} para ir llevando el control mencionado atrás del número tareas completadas y el cambio de fases.
+Gracias a esta metodología de desarrollo, se ha podido mantener un ritmo de trabajo constante, así mismo ha permitido realizar las paradas necesarias para asimilar nuevos conceptos, corregir fallos y reformular la forma de completar las tareas, de manera que la presión en base al tiempo, teniendo en cuenta el contexto, ha sido menor y se ha podido llevar a cabo de una manera más fluida.
+
+De igual forma, sí que se llevaron a cabo \textit{sprints}, de una duración de de aproximadamente dos semanas por \textit{sprint} para ir llevando el control mencionado atrás del número tareas completadas y el cambio de fases.
 
 \section{Formación}
 
@@ -48,7 +41,7 @@ Una vez comenzó el desarrollo se recurrió a la misma documentación de Unity p
 
 Como se ha comentado previamente, los primeros meses fueron de formación aunque durante el desarrollo requiriese también de cierta formación, por lo que comenzó algo más tardío el \textit{arranque} del mismo.
 
-Para explicar las fases de desarrollo, se dividirá en tres fases correspondientes a las versiones del proyecto: \textit{alpha}, \textit{beta} y \textit{Release Candidate 1}.
+Para explicar las fases de desarrollo, se dividirá en tres fases correspondientes a las versiones del proyecto: \textit{alpha}, \textit{beta} y \textit{Release candidates}.
 
 \subsubsection{Alpha}
 
@@ -74,7 +67,7 @@ Es la fase previa a la versión candidata a ser publicada. En esta fase se reali
 
 Lo más destacable en esta fase es el comprobar cómo el desarrollo de las funciones tenía una cierta complejidad, pero que es a la hora de perfeccionar, corregir y cambiar la lógica de las funciones cuando aumenta esta complejidad y se hace denotar.
 
-\subsubsection{Release Candidate 1}
+\subsubsection{Release candidates}
 
 En este último \textit{sprint} se ha actualizado el modelo de vehículo, el mapa a una versión mejorada visual y estructuralmente, así como rellenado toda la documentación.
 
@@ -111,10 +104,10 @@ Estos han sido varios de los problemas surgidos:
 
 \section{Documentación}
 
-En los inicios se planteó realizar la documentación en documento OpenOffice, pero la plantilla disponible hacía difícil añadir determinado contenido y formatearlo correctamente, por lo que se procedió a desarrollarla en LaTeX. 
+En los inicios del proyecto, se planteó realizar la documentación en documento OpenOffice, pero se vio menos óptimo respecto al tiempo que conlleva formatear el documento que en otras herramientas como LaTeX, de la cual también se tenía plantilla, con lo cual se procedió a comenzar la documentación ahí haciendo uso de Texmaker.
 
-Los inconvenientes encontrados con este lenguaje han sido debido al desconocimiento del mismo, por lo que la escritura de algunos caracteres o estructuras errónea provocaba una compilación fallida, así como algún espaciado incrustado carente de sentido, los cuales se han resuelto la mayoría de veces escribiendo más contenido y reestructurando algunos párrafos, haciendo el progreso, en ocasiones, un poco ``tedioso''.
+Gracias a esta herramienta se ha podido escribir la documentación centrándose en el contenido con la correcta estructuración de los apartados, índices y elementos gráficos. Los inconvenientes encontrados han sido debido al desconocimiento del mismo (escritura de algunos caracteres o estructuras erróneas que provocaba una compilación fallida) así como algún fallo menor fácilmente solventable (reestructurado y reescritura de textos) ralentizando un poco el progreso en las etapas iniciales de la documentación.
 
-\section{Reconocimientos}
+\section{Exposición social}
 
-Aunque no ha habido ningún tipo de reconocimiento institucional ni económico durante su desarrollo, el progreso de este proyecto se ha ido plasmando en las redes sociales de ÍTACA, obteniendo un \textit{feedback} positivo de las personas que han visualizado las publicaciones. Además, se explicó parte de su creación y los problemas a resolver en unas jornadas online organizadas por el mismo Centro el día 16 de junio de 2021, obteniendo también buenas valoraciones y un gran interés por el público.
+El progreso de este proyecto se ha ido plasmando en las redes sociales de ÍTACA, obteniendo un \textit{feedback} positivo de las personas que han visualizado las publicaciones. Además, se explicó parte de su creación y los problemas a resolver en unas jornadas online organizadas por el mismo Centro el día 16 de junio de 2021, obteniendo también buenas valoraciones y un gran interés por el público.
