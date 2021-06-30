@@ -12,9 +12,14 @@ public class ButtonClick : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
-    public void Credits()
+    public void Instructions()
     {
         SceneManager.LoadScene(5);
+    }
+
+    public void Credits()
+    {
+        SceneManager.LoadScene(6);
     }
 
     public void Exit()
@@ -63,13 +68,13 @@ public class ButtonClick : MonoBehaviour
     public void CircuitOne()
     {
         // ¿Guardar circuito en una variable?
-        SceneManager.LoadScene(6);
+        SceneManager.LoadScene(7);
     }
 
     public void CircuitTwo()
     {
         // ¿Guardar circuito en una variable?
-        SceneManager.LoadScene(6);
+        SceneManager.LoadScene(7);
     }
 
     public void BackToCharacterSelector()

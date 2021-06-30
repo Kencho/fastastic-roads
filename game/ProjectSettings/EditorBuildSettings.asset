@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/Scenes/TimeTrialStatistics.unity
     guid: bd8e6f3628eb88a409171d696b1ccb5f
   - enabled: 1
+    path: Assets/Scenes/Instructions.unity
+    guid: 661bb1614e6a5444396af1551a1cdeec
+  - enabled: 1
     path: Assets/Scenes/Credits.unity
     guid: 7c0f309127ceff94194fd390cafcbb28
   - enabled: 1
