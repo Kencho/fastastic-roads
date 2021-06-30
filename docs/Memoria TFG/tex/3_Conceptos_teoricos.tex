@@ -57,9 +57,9 @@ La forma en la que se aprovecha de cara a un videojuego de carreras es empleando
 
 \subsection{Sistema de coordenadas}
 
-El sistema de coordenadas engloba a toda la escena en la que nos hallamos. Esto provoca que las coordenadas de los \texit{GameObject} que se hallan en la jerarquía de objetos y que no tengan ningún otro por encima de ellos sean globales, es decir, que sean relativas a la escena en la que se halle el usuario. 
+El sistema de coordenadas engloba a toda la escena en la que nos hallamos. Esto provoca que las coordenadas de los \textit{GameObject} que se hallan en la jerarquía de objetos y que no tengan ningún otro por encima de ellos sean globales, es decir, que sean relativas a la escena en la que se halle el usuario. 
 
-En caso de que un \texit{GameObject} tenga un objeto padre en la jerarquía de objetos, su sistema de coordenadas será local en vez de global, lo que implica que su posición será relativa a la posición del objeto padre, esto es, dependerá de la jerarquía de objetos y no de la escena en sí.
+En caso de que un \textit{GameObject} tenga un objeto padre en la jerarquía de objetos, su sistema de coordenadas será local en vez de global, lo que implica que su posición será relativa a la posición del objeto padre, esto es, dependerá de la jerarquía de objetos y no de la escena en sí.
 
 Es importante tener en cuenta este concepto y su funcionamiento, ya que, aunque en apariencia es simple, puede provocar confusión a la hora de la colocación de un objeto, debido a que unas mismas coordenadas no generan el mismo posicionamiento en la escena con un objeto que depende de otro objeto (o de una jerarquía de objetos) que con un objeto que depende de la propia escena.
 
