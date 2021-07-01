@@ -13,7 +13,7 @@ Fue este atractivo conjunto de ideas y forma la motivación para escogerlo como 
 
 Escogido el proyecto y el motor de videojuego en el cual se realizaría, y una vez se acordó quiénes lo tutorizarían, se procedió a comenzar la organización del proyecto.
 
-Al tratarse de un proyecto multidisciplinar en el cual se ha participado por parte de Ingeniería Informática y por parte de ÍTACA, donde se han visto involucrados otros Trabajos de Fin de Grado/Máster en el proyecto, primeramente se tuvo varias reuniones de toma de contacto y para organizar las tareas a lo largo de las semanas.
+Al tratarse de un proyecto multidisciplinar en el cual se ha participado por parte de Ingeniería Informática y por parte de ÍTACA, donde se han visto involucrados otros Trabajos de Fin de Grado/Máster en el proyecto, primeramente, se tuvo varias reuniones de toma de contacto y para organizar las tareas a lo largo de las semanas.
 
 Inicialmente, debido al desconocimiento de este motor, se dedicaron los primeros meses a la investigación para aprender a entenderlo y usarlo. Una vez se comprendieron las bases, se dio comienzo al desarrollo.
 
@@ -27,7 +27,7 @@ Este flujo de trabajo permite, además, ajustar en el futuro las estimaciones qu
 
 Gracias a esta metodología de desarrollo, se ha podido mantener un ritmo de trabajo constante, así mismo ha permitido realizar las paradas necesarias para asimilar nuevos conceptos, corregir fallos y reformular la forma de completar las tareas, de manera que la presión en base al tiempo, teniendo en cuenta el contexto, ha sido menor y se ha podido llevar a cabo de una manera más fluida.
 
-De igual forma, sí que se llevaron a cabo \textit{sprints}, de una duración de de aproximadamente dos semanas por \textit{sprint} para ir llevando el control mencionado atrás del número tareas completadas y el cambio de fases.
+De igual forma, sí que se llevaron a cabo \textit{sprints}, de una duración de aproximadamente dos semanas por \textit{sprint} para ir llevando el control mencionado atrás del número tareas completadas y el cambio de fases.
 
 \section{Formación}
 
@@ -39,7 +39,7 @@ Una vez comenzó el desarrollo se recurrió a la misma documentación de Unity p
 
 \section{Desarrollo del proyecto}
 
-Como se ha comentado previamente, los primeros meses fueron de formación aunque durante el desarrollo requiriese también de cierta formación, por lo que comenzó algo más tardío el \textit{arranque} del mismo.
+Como se ha comentado previamente, los primeros meses fueron de formación, aunque durante el desarrollo requiriese también de cierto aprendizaje respecto a nuevos conceptos y herramientas, por lo que comenzó algo más tardío el \textit{arranque} del mismo.
 
 Para explicar las fases de desarrollo, se dividirá en tres fases correspondientes a las versiones del proyecto: \textit{alpha}, \textit{beta} y \textit{Release candidates}.
 
@@ -63,7 +63,7 @@ Para el último \textit{sprint} antes de la beta se ``pulieron'' todas las funci
 
 \subsubsection{Beta}
 
-Es la fase previa a la versión candidata a ser publicada. En esta fase se realizó una ``limpieza'' de componentes innecesarios en la escena, recolocación de assets, corrigieron \textit{bugs} varios y cambiado la lógica de algunas funciones como el conteo de puntos de control, el sistema de recolocación y el cálculo del mejor tiempo por vuelta.
+Es la fase previa a la versión candidata a ser publicada. En esta fase se realizó una ``limpieza'' de componentes innecesarios en la escena, recolocación de \textit{assets}, corrigieron \textit{bugs} varios y cambiado la lógica de algunas funciones como el conteo de puntos de control, el sistema de recolocación y el cálculo del mejor tiempo por vuelta.
 
 Lo más destacable en esta fase es el comprobar cómo el desarrollo de las funciones tenía una cierta complejidad, pero que es a la hora de perfeccionar, corregir y cambiar la lógica de las funciones cuando aumenta esta complejidad y se hace denotar.
 
@@ -81,7 +81,7 @@ Ha habido constante comunicación respecto a dudas, problemas que pudiesen surgi
 
 \subsubsection{Narrativa}
 
-Aunque la narrativa está prácticamente ausente, no carece de importancia, pues la idea principal aportada por el equipo es el mostrar históricamente la implicación de las personajes en los vehículos que manejan, aportando unas características especiales que el resto de vehículos no tienen. Debido al tamaño del proyecto, se tuvo que simplificar esta idea en un juego más simple con modo a contrarreloj, teniendo la intención de continuarlo más adelante.
+Aunque la narrativa está prácticamente ausente, no carece de importancia, pues la idea principal aportada por el equipo es el mostrar históricamente la implicación de los personajes en los vehículos que manejan, aportando unas características especiales que el resto de vehículos no tienen. Debido al tamaño del proyecto, se tuvo que simplificar esta idea en un juego más simple con modo a contrarreloj, teniendo la intención de continuarlo más adelante.
 
 \subsubsection{Arte}
 
@@ -96,7 +96,7 @@ Al tratarse de un motor de videojuegos con su propia estructura, las pruebas aut
 Estos han sido varios de los problemas surgidos:
 \begin{itemize}
 \tightlist
-	\item Los \textit{meshcolliders} del terreno quitó horas de trabajo, pues ocasionaban comportamientos imprevistos en el vehículo que, aún configurándolo, impedía el correcto funcionamiento de éste. Al actualizar el mapa a una versión más reciente y con más polígonos, así como añadiendo \textit{colliders} esféricos a las ruedas para que no atravesaran el suelo, se solucionaron gran parte de esos problemas ocasionados.
+	\item Los \textit{meshcolliders} del terreno quitó horas de trabajo, pues ocasionaban comportamientos imprevistos en el vehículo que, aun configurándolo, impedía el correcto funcionamiento de éste. Al actualizar el mapa a una versión más reciente y con más polígonos, así como añadiendo \textit{colliders} esféricos a las ruedas para que no atravesaran el suelo, se solucionaron gran parte de esos problemas ocasionados.
 	\item Las funciones creadas, una vez fueron desarrolladas, funcionaban sin algún tipo de problema. En cambio, cuando se tuvieron que implementar nuevos aspectos, componentes u otros, algunos provocaron fallos inesperados en esas funciones previamente creadas, aparentemente, de manera correcta. Un ejemplo fue el sistema de conteo de vueltas, el cual, al introducir los \textit{colliders} de las ruedas, empezó a realizar un mal conteo provocando la finalización inesperada de la partida al aumentar el número de vueltas completo, lo que hizo necesario un replanteamiento de la lógica de los \textit{scripts} general para que nada empezara a fallar por distintos lados.
 	\item Distintos fallos menores solventados en el momento en el que se conocía su existencia.
 	\item 
@@ -106,7 +106,7 @@ Estos han sido varios de los problemas surgidos:
 
 En los inicios del proyecto, se planteó realizar la documentación en documento OpenOffice, pero se vio menos óptimo respecto al tiempo que conlleva formatear el documento que en otras herramientas como LaTeX, de la cual también se tenía plantilla, con lo cual se procedió a comenzar la documentación ahí haciendo uso de Texmaker.
 
-Gracias a esta herramienta se ha podido escribir la documentación centrándose en el contenido con la correcta estructuración de los apartados, índices y elementos gráficos. Los inconvenientes encontrados han sido debido al desconocimiento del mismo (escritura de algunos caracteres o estructuras erróneas que provocaba una compilación fallida) así como algún fallo menor fácilmente solventable (reestructurado y reescritura de textos) ralentizando un poco el progreso en las etapas iniciales de la documentación.
+Gracias a esta herramienta se ha podido escribir la documentación centrándose en el contenido con la correcta estructuración de los apartados, índices y elementos gráficos. Los inconvenientes encontrados han sido debido al desconocimiento del mismo (escritura de algunos caracteres o estructuras erróneas que provocaba una compilación fallida) así como algún fallo menor fácilmente solucionable (reestructurado y reescritura de textos) ralentizando un poco el progreso en las etapas iniciales de la documentación.
 
 \section{Exposición social}
 
