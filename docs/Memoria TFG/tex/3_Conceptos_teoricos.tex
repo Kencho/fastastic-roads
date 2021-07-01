@@ -1,5 +1,5 @@
 \capitulo{3}{Conceptos teóricos} \label{cap:conceptos}
-Para comprender todo el ecosistema que envuelve a un videojuego, han de ser explicados distintos términos con los que el proyecto ha tomado contacto y con aquellos en los que se profundizará más adelante.
+Para comprender todo el ecosistema que envuelve a un videojuego, han de ser explicados los distintos términos con los que el proyecto ha tomado contacto y con aquellos en los que se profundizará más adelante.
 
 En este apartado se detallan los conceptos principales y cómo influyen en el desarrollo del juego.
 
@@ -21,29 +21,32 @@ Las escenas son el principal elemento fundamental de Unity, motor del que se hab
 
 Se trata de la unidad más básica dentro de una escena. Representa personajes, \textit{props} o elementos de atrezo, y el escenario. Son objetos inertes, sin ninguna funcionalidad de base, por lo que no logran nada por sí mismos, pero sí funcionan como contenedores para componentes, los cuales son los que implementan las funcionalidades a los mismos, como puede ser el movimiento, conteo de vueltas o el sistema de puntos de control entre otros dentro de este proyecto.
 
-Todos los \textit{GameObject} tienen un componente \textit{Transform} o transformada del objeto, que sirve para representar la posición, orientación y escala del objeto respecto al objeto padre del mismo, y en caso de no tener objeto padre será respecto a la escena. Es uno de los elementos necesarios para poder mover libremente el objeto por el escenario, así como cambiar su tamaño y orientarlo en la posición en la que lo quiera el usuario. La posición del \textit{GameObject} es de tipo \textit{Vector3} y la orientación es de tipo \textit{Quaternion} (en este caso se hace uso de una función llamada ``\textit{Euler}'' para devolver la rotación en grados en un vector de tres posiciones, como el correspondiente a la posición del \textit{GameObject}).
+Todos los \textit{GameObject} tienen un componente \textit{Transform} o transformada del objeto, que sirve para representar la posición, orientación y escala del objeto respecto al objeto padre del mismo, y en caso de no tener objeto padre será respecto a la escena. Es uno de los elementos necesarios para poder mover libremente el objeto por el escenario, así como cambiar su tamaño y orientarlo en la posición en la que lo quiera el usuario. La posición del \textit{GameObject} es de tipo \textit{Vector3} y la orientación es de tipo \textit{Quaternion} (en este caso se hace uso de una función llamada ``\textit{Euler}'', siendo los ángulos de \textit{Euler} una representación de una rotación alternativa a los cuaternios expresada como una secuencia de rotaciones entre los ejes cartesianos, primero rotando en Z, luego en X y luego en Y, para devolverla en un vector de tres posiciones).
 
-A los \textit{GameObject} se les adjuntarán componentes que les otorgarán comportamientos específicos. Los más destacables para este proyecto suministrados por defecto por Unity han sido: 
+\subsection{Componentes}
+
+Los componentes son las distintas piezas requeridas para dotar a los objetos de la capacidad de ejercer determinadas acciones o características, como pueden ser las cámaras, el movimiento, el sonido, la luz, las colisiones, los sistemas de conteo y todo lo que aporte Unity por defecto o quiera crear el usuario.
+
+Se crean como \textit{scripts} programados en C\#. Estos \textit{scripts} se adjuntan a los \textit{GameObjects}, dando la funcionalidad correspondiente a los objetos en los que se hallen. Gracias a \textit{UnityEngine}, se tienen todas las herramientas para poder programar \textit{scripts} interactuando con los distintos \textit{GameObjects} y el entorno de Unity. No obstante, algunas veces puede ser limitante a la hora de querer modificar alguna característica a bajo nivel, ya que Unity tiene sus propias restricciones a las que el usuario tiene que adaptarse.
+
+Los componentes les otorgarán comportamientos específicos, donde los más destacables para este proyecto suministrados por defecto por Unity han sido: 
 \begin{itemize}
 \tightlist
-    \item \textit{Mesh Renderers} o renderizadores de mallas: definen la geometría de los objetos y la renderiza en la posición definida por el componente de transformada del objeto.
+    \item \textit{Mesh Renderers} o renderizadores de mallas: definen la geometría de los objetos obtenida del \textit{Mesh Filter} (el cual es el encargado de coger una malla de los \textit{assets} y pasárselo al renderizador de malla) y la renderiza en la posición definida por el componente de transformada del objeto para mostrarla en pantalla.
     \item \textit{Colliders} o colisionadores: definen la forma de un objeto con el propósito de ejercer colisiones físicas. Este componente es invisible, y no necesariamente tiene la forma exacta que la malla del objeto en cuestión (de hecho, por lo general, una aproximación a menudo es más eficiente para el rendimiento y prácticamente indistinguible en el juego).
    	\begin{itemize}
    	\tightlist
-   		    \item \textit{Mesh Colliders} o colisionadores de malla: toma la forma de una malla y construye el colisionador basado en ella. Pueden chocar con otros colisionadores de malla si están marcados como "convexos".
+   		    \item \textit{Mesh Colliders} o colisionadores de malla: toma la forma de una malla y construye el colisionador basado en ella. Pueden chocar con otros colisionadores de malla si están marcados como ``convexos''.
    		    \item \textit{Wheel Colliders} o colisionadores de ruedas: son colisionadores especiales para vehículos. Tiene detección de colisiones integrada, física de ruedas y un modelo de deslizamiento basado en la fricción de la malla. Puede utilizarse para objetos que no sean ruedas pero está específicamente diseñado para ello.
    	\end{itemize}
+   	\item \textit{Camera} o cámara: dispositivos que capturan y muestran el mundo al jugador. Se explica más detalladamente en el apartado de ``Cámaras''.
+   	\textit{Lights} o luces: partes esenciales de cada escena, definen el color y el ambiente de una escena.
+   	\item \textit{Rigidbody}: permite que un objeto tenga comportamiento físico. Se explica más detalladamente en el apartado de ``Físicas''.
 \end{itemize}
 
 En el caso del vehículo a manejar en el juego, consta de un conjunto de renderizadores de malla que conforman la apariencia del vehículo, y un conjunto de colisionadores, dividido en un colisionador de malla, cuatro específicos de ruedas y cuatro de esferas.
 
 Para el presente trabajo se han desarrollado, además, nuevos componentes que se describirán en detalle en el anexo C.
-
-\subsection{Componentes}
-
-Como se ha mencionado en los \textit{GameObject}, los componentes son las distintas piezas requeridas para dotar a los objetos de la capacidad de ejercer determinadas acciones o características, como pueden ser las cámaras, el movimiento, el sonido, la luz, las colisiones, los sistemas de conteo y todo lo que aporte Unity por defecto o quiera crear el usuario.
-
-Los componentes se crean como \textit{scripts} programados en C\#. Estos \textit{scripts} se adjuntan a los \textit{GameObjects}, dando la funcionalidad correspondiente a los objetos en los que se hallen. Gracias a \textit{UnityEngine}, se tienen todas las herramientas para poder programar \textit{scripts} interactuando con los distintos \textit{GameObjects} y el entorno de Unity. No obstante, algunas veces puede ser limitante a la hora de querer modificar alguna característica a bajo nivel, ya que Unity tiene sus propias restricciones a las que el usuario tiene que adaptarse.
 
 \subsection{Cámaras}
 
@@ -67,7 +70,7 @@ Es importante tener en cuenta este concepto y su funcionamiento, ya que, aunque 
 
 Unity integra un sistema de físicas que permite a los \textit{GameObjects} tener un comportamiento físico convincente, donde deben poder tener una aceleración adecuada y verse afectados por las colisiones, la gravedad y otras fuerzas. Este sistema proporciona distintos componentes que manejan la simulación física, de manera que modificando los distintos ajustes se puede obtener objetos que se comporten pasivamente de una manera realista. Da la posibilidad de controlar estas físicas desde \textit{script}, por lo que se puede dotar a los objetos de un dinamismo muy diverso. En Unity, los conceptos principales de las físicas para los juegos en 2D y en 3D son iguales, pero la implementación es diferente, por lo que hay un motor específico para 2D y otro para 3D.
 
-Los principales componentes en relación a las físicas son los \textit{Rigidbody} y los \textit{colliders} o colisionadores, explicados anteriormente. 
+Los principales componentes en relación a las físicas son los \textit{Rigidbody} y los \textit{colliders} o colisionadores (estos últimos han sido explicados en el apartado de \textit{GameObject}). 
 
 Un \textit{Rigidbody} es el componente principal que permite el comportamiento físico de un objeto. Al añadir este componente a un objeto, éste responderá de manera inmediata a la gravedad. Si, además, se añaden uno o más colisionadores al objeto, entonces éste será movido por las colisiones entrantes. La manera en la que ahora responderá el objeto ante el movimiento será mediante fuerzas aplicadas al mismo, y no mediante cambios directos en su transformada.
 
@@ -75,7 +78,7 @@ También hay que tener en cuenta a los \textit{triggers}, los cuales no son comp
 
 \subsection{Asset}
 
-Los \textit{assets} o recursos son representaciones de cualquier item que pueda ser utilizado en el juego. Puede partir de un archivo creado de manera externa a Unity, como puede ser un modelo 3D, un archivo de audio, una imagen o cualquiera de los tipos de archivo que Unity soporta, así como aquellos que pueden ser creados dentro del mismo motor, como los controladores de animación o los mezcladores de audio.
+Los \textit{assets} o recursos son representaciones de cualquier ítem que pueda ser utilizado en el juego. Puede partir de un archivo creado de manera externa a Unity, como puede ser un modelo 3D, un archivo de audio, una imagen o cualquiera de los tipos de archivo que Unity soporta, así como aquellos que pueden ser creados dentro del mismo motor, como los controladores de animación o los mezcladores de audio.
 
 En ``Fastastic Roads'' los \textit{assets} principales son los modelos de los vehículos y del escenario, los cuales son objetos 3D creados en Blender, acompañados de sus respectivas texturas.
 
@@ -104,7 +107,7 @@ Para poder moverse por el juego se requiere de un ratón para la selección de l
 
 \subsection{Sonido}
 
-El sonido es un aspecto muy importante en un videojuego, pues es el encargado de transmitir las sensaciones auditivas respecto a las acciones que realiza el jugador o los elementos con los que interactua, como puede ser accionar un botón, activar algún objeto, correr o el sonido de un motor entre otros, así como el sonido ambiente que engloba a una escena.
+El sonido es un aspecto muy importante en un videojuego, pues es el encargado de transmitir las sensaciones auditivas respecto a las acciones que realiza el jugador o los elementos con los que interactúa, como puede ser accionar un botón, activar algún objeto, correr o el sonido de un motor entre otros, así como el sonido ambiente que engloba a una escena.
 
 Unity provee al usuario de un sistema de sonido espacial 3D completo, así como de un sistema de mezcla y masterizado en tiempo real, jerarquías de mezcladores, instantáneas y efectos.
 
@@ -126,7 +129,7 @@ El entorno virtual puede representarse de diversas formas, como son los circuito
 
 Las carreras pueden ser muy diversas, pero los tipos principales generalmente son dos, que son las carreras competitivas, donde se cumple un determinado número de vueltas mientras se rivaliza contra varios contrincantes por llegar al primer puesto, y las carreras contrarreloj, donde la prioridad es realizar la vuelta más corta en tiempo al circuito, habiendo también un límite de vueltas a realizar.
 
-En el caso de ``Fastastic Roads'', se trata de un videojuego de carreras arcade. Estas carreras son únicamente contrarreloj, pero el objetivo en adelante es añadir un modo de carreras competitivas en las que se puedan utilizar habilidades acorde a los vehículos que maneje el usuario. Por ello, las partidas se realizan en circuitos que son cerrados (no son abiertas, no hay posibilidad de moverse libremente fuera del escenario) y ha de cumplirse el número de vueltas requerido mientras un cronómetro de tiempo cuenta el tiempo que se tarda en dar una vuelta y un marcador indica el mejor tiempo realizado. Al acabar las vueltas indicadas, la partida finaliza devolviendo al usuario al menú hasta que se decida empezar una nueva.
+En el caso de ``Fastastic Roads'', se trata de un videojuego de carreras arcade. Estas carreras son únicamente contrarreloj, pero el objetivo en adelante es añadir un modo de carreras competitivas en las que se puedan utilizar habilidades acordes a los vehículos que maneje el usuario. Por ello, las partidas se realizan en circuitos que son cerrados (no son abiertas, no hay posibilidad de moverse libremente fuera del escenario) y ha de cumplirse el número de vueltas requerido mientras un cronómetro de tiempo cuenta el tiempo que se tarda en dar una vuelta y un marcador indica el mejor tiempo realizado. Al acabar las vueltas indicadas, la partida finaliza devolviendo al usuario al menú hasta que se decida empezar una nueva.
 
 \subsection{Puntos de control}
 
