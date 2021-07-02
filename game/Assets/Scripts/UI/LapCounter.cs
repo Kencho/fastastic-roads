@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Cuenta las vueltas realizadas en la carrera hasta llegar al objetivo.
+/// 
+/// @author Alejandro Goicoechea Román
+/// </summary>
 public class LapCounter : MonoBehaviour
 {
     /* Vuelta en la que nos hallamos. */

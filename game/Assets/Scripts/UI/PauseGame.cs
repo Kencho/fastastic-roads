@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// Permite desplegar un menú de pausa del juego durante la partida.
+/// 
+/// @author Alejandro Goicoechea Román
+/// </summary>
 public class PauseGame : MonoBehaviour
 {
     /* Indica si el juego está pausado o no. */

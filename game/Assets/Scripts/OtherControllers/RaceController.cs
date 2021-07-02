@@ -4,6 +4,12 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using KartGame.KartSystems;
 
+/// <summary>
+/// Controlador de carrera encargado de gestionar todo lo necesario
+/// para que se puedan realizar carreras.
+/// 
+/// @author Alejandro Goicoechea Román
+/// </summary>
 [RequireComponent(typeof(LapCounter))]
 [RequireComponent(typeof(BestLapTime))]
 public class RaceController : MonoBehaviour

@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// Asocia a cada botón la carga de la escena indicada mediante un identificador.
+/// 
+/// @author Alejandro Goicoechea Román
+/// </summary>
 public class ButtonClick : MonoBehaviour
 {
     // Main Menu Buttons

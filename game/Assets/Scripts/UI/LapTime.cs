@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Cuenta el tiempo por vuelta.
+/// 
+/// @author Alejandro Goicoechea Román
+/// </summary>
 public class LapTime : MonoBehaviour
 {
     public static int MinuteCount;

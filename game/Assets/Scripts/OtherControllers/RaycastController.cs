@@ -2,6 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Nos permite realizar una detección de terreno.
+/// 
+/// @author Alejandro Goicoechea Román
+/// </summary>
 public class RaycastController : MonoBehaviour
 {
     /* Lista con las ruedas del vehículo. */
@@ -9,9 +14,6 @@ public class RaycastController : MonoBehaviour
 
     /* Distancia de Raycast para que detecte el nuevo tipo de terreno. */
     public float RaycastDist = 0.3f;
-
-    /* Número asociado al layer "Road" (obtenido mediante GetMask). */
-    private int RoadLayerMask = 64;
 
     /* RaycastHit del vehículo respecto al terreno que pisa. */
     private RaycastHit RCHTerrain;

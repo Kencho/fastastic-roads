@@ -4,6 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using KartGame.KartSystems;
 
+/// <summary>
+/// Realiza una cuenta atrás antes de comenzar la carrera.
+/// 
+/// @author Alejandro Goicoechea Román
+/// </summary>
 public class CountDown : MonoBehaviour
 {
     private float currentTime = 3.9f;

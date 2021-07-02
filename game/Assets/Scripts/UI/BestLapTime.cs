@@ -4,6 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using KartGame.KartSystems;
 
+/// <summary>
+/// Obtiene y actualiza el mejor tiempo de una vuelta en una carrera.
+/// 
+/// @author Alejandro Goicoechea Román
+/// </summary>
 public class BestLapTime : MonoBehaviour
 {
     public GameObject BestMinuteDisplay;

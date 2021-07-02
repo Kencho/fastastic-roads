@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// Provoca que el objeto se comporte como un punto de control.
+/// 
+/// @author Alejandro Goicoechea Román
+/// </summary>
 public class Checkpoint : MonoBehaviour
 {
-    /* Controlador de los checkpoints. */
-    private TrackCheckpoints trackCheckpoints;
 
     /* Vehículo conductor, o sease, aquel que manejamos. */
     GameObject driver;
@@ -22,13 +25,6 @@ public class Checkpoint : MonoBehaviour
         {
             collider.gameObject.SendMessageUpwards("CrossCheckpoint", this);
         }
-    }
-
-    // Lista de checkpoints anteriores permitidos (ej.: tenemos el 0, 1, 2: hay una bifurcación (3a y 3b), luego 4 y otra vez al 0, comprobar como un grafo)
-    // 
-
-    public void SetTrackCheckpoints(TrackCheckpoints trackCheckpoints) {
-        this.trackCheckpoints = trackCheckpoints;
     }
 
     public bool IsPreviousCheckpoint(Checkpoint anotherCheckpoint)
