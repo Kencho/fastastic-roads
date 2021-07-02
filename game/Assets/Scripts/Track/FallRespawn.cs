@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// Al entrar en contacto con el trigger, el objeto se recoloca en el último
-/// punto de control.
+/// When interacting with the trigger, the object is respawned at the last control point. 
 /// 
 /// @author Alejandro Goicoechea Román
 /// </summary>

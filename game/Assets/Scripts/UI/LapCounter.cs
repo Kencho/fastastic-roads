@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 /// <summary>
-/// Cuenta las vueltas realizadas en la carrera hasta llegar al objetivo.
+/// Counts the laps made in the race until you reach the goal. 
 /// 
 /// @author Alejandro Goicoechea Román
 /// </summary>

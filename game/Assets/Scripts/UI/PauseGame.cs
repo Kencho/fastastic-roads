@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 /// <summary>
-/// Permite desplegar un menú de pausa del juego durante la partida.
+/// It allows to display a game pause menu during the game. 
 /// 
 /// @author Alejandro Goicoechea Román
 /// </summary>

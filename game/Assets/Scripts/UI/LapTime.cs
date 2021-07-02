@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 /// <summary>
-/// Cuenta el tiempo por vuelta.
+/// Counts the time per lap. 
 /// 
 /// @author Alejandro Goicoechea Román
 /// </summary>

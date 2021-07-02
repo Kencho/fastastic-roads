@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 /// <summary>
-/// Provoca que el objeto se comporte como un punto de control.
+/// The object behaves like a checkpoint. 
 /// 
 /// @author Alejandro Goicoechea Román
 /// </summary>

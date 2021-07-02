@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using KartGame.KartSystems;
 
 /// <summary>
-/// Realiza una cuenta atrás antes de comenzar la carrera.
+/// Count down before starting the race. 
 /// 
 /// @author Alejandro Goicoechea Román
 /// </summary>

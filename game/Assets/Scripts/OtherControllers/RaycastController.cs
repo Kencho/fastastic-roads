@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// Nos permite realizar una detección de terreno.
+/// It allows to detect the terrain that the vehicle is treading on.
 /// 
 /// @author Alejandro Goicoechea Román
 /// </summary>

@@ -5,8 +5,7 @@ using UnityEngine.SceneManagement;
 using KartGame.KartSystems;
 
 /// <summary>
-/// Controlador de carrera encargado de gestionar todo lo necesario
-/// para que se puedan realizar carreras.
+/// Race controller that manages everything necessary so that races can be carried out. 
 /// 
 /// @author Alejandro Goicoechea Román
 /// </summary>

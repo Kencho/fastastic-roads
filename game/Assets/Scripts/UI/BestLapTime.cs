@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using KartGame.KartSystems;
 
 /// <summary>
-/// Obtiene y actualiza el mejor tiempo de una vuelta en una carrera.
+/// Get and update the best lap time in a race.
 /// 
 /// @author Alejandro Goicoechea Román
 /// </summary>

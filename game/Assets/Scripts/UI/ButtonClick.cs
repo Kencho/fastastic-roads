@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 /// <summary>
-/// Asocia a cada botón la carga de la escena indicada mediante un identificador.
+/// Associates with each button in the menus the load of the scene 
+/// indicated by an identifier. 
 /// 
 /// @author Alejandro Goicoechea Román
 /// </summary>
