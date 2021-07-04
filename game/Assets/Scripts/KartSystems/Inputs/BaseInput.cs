@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// Generates the interfaces for the inputs.
+/// </summary>
 namespace KartGame.KartSystems
 {
 

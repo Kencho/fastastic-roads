@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// Provides to the user the default inputs assigned to the actions.
+/// </summary>
 namespace KartGame.KartSystems {
 
     public class KeyboardInput : BaseInput
