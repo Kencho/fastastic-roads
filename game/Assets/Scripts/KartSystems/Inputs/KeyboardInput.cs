@@ -1,10 +1,10 @@
 ﻿using UnityEngine;
 
-/// <summary>
-/// Provides to the user the default inputs assigned to the actions.
-/// </summary>
 namespace KartGame.KartSystems {
 
+    /// <summary>
+    /// Provides to the user the default inputs assigned to the actions.
+    /// </summary>
     public class KeyboardInput : BaseInput
     {
         public string Horizontal = "Horizontal";

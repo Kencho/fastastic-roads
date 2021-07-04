@@ -1,11 +1,10 @@
 ﻿using UnityEngine;
 
-/// <summary>
-/// Generates the interfaces for the inputs.
-/// </summary>
 namespace KartGame.KartSystems
 {
-
+    /// <summary>
+    /// Generates the interface methods for the inputs.
+    /// </summary>
     public interface IInput
     {
         Vector2 GenerateInput();
@@ -15,6 +14,9 @@ namespace KartGame.KartSystems
         bool Blocked { get; set; }
     }
 
+    /// <summary>
+    /// Generates the methods for the inputs.
+    /// </summary>
     public abstract class BaseInput : MonoBehaviour, IInput
     {
         public bool Blocked { get; set; }
