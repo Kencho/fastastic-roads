@@ -19,17 +19,45 @@ En este proyecto se hace uso del motor gráfico Unity.
 
 Las escenas son el principal elemento fundamental de Unity, motor del que se hablará en el capítulo 4, 'Técnicas y herramientas'. Contienen todos los objetos que componen un nivel, como puede ser todo lo que conforma a los menús, a niveles individuales y cualquier otra cosa. Cada fichero de escena se considera como un marco único \cite{doc:scene}.
 
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=\textwidth]{unity-basic}
+	\caption{Escena vacía en el motor de videojuegos Unity.}
+	\label{fig:unity-basic}
+\end{figure}
+
 \subsection{GameObject}
 
 Se trata de la unidad más básica dentro de una escena. Representa personajes, \textit{props} o elementos de atrezo, y el escenario. Son objetos inertes, sin ninguna funcionalidad de base, por lo que no logran nada por sí mismos, pero sí funcionan como contenedores para componentes, los cuales son los que implementan las funcionalidades a los mismos, como puede ser el movimiento, conteo de vueltas o el sistema de puntos de control entre otros dentro de este proyecto \cite{doc:gameobject}.
 
 Todos los \textit{GameObject} tienen un componente \textit{Transform} o transformada del objeto, que sirve para representar la posición, orientación y escala del objeto respecto al objeto padre del mismo, y en caso de no tener objeto padre será respecto a la escena \cite{doc:transform}. Es uno de los elementos necesarios para poder mover libremente el objeto por el escenario, así como cambiar su tamaño y orientarlo en la posición en la que lo quiera el usuario. La posición del \textit{GameObject} es de tipo \textit{Vector3} y la orientación es de tipo \textit{Quaternion} (en este caso se hace uso de una función llamada ``\textit{Euler}'', siendo los ángulos de \textit{Euler} una representación de una rotación alternativa a los cuaternios expresada como una secuencia de rotaciones entre los ejes cartesianos, primero rotando en Z, luego en X y luego en Y, para devolverla en un vector de tres posiciones).
 
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=\textwidth]{gameobject}
+	\caption{\textit{GameObject} básico ubicado en la jerarquía de objetos.}
+	\label{fig:gameobject}
+\end{figure}
+
 \subsection{Componentes}
 
 Los componentes son las distintas piezas requeridas para dotar a los objetos de la capacidad de ejercer determinadas acciones o características, como pueden ser las cámaras, el movimiento, el sonido, la luz, las colisiones, los sistemas de conteo y todo lo que aporte Unity por defecto o quiera crear el usuario \cite{doc:component}.
 
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=\textwidth]{component-add}
+	\caption{Se pueden tanto añadir componentes provistos por Unity como crearlos.}
+	\label{fig:component-add}
+\end{figure}
+
 Se crean como \textit{scripts} programados en C\#. Estos \textit{scripts} se adjuntan a los \textit{GameObjects}, dando la funcionalidad correspondiente a los objetos en los que se hallen. Gracias a \textit{UnityEngine}, se tienen todas las herramientas para poder programar \textit{scripts} interactuando con los distintos \textit{GameObjects} y el entorno de Unity. No obstante, algunas veces puede ser limitante a la hora de querer modificar alguna característica a bajo nivel, ya que Unity tiene sus propias restricciones a las que el usuario tiene que adaptarse \cite{doc:scripts}.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=\textwidth]{componente-script}
+	\caption{Los \textit{scripts} se programan en C\#.}
+	\label{fig:componente-script}
+\end{figure}
 
 Los componentes les otorgarán comportamientos específicos, donde los más destacables para este proyecto suministrados por defecto por Unity han sido: 
 \begin{itemize}
@@ -56,6 +84,13 @@ Las cámaras en Unity son objetos que definen una vista en una escena. La posici
 
 Las escenas en Unity se crean mediante el posicionamiento y movimiento de objetos en un espacio tridimensional. Puesto que la pantalla del espectador es bidimensional, las cámaras permiten capturar estas vistas, donde se aplica una proyección para convertir el espacio en tres dimensiones a un espacio bidimensional (aunque no se pierde la información de la profundidad).
 
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=\textwidth]{camera}
+	\caption{Componente de cámara junto a su representación en pantalla.}
+	\label{fig:camera}
+\end{figure}
+
 Una de las proyecciones que permite visualizar la escena lo más fiel a la realidad es la proyección en perspectiva cónica. Esta perspectiva es un sistema de representación gráfico basado en la proyección de un cuerpo tridimensional sobre un plano, auxiliándose en rectas proyectantes que pasan por un punto. Este sistema es el que más se asemeja a la visión humana, ya que se logra una aparente profundidad \cite{eduxg:perscon}, y es el empleado en Unity para la representación de objetos en la escena.
 
 La forma en la que se aprovecha de cara a un videojuego de carreras es empleando la cámara en tercera persona, donde la cámara sigue al vehículo ligeramente alejada. Para un mayor realismo, se ha hecho uso de un sistema de cámaras dinámico ya programado más fluido llamado Cinemachine \cite{doc:cinemachine}. Este componente ha sido instalado desde propio Unity.
@@ -63,6 +98,13 @@ La forma en la que se aprovecha de cara a un videojuego de carreras es empleando
 \subsection{Sistema de coordenadas}
 
 El sistema de coordenadas engloba a toda la escena en la que nos hallamos. Esto provoca que las coordenadas de los \textit{GameObject} que se hallan en la jerarquía de objetos y que no tengan ningún otro por encima de ellos sean globales, es decir, que sean relativas a la escena en la que se halle el usuario. 
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=\textwidth]{transform-coordenadas}
+	\caption{Coordenadas en el \textit{Transform} de un objeto.}
+	\label{fig:transform-coordenadas}
+\end{figure}
 
 En caso de que un \textit{GameObject} tenga un objeto padre en la jerarquía de objetos, su sistema de coordenadas será local en vez de global, lo que implica que su posición será relativa a la posición del objeto padre, esto es, dependerá de la jerarquía de objetos y no de la escena en sí.
 
@@ -84,11 +126,25 @@ Los \textit{assets} o recursos son representaciones de cualquier ítem que pueda
 
 En ``Fastastic Roads'' los \textit{assets} principales son los modelos de los vehículos y del escenario, los cuales son objetos 3D creados en Blender, acompañados de sus respectivas texturas.
 
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=\textwidth]{assets}
+	\caption{Se pueden incluir todo tipo de \textit{assets} compatibles con Unity.}
+	\label{fig:assets}
+\end{figure}
+
 \subsection{Prefab}
 
 Los \textit{prefabs} u objetos prefabricados son \textit{GameObjects} a los cuales se les ha añadido distintos componentes y ajustado sus propiedades al valor adecuado al diseñador, de tal manera que se almacena como un conjunto para poder ser instanciado en adelante sin tener que integrar cada modelo individual con sus mismas propiedades, optimizando el tiempo de creación de objetos y pudiendo ser reutilizados tantas veces como se necesite, esto es, actuando como una plantilla a partir de la cual se pueden crear nuevas instancias del objeto en la escena \cite{doc:prefab}.
 
 En el momento en el que un \textit{prefab} sea editado, se reflejará en todas las instancias producidas a partir de éste. No obstante, se pueden realizar modificaciones individuales para cada instancia.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=\textwidth]{prefab-pilar}
+	\caption{\textit{Prefab} del personaje de Pilar Careaga.}
+	\label{fig:prefab-pilar}
+\end{figure}
 
 \subsection{Renderizado}
 
