@@ -2,10 +2,142 @@
 
 \section{Introducción}
 
+En este apartado se recogen los requisitos mínimos para poder ejecutar la aplicación, así como los pasos a seguir para ejecutarla y un manual de uso de la misma.
+
 \section{Requisitos de usuarios}
+
+Los requisitos mínimos para ejecutar el videojuego, calculados en base a los mencionados por Unity en su página web, son los siguientes:
+
+\begin{itemize}
+\tightlist
+	\item Procesador: cualquiera con arquitectura x86/x64 con soporte para set de instrucciones SSE2
+	\item Memoria RAM: 4 gbs
+	\item Tarjeta gráfica: cualquiera compatible con, al menos, DirectX 10
+	\item Sistema operativo: Windows 7/8/10, solo en versión de 64 bits
+	\item Ratón
+	\item Teclado
+\end{itemize}
+
+De igual manera, se ha probado en diferentes PCs y los mínimos recomendados obtenidos, en base a esos PCs mencionados, son los siguientes:
+
+\begin{itemize}
+\tightlist
+	\item Procesador: Intel i7-8750H/AMD FX 6350
+	\item Memoria RAM: 8 GBs
+	\item Tarjeta gráfica: Intel UHD Graphics 630 (media de entre 25 - 30 fps)
+	\item Sistema operativo: Windows 7
+	\item Espacio ocupado en SSD/HDD: 250 MBs aprox.
+\end{itemize}
+
+Tras haber probado con diferentes pantallas, la escalabilidad de la resolución con los elementos en pantalla no es automática, por lo que la resolución de pantalla recomendada para una correcta visualización es de 1920x1080.
 
 \section{Instalación}
 
+El videojuego se exporta directamente desde el mismo motor Unity como aplicación ejecutable. Gracias a ello no es necesaria la instalación del mismo, sino que se puede abrir haciendo doble \textit{click} directamente en el ejecutable con el nombre de ``Fastastic Roads''.
+
+Es recomendable tener actualizada la tarjeta gráfica, así como los controladores correspondientes para que el videojuego pueda ser ejecutado.
+
 \section{Manual del usuario}
 
+El uso de la aplicación es muy sencillo. Se empezará ejecutando el juego, haciendo doble \textit{click} en el nombre de ``Fastastic Roads.exe'', correspondiente al ejecutable. Aparecerá el logo de Unity y, a continuación, aparecerá el menú principal.
 
+\subsection{Menús}
+
+Las pantallas por las que se mueve el usuario son menús. En estos menús habrá botones, en los cuales se puede pinchar con el botón izquierdo del ratón. Se procede a explicar las diferentes pantallas. Todos los menús tienen un botón para retroceder a la pantalla anterior en la esquina inferior izquierda.
+
+\subsubsection{Menú principal}
+
+Este menú es la pantalla principal del juego. Permite proceder a las distintas pantallas del juego, así como a salir de él. 
+\begin{itemize}
+\tightlist
+	\item \textbf{Play}: permite trasladarse a la pantalla de selección de modo de juego.
+	\item \textbf{Instructions}: muestra en pantalla las instrucciones de manejo de vehículo, para entender cómo jugar en una partida.
+	\item \textbf{Credits}: aparecen las distintas personas involucradas en el proyecto y sus roles.
+	\item \textbf{Exit}: permite salirse del videojuego, devolviendo al usuario a \textit{Windows}.
+\end{itemize}
+
+\imagen{fastastic-menu}{Menú principal de ``Fastastic Roads''.}
+
+\subsubsection{Instrucciones}
+
+Muestra las instrucciones de juego. El manejo de vehículo se puede realizar con las flechas del teclado, o bien con las teclas ``W'', ``A'', ``S'' y ``D'' siguiendo la misma posición que las flechas (flecha arriba - W, flecha izquierda - A, flecha abajo - S, flecha derecha - D). En caso de volcado de vehículo o cualquier otra situación que lo requiera, hay posibilidad de recolocar el vehículo en el último punto de control atravesado pulsando la tecla ``R''.
+
+\imagen{fastastic-instructions}{Instrucciones para jugar.}
+
+Para jugar correctamente, se explican los siguientes puntos:
+
+\begin{itemize}
+\tightlist
+	\item El vehículo se mueve manteniendo pulsadas estas teclas. Si una tecla se pulsa pero no se mantiene, realizará un escaso movimiento. De igual manera, si una tecla se mantiene pulsada de manera constante, es probable que el usuario pierda el control del vehículo, por lo que tiene que hacer combinaciones de pulsaciones continuas y soltar las mismas teclas. Para jugadores menos experimentados, es aconsejable realizar toques cortos en las teclas para un mejor manejo en la partida
+	\item Si el vehículo está parado y se pulsa la tecla correspondiente al giro a la izquierda o al giro a la derecha, éste se moverá sobre sí mismo hacia el lado correspondiente de la tecla pulsada.
+	\item Si el vehículo está en movimiento sin acelerar y se pulsa la tecla correspondiente al giro a la izquierda o al giro a la derecha, éste se moverá siguiendo la inercia del mismo hacia el lado correspondiente de la tecla pulsada.
+	\item Si se pulsa la tecla de aceleración sin combinar con ninguna tecla de giro, el vehículo se moverá en línea recta.
+	\item Si se pulsa la tecla de deceleración, sin estar previamente el vehículo en movimiento y sin combinar con ninguna de giro, el vehículo se moverá marcha atrás en línea recta.
+	\item Si se pulsa la tecla de deceleración estando previamente el vehículo en movimiento y sin combinar con ninguna de giro, el vehículo decelerará hasta detenerse. Si no se suelta la tecla de deceleración una vez el vehículo esté a punto de detenerse, iniciará la marcha atrás inmediatamente después.
+	\item Si se pulsa la tecla de aceleración más una tecla de giro a la vez, el vehículo girará hacia la dirección deseada mientras avanza.
+	\item Si se pulsa la tecla de deleración más una tecla de giro a la vez, el vehículo girará hacia la dirección deseada mientras avanza marcha atrás.
+\end{itemize}
+
+Para continuar hacia la partida, el usuario pulsará en ``\textit{Play}'' (``Jugar'').
+
+\subsubsection{Selector de modo}
+
+En esta pantalla se escoge entre los diferentes modos disponibles. En el caso de este proyecto, solo está disponible para seleccionar el modo contrarreloj (\textit{Time Trial}), con idea a futuro de integrar más modos, como el otro mostrado en rojo no seleccionable con el mensaje ``\textit{Coming soon}'' (``Disponible próximamente'').
+
+\imagen{fastastic-modeselector}{Selector de modo de juego (solo disponible el modo a contrarreloj).}
+
+El usuario pulsará en ``Time Trial'' para continuar a la partida.
+
+\subsubsection{Selector de personaje}
+
+Permite escoger entre los distintos personajes disponibles. Aunque aparezcan varios nombres, en este proyecto, independientemente de dónde se pulse, solo se podrá jugar con el personaje de ``Pilar Careaga''.
+
+\imagen{fastastic-characterselector}{Selector de personaje (solo disponible el personaje de Pilar Careaga).}
+
+Por ello, el usuario pulsará en cualquiera de los dos disponibles.
+
+\subsubsection{Selector de circuito}
+
+Antes de comenzar la partida, se escoge entre los distintos circuitos disponibles. De nuevo, solo hay un circuito disponible, por lo que independientemente de dónde se pulse llevará al mismo.
+
+\imagen{fastastic-trackselector}{Selector de circuito para jugar (solo uno disponible).}
+
+Por ello, el usuario escogerá cualquiera de los dos en pantalla.
+
+\subsubsection{Partida contrarreloj}
+
+Una vez comienza la partida, primero aparece una cuenta atrás en la cual el usuario no puede mover el vehículo hasta que haya terminado, donde aparecerá el mensaje ``\textit{Go!}'' (equivalente a ``¡Ya!'').
+
+\imagen{fastastic-countdown}{Cuenta atrás antes de empezar la carrera.}
+
+Con la cuenta atrás finalizada, el usuario puede empezar a moverse. Siguiendo las intrucciones anteriormente mencionadas, el usuario tiene que seguir por el circuito avanzando por la carretera atravesando los diferentes puntos de control hasta llegar a meta. 
+
+\imagen{fastastic-checkpoint}{Los puntos de control se distinguen por su transparencia ligeramente traslúcida.}
+
+Si el usuario se mueve en dirección contraria, los puntos de control que atraviese no serán válidos hasta que no llegue al que le corresponde atravesar inicialmente. Para que sea distinguible, hay diferentes señales con flechas indicativas en el escenario para orientar al jugador.
+
+\imagen{fastastic-randomimage}{Las flechas indican por dónde debe ir el jugador.}
+
+En la interfaz se puede observar un letrero de ``\textit{Lap}'', el cual indica el número de vuelta en el que se encuentra el usuario y el número total de vueltas de la carrera, así como otro letrero que indica el ``\textit{Lap time}'' o tiempo de vuelta, y el ``\textit{Best lap time}'' o mejor tiempo de vuelta.
+
+\imagen{fastastic-twoways}{En algún punto del circuito puede haber bifurcaciones por las que circular.}
+
+El usuario puede encontrarse durante el recorrido de la partida diferentes caminos por los que ir. Podrá escoger libremente entre cualquiera de ellos, donde la diferencia de cada uno la marca la dificultad de recorrido.
+
+\imagen{fastastic-newlap}{Al pasar de nuevo por meta, se actualiza el número de vueltas y el mejor tiempo.}
+
+Una vez atraviesa la meta después de haber pasado a través de todos los anteriores puntos de control, el contador de ``Tiempo por vuelta'' de restaura a cero, y si el tiempo ha sido mejor que el previo, se actualiza el contador de ``Mejor tiempo por vuelta''.
+
+\imagen{fastastic-pausemenu}{Hay posibilidad de pausar la partida dándole a la tecla de Escape.}
+
+En caso de que sea necesario, el videojuego se puede pausar pulsando la tecla de ``Escape'' en el teclado, permitiendo al usuario continuar el juego cuando se desee o, en caso contrario, abandonarlo, devolviendo al usuario de esta manera al menú principal.
+
+\imagen{fastastic-endgame}{Al finalizar, se bloquea el manejo del vehículo y se salta a la pantalla de estadísticas.}
+
+Una vez se completen todas las vueltas, el vehículo bloquea su control impidiendo moverlo con el teclado, y devolviendo al usuario a la pantalla de estadísticas.
+
+\subsubsection{Créditos}
+
+Para finalizar, aquí se muestra una descripción del proyecto y los distintos participantes que han colaborado en él.
+
+\imagen{fastastic-credits}{En la pantalla de créditos aparecen los participantes en el desarrollo del proyecto.}
