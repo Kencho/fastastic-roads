@@ -6,36 +6,30 @@ En este apéndice se procede a explicar la organización por directorios del pro
 
 \section{Estructura de directorios}
 
-La estructura de directorios ubicada en el \href{https://github.com/Kencho/fastastic-roads}{código del proyecto de GitHub} es la siguiente:
+La estructura de directorios ubicada en el código del proyecto de GitHub\footnote{Repositorio disponible en: \url{https://github.com/Kencho/fastastic-roads}} es la siguiente:
 
 \begin{itemize}
 \tightlist
 	\item /docs: contiene toda la documentación del proyecto, incluido este fichero de anexos. 
+	\item /docs/API: contiene toda la documentación del API construida con Doxygen.
 	\item /game: directorio raíz del juego en Unity.
 	\item /game/Assets: guarda todos los ficheros de modelos, animaciones, \textit{prefabs}, escenas y \textit{scripts}. Se hará hincapié en esta última carpeta, pues es la que contiene los ficheros que se han programado para el funcionamiento del videojuego con modo a contrarreloj.
 	\item /game/Assets/Scripts: contiene todos los \textit{scripts} programados y utilizados para el funcionamiento del proyecto como videojuego de carreras con modo a contrarreloj.
 	\item /game/Packages: contiene los ficheros correspondientes a la información de paquetes dentro de Unity.
 	\item /game/ProjectSettings: contiene todos los ficheros de configuración de proyecto, necesarios para que Unity pueda cargar el proyecto al añadirlo.
 	\item /game/UserSettings: contiene los ficheros de configuración de usuario.
-\end{itemize}
-
-Habría otra carpeta correspondiente a las \textit{builds} exportadas del videojuego para Windows y Linux, pero debido al tamaño de los archivos no ha sido posible adjuntarla al repositorio, por lo que solo se ubica en el material físico entregado. Su desglose sería el siguiente:
-
-\begin{itemize}
-\tightlist
-	\item /builds/Windows: contiene el ejecutable y todos los ficheros de datos del videojuego para Windows.
-	\item /builds/Linux: contiene el ejecutable y todos los ficheros de datos del videojuego para Linux.
+	\item /builds: contiene todos los ficheros de datos del videojuego con sus respectivos ejecutables para Windows y Linux (solo disponibles en el material digital adjunto al proyecto).
 \end{itemize}
 
 \section{Manual del programador}
 
 En este apartado, se explica detalladamente todo aquello necesario para cargar el proyecto correctamente, compilarlo y ejecutarlo.
 
-Lo esencial necesario para poder cargar el proyecto, analizarlo y ejecutarlo es tener Unity instalado. Para ello, la versión utilizada tiene que ser igual o superior a la del proyecto. En este caso, se ha hecho uso de la versión 2020.3.1f1, la cual se puede descargar de aquí: \href{https://unity3d.com/es/get-unity/download?thank-you=update&download_nid=64582&os=Win}{Unity 2020.3.1f1}.
+Lo esencial necesario para poder cargar el proyecto, analizarlo y ejecutarlo es tener Unity instalado. Para ello, la versión utilizada tiene que ser igual o superior a la del proyecto. En este caso, se ha hecho uso de la versión 2020.3.1f1.\footnote{Enlace de descarga de la versión 2020.3.1f1 de Unity: \url{https://unity3d.com/es/get-unity/download?thank-you=update&download_nid=64582&os=Win}}
 
-No es necesaria la creación de una cuenta de Unity, pero es recomendable de cara a futuro si se va a usar más veces, ya que permite disfrutar de ciertas ventajas, entre ellas la distribución de cualquier proyecto de manera comercial (ingresos anuales inferiores a 100.000\$).
+No es necesaria la creación de una cuenta de Unity, pero es recomendable de cara a futuro si se va a usar más veces.
 
-Una vez se haya descargado, se procede a instalar. Acto seguido, ha de descargarse el proyecto del repositorio de \href{https://github.com/Kencho/fastastic-roads}{GitHub}.
+Una vez se haya descargado, se procede a instalar. Acto seguido, ha de descargarse el proyecto del repositorio de GitHub.
 
 En Unity, para la gestión de proyectos, se tiene un ``Unity Hub'', en el cual se pueden gestionar las versiones de Unity instaladas, así como la descarga de proyectos de aprendizaje y la creación e importación de nuevos proyectos. En este caso, lo que interesa es añadir uno ya existente, por lo que se pulsa en ``Add'', se selecciona la carpeta ``game'' y se le da a ``Aceptar''. En ese momento se tendrá el proyecto ya añadido.
 
@@ -69,4 +63,4 @@ En Unity hay posibilidad de realizar pruebas automáticas. El ``Unity Test Frame
 
 No obstante, en este caso no se ha hecho uso de ese tipo de pruebas, ya que requiere de un estudio mayor y para el flujo de trabajo llevado no era adecuado. Es por ello que se ha hecho uso de pruebas de aceptación basadas en los casos de uso.
 
-La forma de trabajar con estas pruebas ha sido sencilla. Se creaban las tareas basadas en los requisitos del proyecto. Estas tareas tenían un objetivo a cumplir. En el momento en el que eran realizadas, se ponían a prueba (``\textit{QA/Testing}''). Si cumplía su cometido, la prueba había sido correcta y se daba por finalizada la tarea. En caso contrario, la prueba no habría pasado y se devolvía la tarea a ``\textit{In Progress}''.
+La forma de trabajar con estas pruebas ha sido sencilla. Se creaban las tareas basadas en los requisitos del proyecto. Cuando una tarea estaba tentativamente completada, se establecía en la fase de pruebas de su ciclo de vida, donde se realizaban las pruebas de aceptación correspondientes. Una vez superadas estas pruebas, la tarea se daba por terminada. En caso contrario, si no las superaban, la tarea continuaba su desarrollo devolviéndola a su fase anterior en el ciclo de vida. En el \hyperref[requisitos]{Anexo B: Especificación de Requisitos} se encuentra cómo se realizan estas pruebas.
