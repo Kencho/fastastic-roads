@@ -2,10 +2,71 @@
 
 \section{Introducción}
 
+En este apéndice se procede a explicar la organización por directorios del proyecto, así como el manual de programador y el resto de la información al respecto de la programación que pueda ser de utilidad.
+
 \section{Estructura de directorios}
+
+La estructura de directorios ubicada en el \href{https://github.com/Kencho/fastastic-roads}{código del proyecto de GitHub} es la siguiente:
+
+\begin{itemize}
+\tightlist
+	\item /docs: contiene toda la documentación del proyecto, incluido este fichero de anexos. 
+	\item /game: directorio raíz del juego en Unity.
+	\item /game/Assets: guarda todos los ficheros de modelos, animaciones, \textit{prefabs}, escenas y \textit{scripts}. Se hará hincapié en esta última carpeta, pues es la que contiene los ficheros que se han programado para el funcionamiento del videojuego con modo a contrarreloj.
+	\item /game/Assets/Scripts: contiene todos los \textit{scripts} programados y utilizados para el funcionamiento del proyecto como videojuego de carreras con modo a contrarreloj.
+	\item /game/Packages: contiene los ficheros correspondientes a la información de paquetes dentro de Unity.
+	\item /game/ProjectSettings: contiene todos los ficheros de configuración de proyecto, necesarios para que Unity pueda cargar el proyecto al añadirlo.
+	\item /game/UserSettings: contiene los ficheros de configuración de usuario.
+\end{itemize}
+
+Habría otra carpeta correspondiente a las \textit{builds} exportadas del videojuego para Windows y Linux, pero debido al tamaño de los archivos no ha sido posible adjuntarla al repositorio, por lo que solo se ubica en el material físico entregado. Su desglose sería el siguiente:
+
+\begin{itemize}
+\tightlist
+	\item /builds/Windows: contiene el ejecutable y todos los ficheros de datos del videojuego para Windows.
+	\item /builds/Linux: contiene el ejecutable y todos los ficheros de datos del videojuego para Linux.
+\end{itemize}
 
 \section{Manual del programador}
 
+En este apartado, se explica detalladamente todo aquello necesario para cargar el proyecto correctamente, compilarlo y ejecutarlo.
+
+Lo esencial necesario para poder cargar el proyecto, analizarlo y ejecutarlo es tener Unity instalado. Para ello, la versión utilizada tiene que ser igual o superior a la del proyecto. En este caso, se ha hecho uso de la versión 2020.3.1f1, la cual se puede descargar de aquí: \href{https://unity3d.com/es/get-unity/download?thank-you=update&download_nid=64582&os=Win}{Unity 2020.3.1f1}.
+
+No es necesaria la creación de una cuenta de Unity, pero es recomendable de cara a futuro si se va a usar más veces, ya que permite disfrutar de ciertas ventajas, entre ellas la distribución de cualquier proyecto de manera comercial (ingresos anuales inferiores a 100.000\$).
+
+Una vez se haya descargado, se procede a instalar. Acto seguido, ha de descargarse el proyecto del repositorio de \href{https://github.com/Kencho/fastastic-roads}{GitHub}.
+
+En Unity, para la gestión de proyectos, se tiene un ``Unity Hub'', en el cual se pueden gestionar las versiones de Unity instaladas, así como la descarga de proyectos de aprendizaje y la creación e importación de nuevos proyectos. En este caso, lo que interesa es añadir uno ya existente, por lo que se pulsa en ``Add'', se selecciona la carpeta ``game'' y se le da a ``Aceptar''. En ese momento se tendrá el proyecto ya añadido.
+
+Para la programación, lo ideal es tener instalado Visual Studio en el ordenador, siendo la versión ``Community'' la recomendada. Para asegurarse de que \textit{IntelliSense} en Visual Studio funcione correctamente con el motor de Unity, es necesario ejecutar un proyecto cualquiera y pinchar, en la barra de arriba, en ``Edit'', a continuación en ``Preferences'' y, dentro de ``External Tools'', en ``External Script Editor'' escoger ``Visual Studio Community'' (o el editor que se tenga).
+
 \section{Compilación, instalación y ejecución del proyecto}
 
+Como se ha mencionado en el apartado anterior, una vez se tiene el proyecto ya importado, ya se puede ejecutar.
+
+Al abrirlo, frente al usuario aparece la pantalla principal de Unity. En ella se verá cargada la escena última abierta. Se pueden abrir las diferentes escenas pinchando, dentro de la pestaña de ``Project'', en la carpeta ``\textit{Scenes}'', ubicada en la parte inferior izquierda de la pantalla. La nomenclatura de las escenas ha sido escogida de manera que sea lo más orientativa de cara al proyecto. 
+
+La distribución de los elementos en pantalla puede ser cambiada como prefiera el usuario, arrastrando las pestañas por las diferentes posiciones de la pantalla para recolocarlos y pudiendo aumentar o disminuir su tamaño . En caso de querer recuperar la posición original de estos bloques, se puede restaurar la vista pinchado en ``\textit{layout}'' y, a continuación, en ``\textit{Default}'' (o vista por defecto).
+
+Los diferentes elementos que componen las escenas se encuentran en la ``Jerarquía de objetos'', ubicada a la izquierda de la pantalla. Cada vez que se pincha en un objeto, en el ``Inspector'' ubicado en la derecha de la pantalla aparecerá los distintos componentes del mismo. Todos tendrán un componente ``\textit{Transform}'' no eliminable, pues es el que indica la posición en la escena mediante un sistema de coordenadas. Esta posición, con las mismas coordenadas, no será igual para un objeto que depende de la escena que para un objeto que depende de otro objeto. Esta dependencia se puede comprobar cuando un objeto se encuentra ``dentro'' de otro objeto (los objetos aparecerán con flechas a su izquierda, donde desplegará otra jerarquía local propia de objetos).
+
+Entre los distintos componentes se encuentran los \textit{scripts}, los cuales aparecen con un nombre acompañado de dos paréntesis en los que pone ese término (por ej., ``Prueba (Script)''). Estos \textit{scripts} pueden abrirse con el editor de código pulsando en los tres puntos ubicados a la derecha del nombre del \textit{script} y, a continuación, en ``Edit Script''. También pueden abrirse yendo a la carpeta en la que se ubican, en este caso la carpeta ``Scripts'', y haciendo doble \textit{click} en ellos. Al pulsar, se abrirá la pantalla del editor de código y se podrá proceder a realizar las modificaciones pertinentes. En caso de querer crear un \textit{script}, se puede realizar pulsando en ``Add Component'' en el inspector de un objeto y escribiendo un nombre inexistente del \textit{script} que queremos crear para que se genere un nuevo archivo. De la misma manera, se puede pulsar con el botón derecho dentro de la carpeta y pinchando en ``Create'', luego en ``C\# Script''.
+
+Entendiendo el sistema básico de \textit{scripts}, queda comprender el funcionamiento de las escenas. Para poder ejecutar una escena, ha de pulsarse en el botón de ``Play'', ubicado en la parte superior de la pantalla. Este botón tiene la forma clásica de triángulo para indicar la reproducción, y va acompañado de otro botón de ``Pause'' con la forma clásica de dos rectángulos paralelos. 
+
+Al darle a ``Play'', la escena se ejecuta. El usuario puede interactuar con la escena en base a los elementos implementados. En el caso de la escena del circuito, se puede jugar directamente con el teclado la partida. Las escenas están conectadas entre sí, significando esto la posibilidad de poder pausar el juego, terminar la partida y volver al menú, etc. Hay posibilidad de ver, además, la escena desde la cámara ubicada en la pestaña ``Scene'', pudiendo moverse pinchando con el botón derecho del ratón en ella para mover la cámara y desplazándose, a la vez, con las teclas ``W'', ``A'', ``S'' y ``D''. A la vez, se pueden analizar los distintos elementos que hay activos en la escena, pudiendo ser seleccionados desde la jerarquía de objetos y modificados sus valores, aunque estos cambios se revierten una vez se pausa la escena.
+
+Para pausar la escena, se ha de pulsar en el botón de ``Play'' de nuevo.
+
+En caso de que haya errores de compilación en alguna de las clases de las que dependa alguno de los componentes del juego, la escena no arrancará hasta que sean solventados, indicando un mensaje por pantalla.
+
+Para exportar el juego, ha de pulsarse, en la barra superior, en ``File'' y, acto seguido, en ``Build Settings...''. Aquí se añaden las escenas que deseemos en el juego para luego interconectarlas mediante \textit{scripts}. En este caso ya se encuentra realizada esa configuración, por lo que solo ha de escogerse la plataforma deseada a exportar y pulsar en ``Build'', escogiendo una carpeta donde guardarlo, o ``Build And Run'' para exportar y ejecutar directamente. Una vez se ha exportado, obtenemos el juego adjuntado con este proyecto.
+
 \section{Pruebas del sistema}
+
+En Unity hay posibilidad de realizar pruebas automáticas. El ``Unity Test Framework'' funciona bajo la API ``Test Runner'' y permite ejecutar pruebas de forma programática a través de cualquier \textit{script} suyo \cite{testapi}.
+
+No obstante, en este caso no se ha hecho uso de ese tipo de pruebas, ya que requiere de un estudio mayor y para el flujo de trabajo llevado no era adecuado. Es por ello que se ha hecho uso de pruebas de aceptación basadas en los casos de uso.
+
+La forma de trabajar con estas pruebas ha sido sencilla. Se creaban las tareas basadas en los requisitos del proyecto. Estas tareas tenían un objetivo a cumplir. En el momento en el que eran realizadas, se ponían a prueba (``\textit{QA/Testing}''). Si cumplía su cometido, la prueba había sido correcta y se daba por finalizada la tarea. En caso contrario, la prueba no habría pasado y se devolvía la tarea a ``\textit{In Progress}''.
