@@ -34,17 +34,12 @@ En este apartado se detallan los requisitos funcionales y no funcionales de la a
       	\begin{itemize}
 		\tightlist
 		\item
-			\textbf{RF-1.1.1 Partida contrarreloj:} La aplicación debe poder crear una partida de carrera a contrarreloj.
-			
+			\textbf{RF-1.1.1 Partida contrarreloj:} La aplicación debe poder crear una partida de carrera a contrarreloj.			
 			\begin{itemize}
 			\tightlist
-				\item \textbf{RF-1.1.1.1 Acelaración del vehículo:} El vehículo debe poder acelerar a petición del usuario. Debe poder combinarse en su uso simultáneo con el giro.
-				\item \textbf{RF-1.1.1.2 Deleración del vehículo:} El vehículo debe poder decelerar e ir en dirección marcha atrás a petición del usuario. Debe poder combinarse en su uso simultáneo con el giro.
-				\item \textbf{RF-1.1.1.3 Giro del vehículo:} El vehículo debe poder girar hacia el lado izquierdo o hacia el lado derecho a petición del usuario. Debe poder combinarse en su uso simultáneo con la aceleración o la deceleración.
-				\item \textbf{RF-1.1.1.4 Recolocación del vehículo:} El vehículo debe poder ser recolocado manualmente en un punto de control previo a petición del usuario. En caso de caer al vacío, debe poder ser recolocado automáticamente.
-				\item \textbf{RF-1.1.1.5 Conteo de vueltas}: En la partida debe haber un contador de vueltas que indique el número de vuelta en el que se ubica el jugador, así como el número total de vueltas a realizar.
-				\item \textbf{RF-1.1.1.6 Cronómetro de tiempo:}: En la partida debe haber un cronómetro que cuente el tiempo realizado en una vuelta. Este cronómetro debe ponerse a cero cada vez que, habiendo atravesado todos los puntos de control previamente, se atraviese la línea de meta.
-				\item \textbf{RF-1.1.1.7 Indicador de mejor tiempo:} Cada mejor tiempo realizado al completar una vuelta debe ser actualizado en un letrero. En caso de no realizarse un tiempo mejor, se dejará con el último mejor tiempo. Cada vez que se empiece una nueva partida debe estar restaurado a 0.
+				\item \textbf{RF-1.1.1.1 Conteo de vueltas}: En la partida debe haber un contador de vueltas que indique el número de vuelta en el que se ubica el jugador, así como el número total de vueltas a realizar.
+				\item \textbf{RF-1.1.1.2 Cronómetro de tiempo:}: En la partida debe haber un cronómetro que cuente el tiempo realizado en una vuelta. Este cronómetro debe ponerse a cero cada vez que, habiendo atravesado todos los puntos de control previamente, se atraviese la línea de meta.
+				\item \textbf{RF-1.1.1.3 Indicador de mejor tiempo:} Cada mejor tiempo realizado al completar una vuelta debe ser actualizado en un letrero. En caso de no realizarse un tiempo mejor, se dejará con el último mejor tiempo. Cada vez que se empiece una nueva partida debe estar restaurado a 0.
 			\end{itemize}
     	
     	\end{itemize}
@@ -52,6 +47,16 @@ En este apartado se detallan los requisitos funcionales y no funcionales de la a
     		\textbf{RF-1.2 Seleccionar personaje:} El usuario debe poder escoger entre las diferentes personajes disponibles para jugar.
 		\item    	
     		\textbf{RF-1.3 Seleccionar circuito:} El usuario debe poder escoger entre los diferentes escenarios disponibles en los que realizar la carrera.
+    	\item
+    		\textbf{RF-1.4 Conducir vehículo:} El usuario debe poder conducir un vehículo escogido previamente.
+			\item 
+				\textbf{RF-1.4.1 Acelaración del vehículo:} El vehículo debe poder acelerar a petición del usuario. Debe poder combinarse en su uso simultáneo con el giro.
+			\item 
+				\textbf{RF-1.4.2 Deleración del vehículo:} El vehículo debe poder decelerar e ir en dirección marcha atrás a petición del usuario. Debe poder combinarse en su uso simultáneo con el giro.
+			\item 
+				\textbf{RF-1.4.3 Giro del vehículo:} El vehículo debe poder girar hacia el lado izquierdo o hacia el lado derecho a petición del usuario. Debe poder combinarse en su uso simultáneo con la aceleración o la deceleración.
+			\item 
+				\textbf{RF-1.4.4 Recolocación del vehículo:} El vehículo debe poder ser recolocado manualmente en un punto de control previo a petición del usuario. En caso de caer al vacío, debe poder ser recolocado automáticamente.
     \end{itemize}
     
 	\item \textbf{RF-2 Instrucciones:} La aplicación debe ofrecer al usuario la posibilidad de consultar unas instrucciones de juego para 
@@ -69,13 +74,13 @@ Estos requisitos se han obtenido en base a las características el estándar int
 	\textbf{RNF-1 Usabilidad:} La aplicación debe ser sencilla de jugar y divertida. La curva de aprendizaje ha de ser baja para que el usuario no desista en comprender el funcionamiento y mejorar, a la vez que tiene que ser capaz de divertirse gracias a las mecánicas del videojuego. Por ello, la interfaz es \"amigable\" de cara al usuario.
 
 \item 
-	\textbf{RNF-2 Eficiencia:} La aplicación debe poder ser ejecutada en computadoras de gama media, con tiempos de carga entre pantallas aceptables y una jugabilidad fluida sin ralentizaciones de \textit{frames}.
+	\textbf{RNF-2 Eficiencia:} La aplicación debe poder ser ejecutada en computadoras de gama media, con tiempos de carga entre pantallas aceptables y una jugabilidad fluida sin ralentizaciones de \textit{frames}. Además, debe poderse incrementar los recursos de los que dispone la aplicación realizando distintas mejoras que impliquen una mayor eficiencia.
 	
 \item 
 	\textbf{RNF-3 Multiplataforma:} La aplicación debe poder ser distribuida para sistemas operativos Windows y Linux, con su correspondiente correcta ejecución en los mismos. 
 	
 \item 
-	\textbf{RNF-4 Facilidad de mantenimiento:} Tiene que tener la capacidad de ser escalable, donde se pueda incrementar los recursos de los que dispone realizando distintas mejoras, como adición de funcionalidades, mayor eficiencia, etc., así como la posibilidad de mantener un soporte prolongado de la aplicación.
+	\textbf{RNF-4 Facilidad de mantenimiento:} Tiene que asegurar la posibilidad de ser extensible (pudiendo añadir funcionalidades nuevas al videojuego), modificable y corregible de manera sencilla.
 
 \item 
 	\textbf{RNF-5 Portabilidad:} Debe ser fácilmente transferible y adaptable a nuevas plataformas de juego.
