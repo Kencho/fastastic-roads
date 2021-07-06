@@ -2,9 +2,22 @@
 
 \section{Introducción}
 
+En este anexo se detallan los objetivos del proyecto y los requisitos que debe cumplir el \textit{software} desarrollado. Estos requisitos se han indicado al inicio del proyecto, pero a lo largo de su desarrollo se han ido añadiendo otros adicionales, por lo que aquí se recogen y explican todos adecuadamente. Parcialmente, se han seguido indicaciones del estándar IEEE 830-1998 para la especificación de requisitos.
+
 \section{Objetivos generales}
 
+Los objetivos que se pretenden alcanzar en este proyecto son los siguientes:
+
+\begin{itemize}
+\tightlist
+	\item Desarrollar un videojuego de carreras para PC, compatible con Windows y Linux.
+	\item Ofrecer una buena jugabilidad y accesibilidad al usuario, con una curva de aprendizaje sencilla.
+	\item Aprender a usar Unity, sus funcionalidades y la programación en el lenguaje que le corresponde.
+	\item Asentar unas bases para proyectos similares.
+\end{itemize}
+
 \section{Catalogo de requisitos}
+
 En este apartado se detallan los requisitos funcionales y no funcionales de la aplicación desarrollada.
 
 \subsection{Requisitos funcionales}
@@ -22,40 +35,51 @@ En este apartado se detallan los requisitos funcionales y no funcionales de la a
 		\tightlist
 		\item
 			\textbf{RF-1.1.1 Partida contrarreloj:} La aplicación debe poder crear una partida de carrera a contrarreloj.
+			
+			\begin{itemize}
+			\tightlist
+				\item \textbf{RF-1.1.1.1 Acelaración del vehículo:} El vehículo debe poder acelerar a petición del usuario. Debe poder combinarse en su uso simultáneo con el giro.
+				\item \textbf{RF-1.1.1.2 Deleración del vehículo:} El vehículo debe poder decelerar e ir en dirección marcha atrás a petición del usuario. Debe poder combinarse en su uso simultáneo con el giro.
+				\item \textbf{RF-1.1.1.3 Giro del vehículo:} El vehículo debe poder girar hacia el lado izquierdo o hacia el lado derecho a petición del usuario. Debe poder combinarse en su uso simultáneo con la aceleración o la deceleración.
+				\item \textbf{RF-1.1.1.4 Recolocación del vehículo:} El vehículo debe poder ser recolocado manualmente en un punto de control previo a petición del usuario. En caso de caer al vacío, debe poder ser recolocado automáticamente.
+				\item \textbf{RF-1.1.1.5 Conteo de vueltas}: En la partida debe haber un contador de vueltas que indique el número de vuelta en el que se ubica el jugador, así como el número total de vueltas a realizar.
+				\item \textbf{RF-1.1.1.6 Cronómetro de tiempo:}: En la partida debe haber un cronómetro que cuente el tiempo realizado en una vuelta. Este cronómetro debe ponerse a cero cada vez que, habiendo atravesado todos los puntos de control previamente, se atraviese la línea de meta.
+				\item \textbf{RF-1.1.1.7 Indicador de mejor tiempo:} Cada mejor tiempo realizado al completar una vuelta debe ser actualizado en un letrero. En caso de no realizarse un tiempo mejor, se dejará con el último mejor tiempo. Cada vez que se empiece una nueva partida debe estar restaurado a 0.
+			\end{itemize}
+    	
     	\end{itemize}
     	\item
     		\textbf{RF-1.2 Seleccionar personaje:} El usuario debe poder escoger entre las diferentes personajes disponibles para jugar.
 		\item    	
     		\textbf{RF-1.3 Seleccionar circuito:} El usuario debe poder escoger entre los diferentes escenarios disponibles en los que realizar la carrera.
-    	
     \end{itemize}
     
-	\item \textbf{RF-2 Créditos:} La aplicación ha de ofrecer la posibilidad de conocer al usuario quiénes han realizado la aplicación en los distintos aspectos que la componen.
-	\item \textbf{RF-X :}
+	\item \textbf{RF-2 Instrucciones:} La aplicación debe ofrecer al usuario la posibilidad de consultar unas instrucciones de juego para 
+	\item \textbf{RF-3 Créditos:} La aplicación ha de ofrecer la posibilidad de conocer al usuario quiénes han realizado la aplicación en los distintos aspectos que la componen.
+	\item \textbf{RF-4 Salir:} El usuario debe poder salir de la aplicación mediante una opción ofrecida por la misma.
 \end{itemize}
+
 \subsection{Requisitos no funcionales}
+
+Estos requisitos se han obtenido en base a las características el estándar internacional para la evaluación de la calidad del software.
+
 \begin{itemize}
 \tightlist
 \item 
 	\textbf{RNF-1 Usabilidad:} La aplicación debe ser sencilla de jugar y divertida. La curva de aprendizaje ha de ser baja para que el usuario no desista en comprender el funcionamiento y mejorar, a la vez que tiene que ser capaz de divertirse gracias a las mecánicas del videojuego. Por ello, la interfaz es \"amigable\" de cara al usuario.
 
 \item 
-	\textbf{RNF-2 Rendimiento:} La aplicación debe poder ser ejecutada en computadoras de gama media, con tiempos de carga entre pantallas aceptables y una jugabilidad fluida sin ralentizaciones de \textit{frames}.
+	\textbf{RNF-2 Eficiencia:} La aplicación debe poder ser ejecutada en computadoras de gama media, con tiempos de carga entre pantallas aceptables y una jugabilidad fluida sin ralentizaciones de \textit{frames}.
 	
 \item 
-	\textbf{RNF-3 Escalabilidad:} La aplicación ha de permitir la adición de nuevas funcionalidades y mejoras de forma relativamente sencilla.
+	\textbf{RNF-3 Multiplataforma:} La aplicación debe poder ser distribuida para sistemas operativos Windows y Linux, con su correspondiente correcta ejecución en los mismos. 
 	
 \item 
-	\textbf{RNF-4 Disponibilidad:} La aplicación debe estar disponible siempre para su uso, independientemente de si se dispone o no de conexión a internet u otros programas (que no sean \textit{drivers} o librerías gráficas necesarias para la ejecución del videojuego).
-	
-\item 
-	\textbf{RNF-5 Mantenibilidad:} La aplicación debe permitir recibir cambios y correcciones de fallos que afecten al rendimiento del programa.
-	
-\item 
-	\textbf{RNF-6 Soporte:} La aplicación ha de poder ser usada en nuevas versiones de sistemas operativos.
+	\textbf{RNF-4 Facilidad de mantenimiento:} Tiene que tener la capacidad de ser escalable, donde se pueda incrementar los recursos de los que dispone realizando distintas mejoras, como adición de funcionalidades, mayor eficiencia, etc., así como la posibilidad de mantener un soporte prolongado de la aplicación.
 
 \item 
-	\textbf{RNF-X Internacionalización:} 
+	\textbf{RNF-5 Portabilidad:} Debe ser fácilmente transferible y adaptable a nuevas plataformas de juego.
+
 \end{itemize}
 \section{Especificación de requisitos}
 
