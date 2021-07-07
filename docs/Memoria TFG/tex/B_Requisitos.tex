@@ -37,7 +37,7 @@ En este apartado se detallan los requisitos funcionales y no funcionales de la a
 			\textbf{RF-1.1.1 Partida contrarreloj:} La aplicación debe poder crear una partida de carrera a contrarreloj.			
 			\begin{itemize}
 			\tightlist
-				\item \textbf{RF-1.1.1.1 Conteo de vueltas}: En la partida debe haber un contador de vueltas que indique el número de vuelta en el que se ubica el jugador, así como el número total de vueltas a realizar.
+				\item \textbf{RF-1.1.1.1 Conteo de vueltas}: En la partida debe haber un contador de vueltas que indique el número de vuelta en el que se ubica el usuario, así como el número total de vueltas a realizar.
 				\item \textbf{RF-1.1.1.2 Cronómetro de tiempo:}: En la partida debe haber un cronómetro que cuente el tiempo realizado en una vuelta. Este cronómetro debe ponerse a cero cada vez que, habiendo atravesado todos los puntos de control previamente, se atraviese la línea de meta.
 				\item \textbf{RF-1.1.1.3 Indicador de mejor tiempo:} Cada mejor tiempo realizado al completar una vuelta debe ser actualizado en un letrero. En caso de no realizarse un tiempo mejor, se dejará con el último mejor tiempo. Cada vez que se empiece una nueva partida debe estar restaurado a 0.
 			\end{itemize}
@@ -52,7 +52,7 @@ En este apartado se detallan los requisitos funcionales y no funcionales de la a
     		\begin{itemize}
 			\tightlist
 				\item \textbf{RF-1.4.1 Acelaración del vehículo:} El vehículo debe poder acelerar a petición del usuario. Debe poder combinarse en su uso simultáneo con el giro.
-				\item \textbf{RF-1.4.2 Deleración del vehículo:} El vehículo debe poder decelerar e ir en dirección marcha atrás a petición del usuario. Debe poder combinarse en su uso simultáneo con el giro.
+				\item \textbf{RF-1.4.2 Deceleración del vehículo:} El vehículo debe poder decelerar e ir en dirección marcha atrás a petición del usuario. Debe poder combinarse en su uso simultáneo con el giro.
 				\item \textbf{RF-1.4.3 Giro del vehículo:} El vehículo debe poder girar hacia el lado izquierdo o hacia el lado derecho a petición del usuario. Debe poder combinarse en su uso simultáneo con la aceleración o la deceleración.
 				\item \textbf{RF-1.4.4 Recolocación del vehículo:} El vehículo debe poder ser recolocado manualmente en un punto de control previo a petición del usuario. En caso de caer al vacío, debe poder ser recolocado automáticamente.
 			\end{itemize}
@@ -61,6 +61,12 @@ En este apartado se detallan los requisitos funcionales y no funcionales de la a
 	\item \textbf{RF-2 Instrucciones:} La aplicación debe ofrecer al usuario la posibilidad de consultar unas instrucciones de juego para 
 	\item \textbf{RF-3 Créditos:} La aplicación ha de ofrecer la posibilidad de conocer al usuario quiénes han realizado la aplicación en los distintos aspectos que la componen.
 	\item \textbf{RF-4 Salir:} El usuario debe poder salir de la aplicación mediante una opción ofrecida por la misma.
+	\begin{itemize}
+	\tightlist
+		\item \textbf{RF-4.1 Salir de la partida:} El usuario debe poder salir de la partida en curso mediante una opción en el menú.
+	\end{itemize}
+	\item \textbf{RF-5 Volver a la pantalla anterior:} La aplicación debe ofrecer la posibilidad de volver a la pantalla anterior al menú en el que se encuentra el usuario.
+	\item \textbf{RF-6 Pausar partida:} La aplicación debe ofrecer la posibilidad de pausar la partida a petición del usuario, así como continuarla una vez pausada.
 \end{itemize}
 
 \subsection{Requisitos no funcionales}
@@ -87,4 +93,504 @@ Estos requisitos se han obtenido en base a las características el estándar int
 \end{itemize}
 \section{Especificación de requisitos}
 
+En esta sección se muestra el diagrama de casos de uso de la aplicación, así como el desglose de cada uno de esos casos.
 
+\subsection{Diagrama de casos de uso}
+
+
+
+\subsection{Actores}
+
+El número de actores que interactúan con este sistema es de uno, siendo el usuario que lo utiliza el único actor.
+
+\subsection{Casos de uso}
+
+\begin{longtable}{>{\raggedright}b{0.2\linewidth}>{\raggedright\arraybackslash}b{0.7\linewidth}}
+
+	\toprule
+	\textbf{CU-01} & \textbf{Jugar} \\
+	\toprule
+	\endhead
+
+	\toprule
+	\caption{CU-01 Jugar}
+	\endfoot
+	
+	\small{\textbf{Descripción}} & Jugar una partida. \\
+	\small{\textbf{Autor}} & Alejandro Goicoechea Román \\
+	\small{\textbf{Requisitos}} & RF-1 \\
+	\small{\textbf{relacionados}} & \\
+	\small{\textbf{Precondición}} & Tener el videojuego iniciado. \\
+	\small{\textbf{Acciones}} & \quad {\small 1. Si no lo ha realizado previamente, el usuario ejecuta} \\
+	& \quad {\small la aplicación.} \\
+	& \quad {\small 2. El usuario pulsa en el botón de ``Jugar'' en el menú} \\
+	& \quad {\small principal.} \\
+	\small{\textbf{Postcondición}} & Se muestra la pantalla de selección de modo de juego. \\
+	\small{\textbf{Excepciones}} & - \\
+	\small{\textbf{Importancia}} & Alta. \\
+	
+\end{longtable}
+
+\begin{longtable}{>{\raggedright}b{0.2\linewidth}>{\raggedright\arraybackslash}b{0.7\linewidth}}
+
+	\toprule
+	\textbf{CU-02} & \textbf{Seleccionar modo} \\
+	\toprule
+	\endhead
+
+	\toprule
+	\caption{CU-02 Seleccionar modo}
+	\endfoot
+	
+	\small{\textbf{Descripción}} & Escoger entre los diferentes modos de juego \\ 
+	&  disponibles. \\
+	\small{\textbf{Autor}} & Alejandro Goicoechea Román \\
+	\small{\textbf{Requisitos}} & RF-1, RF-1.1 \\
+	\small{\textbf{relacionados}} & \\
+	\small{\textbf{Precondición}} & Haber seleccionado la opción de "Jugar". \\
+	\small{\textbf{Acciones}} & \quad {\small 1. Pulsar en el modo de juego deseado.} \\
+	\small{\textbf{Postcondición}} & Se muestra la pantalla de selección de personaje. \\
+	\small{\textbf{Excepciones}} & - \\
+	\small{\textbf{Importancia}} & Alta. \\
+	
+\end{longtable}
+
+\begin{longtable}{>{\raggedright}b{0.2\linewidth}>{\raggedright\arraybackslash}b{0.7\linewidth}}
+
+	\toprule
+	\textbf{CU-03} & \textbf{Seleccionar personaje} \\
+	\toprule
+	\endhead
+
+	\toprule
+	\caption{CU-03 Seleccionar personaje}
+	\endfoot
+	
+	\small{\textbf{Descripción}} & Escoger un personaje de entre todos los personajes \\
+	&  disponibles para conducir con él. \\
+	\small{\textbf{Autor}} & Alejandro Goicoechea Román \\
+	\small{\textbf{Requisitos}} & RF-1, RF-1.1.1, RF-1.2 \\
+	\small{\textbf{relacionados}} & \\
+	\small{\textbf{Precondición}} & Haber escogido un modo de juego. \\
+	\small{\textbf{Acciones}} & \quad {\small 1. Pulsar en un icono de personaje.} \\
+	\small{\textbf{Postcondición}} & Se muestra la pantalla de selección de circuito. \\
+	\small{\textbf{Excepciones}} & - \\
+	\small{\textbf{Importancia}} & Alta. \\
+	
+\end{longtable}
+
+\begin{longtable}{>{\raggedright}b{0.2\linewidth}>{\raggedright\arraybackslash}b{0.7\linewidth}}
+
+	\toprule
+	\textbf{CU-04} & \textbf{Seleccionar circuito} \\
+	\toprule
+	\endhead
+
+	\toprule
+	\caption{CU-04 Seleccionar circuito}
+	\endfoot
+	
+	\small{\textbf{Descripción}} & Seleccionar un circuito de entre todos los disponibles \\
+	& para recorrerlo. \\
+	&  \\
+	\small{\textbf{Autor}} & Alejandro Goicoechea Román \\
+	\small{\textbf{Requisitos}} & RF-1, RF-1.1.1, RF 1.2, RF-1.3 \\
+	\small{\textbf{relacionados}} & \\
+	\small{\textbf{Precondición}} & Haber seleccionado un personaje. \\
+	\small{\textbf{Acciones}} & \quad {\small 1. Pulsar en un icono de circuito. } \\
+	\small{\textbf{Postcondición}} & Empieza la partida con las opciones previas \\ 
+	& seleccionadas. \\
+	\small{\textbf{Excepciones}} & - \\
+	\small{\textbf{Importancia}} & Alta. \\
+	
+\end{longtable}
+
+\begin{longtable}{>{\raggedright}b{0.2\linewidth}>{\raggedright\arraybackslash}b{0.7\linewidth}}
+
+	\toprule
+	\textbf{CU-05} & \textbf{Conducir vehículo} \\
+	\toprule
+	\endhead
+
+	\toprule
+	\caption{CU-05 Conducir vehículo}
+	\endfoot
+	
+	\small{\textbf{Descripción}} & Conducir el vehículo escogido por el usuario. \\
+	\small{\textbf{Autor}} & Alejandro Goicoechea Román \\
+	\small{\textbf{Requisitos}} & RF-1, RF-1.4, RF-1.4.1, RF-1.4.2, RF-1.4.3 \\
+	\small{\textbf{relacionados}} & \\
+	\small{\textbf{Precondición}} & Haber comenzado una partida. \\
+	\small{\textbf{Acciones}} & \quad {\small 1. El usuario pulsa cualquiera de las acciones } \\
+	& \quad {\small asociadas a la conducción del vehículo. } \\
+	\small{\textbf{Postcondición}} & El vehículo debe moverse en base a la acción \\
+	& realizada. \\
+	\small{\textbf{Excepciones}} & - \\
+	\small{\textbf{Importancia}} & Alta. \\
+	
+\end{longtable}
+
+\begin{longtable}{>{\raggedright}b{0.2\linewidth}>{\raggedright\arraybackslash}b{0.7\linewidth}}
+
+	\toprule
+	\textbf{CU-06} & \textbf{Acelerar vehículo} \\
+	\toprule
+	\endhead
+
+	\toprule
+	\caption{CU-06 Acelerar vehículo}
+	\endfoot
+	
+	\small{\textbf{Descripción}} & Acelerar el vehículo durante el tiempo que desea el \\
+	& usuario.  \\
+	\small{\textbf{Autor}} & Alejandro Goicoechea Román \\
+	\small{\textbf{Requisitos}} & RF-1, RF-1.4, RF-1.4.1, RF-1.4.3 \\
+	\small{\textbf{relacionados}} & \\
+	\small{\textbf{Precondición}} & Haber comenzado una partida. \\
+	\small{\textbf{Acciones}} & \quad {\small 1. El usuario pulsa la tecla "W" o la tecla de ``flecha } \\
+	& \quad {\small arriba'' de manera intermitente o constante. } \\
+	& \quad {\small 2. De manera opcional, el usuario pulsa, combinando } \\
+	& \quad {\small con la tecla de aceleración, las teclas de giro} \\
+	& \quad {\small (``A''/``flecha izquierda'' o ``D''/``flecha derecha''). } \\
+	\small{\textbf{Postcondición}} & El vehículo se desplaza hacia \\
+	& adelante o hacia adelante con giro según lo pulsado previamente. \\
+	\small{\textbf{Excepciones}} & - \\
+	\small{\textbf{Importancia}} & Muy alta. \\
+	
+\end{longtable}
+
+\begin{longtable}{>{\raggedright}b{0.2\linewidth}>{\raggedright\arraybackslash}b{0.7\linewidth}}
+
+	\toprule
+	\textbf{CU-07} & \textbf{Decelerar vehículo} \\
+	\toprule
+	\endhead
+
+	\toprule
+	\caption{CU-07 Decelerar vehículo}
+	\endfoot
+	
+	\small{\textbf{Descripción}} & Decelerar el vehículo durante el tiempo que desea el \\
+	& usuario.  \\
+	\small{\textbf{Autor}} & Alejandro Goicoechea Román \\
+	\small{\textbf{Requisitos}} & RF-1, RF-1.4, RF-1.4.2, RF-1.4.3 \\
+	\small{\textbf{relacionados}} & \\
+	\small{\textbf{Precondición}} & Haber comenzado una partida. \\
+	\small{\textbf{Acciones}} & \quad {\small 1. El usuario pulsa la tecla "S" o la tecla de ``flecha } \\
+	& \quad {\small abajo'' de manera intermitente o constante. } \\
+	& \quad {\small 2. De manera opcional, el usuario pulsa, combinando } \\
+	& \quad {\small con la tecla de deceleración, las teclas de giro} \\
+	& \quad {\small (``A''/``flecha izquierda'' o ``D''/``flecha derecha''). } \\
+	\small{\textbf{Postcondición}} & El vehículo se desplaza hacia atrás o hacia atrás \\
+	&  con giro según lo pulsado previamente. Si el vehículo está en movimiento, el vehículo decelera. \\
+	\small{\textbf{Excepciones}} & - \\
+	\small{\textbf{Importancia}} & Muy alta. \\
+	
+\end{longtable}
+
+\begin{longtable}{>{\raggedright}b{0.2\linewidth}>{\raggedright\arraybackslash}b{0.7\linewidth}}
+
+	\toprule
+	\textbf{CU-08} & \textbf{Girar vehículo} \\
+	\toprule
+	\endhead
+
+	\toprule
+	\caption{CU-08 Girar vehículo}
+	\endfoot
+	
+	\small{\textbf{Descripción}} & Girar vehículo sobre sí mismo si está parado o hacia \\
+	& el lado deseado en estado de movimiento. \\
+	\small{\textbf{Autor}} & Alejandro Goicoechea Román \\
+	\small{\textbf{Requisitos}} & RF-1, RF-1.4, RF-1.4.1, RF-1.4.2, RF-1.4.3 \\
+	\small{\textbf{relacionados}} & \\
+	\small{\textbf{Precondición}} & Haber comenzado una partida. \\
+	\small{\textbf{Acciones}} & \quad {\small 1. El usuario pulsa la tecla de giro a la izquierda} \\
+	& \quad {\small (``A''/``flecha izquierda'') o la tecla de giro a la} \\
+	& \quad {\small derecha (``D''/``flecha derecha'') mientras el vehículo} \\
+	& \quad {\small está en movimiento o mientras el vehículo está en} \\
+	& \quad {\small estado de reposo. } \\
+	\small{\textbf{Postcondición}} & El vehículo gira en la dirección indicada. \\
+	\small{\textbf{Excepciones}} & - \\
+	\small{\textbf{Importancia}} & Muy alta. \\
+	
+\end{longtable}
+
+\begin{longtable}{>{\raggedright}b{0.2\linewidth}>{\raggedright\arraybackslash}b{0.7\linewidth}}
+
+	\toprule
+	\textbf{CU-09} & \textbf{Recolocar vehículo} \\
+	\toprule
+	\endhead
+
+	\toprule
+	\caption{CU-09 Recolocar vehículo}
+	\endfoot
+	
+	\small{\textbf{Descripción}} & Permite recolocar el vehículo manualmente en el \\
+	& último punto de control atravesado. \\
+	\small{\textbf{Autor}} & Alejandro Goicoechea Román \\
+	\small{\textbf{Requisitos}} & RF-1, RF-1.4, RF-1.4.4 \\
+	\small{\textbf{relacionados}} &  \\
+	\small{\textbf{Precondición}} & Haber comenzado una partida. \\
+	\small{\textbf{Acciones}} & \quad {\small 1. Pulsar la tecla ``R'' para recolocar el vehículo. } \\
+	\small{\textbf{Postcondición}} & El vehículo se recoloca en el punto de control \\
+	& previamente atravesado. \\
+	\small{\textbf{Excepciones}} & - \\
+	\small{\textbf{Importancia}} & Alta. \\
+	
+\end{longtable}
+
+\begin{longtable}{>{\raggedright}b{0.2\linewidth}>{\raggedright\arraybackslash}b{0.7\linewidth}}
+
+	\toprule
+	\textbf{CU-10} & \textbf{Partida contrarreloj} \\
+	\toprule
+	\endhead
+
+	\toprule
+	\caption{CU-10 Partida contrarreloj}
+	\endfoot
+	
+	\small{\textbf{Descripción}} & Jugar una partida contrarreloj con todos los \\
+	& elementos que conforman ese modo de juego. \\
+	\small{\textbf{Autor}} & Alejandro Goicoechea Román \\
+	\small{\textbf{Requisitos}} & RF-1, RF-1.1.1, RF-1.2, RF-1.3, RF-1.4 \\
+	\small{\textbf{relacionados}} & \\
+	\small{\textbf{Precondición}} & Haber seleccionado este modo de juego. \\
+	\small{\textbf{Acciones}} & \quad {\small 1. Jugar la partida siguiendo las intrucciones previas} \\
+	& \quad {\small vistas.} \\
+	\small{\textbf{Postcondición}} & La partida se comporta como un juego de carreras \\
+	& contrarreloj. \\
+	\small{\textbf{Excepciones}} & - \\
+	\small{\textbf{Importancia}} & Alta. \\
+	
+\end{longtable}
+
+\begin{longtable}{>{\raggedright}b{0.2\linewidth}>{\raggedright\arraybackslash}b{0.7\linewidth}}
+
+	\toprule
+	\textbf{CU-11} & \textbf{Conteo de vueltas} \\
+	\toprule
+	\endhead
+
+	\toprule
+	\caption{CU-11 Conteo de vueltas}
+	\endfoot
+	
+	\small{\textbf{Descripción}} & Contar las vueltas que realiza el usuario, así como el \\
+	& número total a realizar. \\
+	\small{\textbf{Autor}} & Alejandro Goicoechea Román \\
+	\small{\textbf{Requisitos}} & RF-1, RF-1.1.1, RF-1.1.1.1 \\
+	\small{\textbf{relacionados}} & \\
+	\small{\textbf{Precondición}} & Haber comenzado una partida. \\
+	\small{\textbf{Acciones}} & \quad {\small 1. Se muestran las vueltas a realizar. } \\
+	& \quad {\small 2. Se muestran las vueltas en la que se encuentra el} \\
+	& \quad {\small usuario.} \\
+	& \quad {\small 3. Por cada vuelta que realice el usuario, el contador} \\
+	& \quad {\small actualizará el número de vueltas sumando una a } \\
+	& \quad {\small éstas. } \\
+	\small{\textbf{Postcondición}} & El contador se actualiza sumando nuevas vueltas. \\
+	\small{\textbf{Excepciones}} & - \\
+	\small{\textbf{Importancia}} & Alta. \\
+	
+\end{longtable}
+
+\begin{longtable}{>{\raggedright}b{0.2\linewidth}>{\raggedright\arraybackslash}b{0.7\linewidth}}
+
+	\toprule
+	\textbf{CU-12} & \textbf{Cronómetro de tiempo} \\
+	\toprule
+	\endhead
+
+	\toprule
+	\caption{CU-12 Cronómetro de tiempo}
+	\endfoot
+	
+	\small{\textbf{Descripción}} & Contar el tiempo por vuelta realizada. \\
+	\small{\textbf{Autor}} & Alejandro Goicoechea Román \\
+	\small{\textbf{Requisitos}} & RF-1, RF-1.1.1, RF-1.1.1.2 \\
+	\small{\textbf{relacionados}} & \\
+	\small{\textbf{Precondición}} & Haber comenzado una partida. \\
+	\small{\textbf{Acciones}} & \quad {\small 1. El cronómetro cuenta el tiempo por vuelta} \\
+	& \quad {\small  realizada. } \\
+	& \quad {\small 2. Por cada vuelta realizada, se restaura a 0. } \\
+	\small{\textbf{Postcondición}} & Muestra el tiempo correctamente. \\
+	\small{\textbf{Excepciones}} & - \\
+	\small{\textbf{Importancia}} & Alta. \\
+	
+\end{longtable}
+
+\begin{longtable}{>{\raggedright}b{0.2\linewidth}>{\raggedright\arraybackslash}b{0.7\linewidth}}
+
+	\toprule
+	\textbf{CU-13} & \textbf{Indicador de mejor tiempo} \\
+	\toprule
+	\endhead
+
+	\toprule
+	\caption{CU-13 Indicador de mejor tiempo}
+	\endfoot
+	
+	\small{\textbf{Descripción}} & Indicar el mejor tiempo de vuelta realizada. \\
+	\small{\textbf{Autor}} & Alejandro Goicoechea Román \\
+	\small{\textbf{Requisitos}} & RF-1, RF-1.1.1, RF-1.1.1.3 \\
+	\small{\textbf{relacionados}} & \\
+	\small{\textbf{Precondición}} & Haber comenzado una partida. \\
+	\small{\textbf{Acciones}} & \quad {\small 1. Por cada vuelta completada, si el tiempo es mejor } \\
+	& \quad {\small al previo indicado, el contador se actualiza. } \\
+	& \quad {\small } \\
+	\small{\textbf{Postcondición}} & Muestra el mejor tiempo realizado. \\
+	\small{\textbf{Excepciones}} & - \\
+	\small{\textbf{Importancia}} & Alta. \\
+	
+\end{longtable}
+
+\begin{longtable}{>{\raggedright}b{0.2\linewidth}>{\raggedright\arraybackslash}b{0.7\linewidth}}
+
+	\toprule
+	\textbf{CU-14} & \textbf{Instrucciones} \\
+	\toprule
+	\endhead
+
+	\toprule
+	\caption{CU-14 Instrucciones}
+	\endfoot
+	
+	\small{\textbf{Descripción}} & Visualizar las intrucciones de juego. \\
+	\small{\textbf{Autor}} & Alejandro Goicoechea Román \\
+	\small{\textbf{Requisitos}} & RF-2 \\
+	\small{\textbf{relacionados}} & \\
+	\small{\textbf{Precondición}} & Encontrarse en el menú principal. \\
+	\small{\textbf{Acciones}} & \quad {\small 1. Pulsar en el botón de instrucciones. } \\
+	\small{\textbf{Postcondición}} & Se visualizan las instrucciones del juego. \\
+	\small{\textbf{Excepciones}} & - \\
+	\small{\textbf{Importancia}} & Alta. \\
+	
+\end{longtable}
+
+\begin{longtable}{>{\raggedright}b{0.2\linewidth}>{\raggedright\arraybackslash}b{0.7\linewidth}}
+
+	\toprule
+	\textbf{CU-15} & \textbf{Créditos} \\
+	\toprule
+	\endhead
+
+	\toprule
+	\caption{CU-15 Créditos}
+	\endfoot
+	
+	\small{\textbf{Descripción}} & Visualizar los créditos del juego con los participantes \\
+	& involucrados en el desarrollo del mismo. \\
+	\small{\textbf{Autor}} & Alejandro Goicoechea Román \\
+	\small{\textbf{Requisitos}} & RF-3 \\
+	\small{\textbf{relacionados}} & \\
+	\small{\textbf{Precondición}} & Encontrarse en el menú principal \\
+	\small{\textbf{Acciones}} & \quad {\small 1. Pulsar el botón de ``Créditos''.} \\
+	& \quad {\small } \\
+	\small{\textbf{Postcondición}} & Se visualizan los créditos del juego. \\
+	\small{\textbf{Excepciones}} & - \\
+	\small{\textbf{Importancia}} & Media. \\
+	
+\end{longtable}
+
+\begin{longtable}{>{\raggedright}b{0.2\linewidth}>{\raggedright\arraybackslash}b{0.7\linewidth}}
+
+	\toprule
+	\textbf{CU-16} & \textbf{Salir} \\
+	\toprule
+	\endhead
+
+	\toprule
+	\caption{CU-16 Salir}
+	\endfoot
+	
+	\small{\textbf{Descripción}} & Salir del juego cerrando la aplicación y devolviendo \\
+	& al usuario al sistema operativo. \\
+	\small{\textbf{Autor}} & Alejandro Goicoechea Román \\
+	\small{\textbf{Requisitos}} & RF-4 \\
+	\small{\textbf{relacionados}} & \\
+	\small{\textbf{Precondición}} & Encontrarse en el menú principal. \\
+	\small{\textbf{Acciones}} & \quad {\small 1. Pulsar en el botón de ``Salir''. } \\
+	& \quad {\small } \\
+	\small{\textbf{Postcondición}} & La aplicación se encuentra cerrada. \\
+	\small{\textbf{Excepciones}} & - \\
+	\small{\textbf{Importancia}} & Muy alta \\
+	
+\end{longtable}
+
+\begin{longtable}{>{\raggedright}b{0.2\linewidth}>{\raggedright\arraybackslash}b{0.7\linewidth}}
+
+	\toprule
+	\textbf{CU-17} & \textbf{Salir de la partida} \\
+	\toprule
+	\endhead
+
+	\toprule
+	\caption{CU-17 Salir de la partida}
+	\endfoot
+	
+	\small{\textbf{Descripción}} & Salir del juego \\
+	\small{\textbf{Autor}} & Alejandro Goicoechea Román \\
+	\small{\textbf{Requisitos}} & RF-1, RF-1.1.1, RF-4, \\
+	\small{\textbf{relacionados}} & \\
+	\small{\textbf{Precondición}} & Haber comenzado una partida. \\
+	\small{\textbf{Acciones}} & \quad {\small 1. Pulsar la tecla de ``Escape'' para abrir el menú de} \\
+	& \quad {\small pausa.} \\
+	& \quad {\small 2. Pulsar en el botón de ``Salir del juego''. } \\
+	\small{\textbf{Postcondición}} & La partida finaliza, devolviendo al usuario al menú. \\
+	\small{\textbf{Excepciones}} & - \\
+	\small{\textbf{Importancia}} & Alta. \\
+	
+\end{longtable}
+
+\begin{longtable}{>{\raggedright}b{0.2\linewidth}>{\raggedright\arraybackslash}b{0.7\linewidth}}
+
+	\toprule
+	\textbf{CU-18} & \textbf{Volver a la pantalla anterior} \\
+	\toprule
+	\endhead
+
+	\toprule
+	\caption{CU-18 Volver a la pantalla anterior}
+	\endfoot
+	
+	\small{\textbf{Descripción}} & Volver a la pantalla previa a aquella en la que se \\
+	& sitúa el usuario. \\
+	\small{\textbf{Autor}} & Alejandro Goicoechea Román \\
+	\small{\textbf{Requisitos}} & RF-1, RF-1.1, RF-1.2, RF-1.3, RF-2, RF-3, RF-4, \\
+	\small{\textbf{relacionados}} & RF-5 \\
+	\small{\textbf{Precondición}} & El usuario se encuentra en una pantalla de menú. \\
+	\small{\textbf{Acciones}} & \quad {\small 1. Pulsar en el botón correspondiente a la vuelta a la} \\
+	& \quad {\small pantalla anterior, con el respectivo nombre que le} \\
+	& \quad {\small toque. } \\
+	\small{\textbf{Postcondición}} & Se traslada a la pantalla previa. \\
+	\small{\textbf{Excepciones}} & - \\
+	\small{\textbf{Importancia}} & Media. \\
+	
+\end{longtable}
+
+\begin{longtable}{>{\raggedright}b{0.2\linewidth}>{\raggedright\arraybackslash}b{0.7\linewidth}}
+
+	\toprule
+	\textbf{CU-18} & \textbf{Pausar partida} \\
+	\toprule
+	\endhead
+
+	\toprule
+	\caption{CU-18 Pausar partida}
+	\endfoot
+	
+	\small{\textbf{Descripción}} & Pausar la partida comenzada, con opción a \\
+	& continuarla después. \\
+	\small{\textbf{Autor}} & Alejandro Goicoechea Román \\
+	\small{\textbf{Requisitos}} & RF-1, RF-1.1.1, RF-6 \\
+	\small{\textbf{relacionados}} & \\
+	\small{\textbf{Precondición}} & El usuario se encuentra en una partida comenzada. \\
+	\small{\textbf{Acciones}} & \quad {\small 1. Pulsar la tecla de ``Escape''. } \\
+	& \quad {\small } \\
+	\small{\textbf{Postcondición}} & La partida se pausa. \\
+	\small{\textbf{Excepciones}} & - \\
+	\small{\textbf{Importancia}} & Media. \\
+	
+\end{longtable}
