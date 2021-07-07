@@ -1,17 +1,44 @@
 \apendice{Plan de Proyecto Software}
 
 \section{Introducción}
-En todo proyecto se requiere de una planificación de cara a cumplir plazos, presupuestos, obligaciones legales, etc. Es por ello que lo ejemplar es seguir una metodología de planificación que se adecue al proyecto, y como viene dándose en los últimos años en el mundo del software, en general, suele ser apropiado seguir la metodología SCRUM gracias a su capacidad incremental y la comunicación entre las personas implicadas.
-\\\\
-Este apartado contiene la explicación de la planificación del proyecto, así como el estudio de viabilidad del mismo (económica, calculando costes que pueden conllevar, y legal, teniendo en cuenta la legislación vigente).
+
+En todo proyecto se requiere de una planificación debidamente organizada, con el fin de cumplir plazos, presupuestos, obligaciones legales y otros aspectos de manera adecuada. 
+
+Es por ello que lo ideal es seguir una metodología de planificación adaptada al proyecto, con la que se puedan aprovechar de la mejor forma posible los recursos disponibles en el tiempo marcado de cara a la correcta finalización, tanto de este Trabajo de Fin de Grado como de cualquier otro tipo de proyecto.
 
 \section{Planificación temporal}
-Aunque este proyecto no ha sido realizado en conjunto a más personas pertenecientes a un mismo equipo, sino que se trata de un proyecto académico individual, sin reuniones diarias y más puntos clave dentro de esta metodología, se han seguido varias pautas dentro de la metodología SCRUM, como son la creación de Sprints de, aproximadamente, dos semanas de duración y el \textit{feedback} rápido. 
-\\\\
-Se ha hecho uso de GitHub de forma exclusiva, 
+
+Inicialmente, se plantearon distintas metodologías de desarrollo \textit{software}, entre ellas Kanban y SCRUM.
+
+Como se explica en el capítulo de "Técnicas y Herramientas" en el documento de memoria, Kanban permite un trabajo más dinámico y fluido, con un proceso evolutivo e incremental enfocado al desarrollo de tareas pendientes. Es más adecuado para los procesos de integración continua, en las que no se tiene periódicamente entregas o microentregas que hacer y se definen una serie de tareas para esas entregas, sino que se van tomando esas tareas, luego en función de su prioridad se van haciendo y finalmente se van validando tan pronto como estén antes de pasar a la siguiente tarea.
+
+Debido a la magnitud del proyecto, se necesitaron ciclos mucho más rápidos de revisión de las tareas para poder ir avanzando y que el impacto de cualquier ``cuello de botella'' fuese el menor posible.
+
+Mediante un tablero de proyecto con cuatro columnas, correspondientes a \textit{``To do''} o ``Por hacer'', \textit{``In progress''} o ``En progreso'', \textit{``QA/Testing''} o ``Control de calidad'' y \textit{``Done''} o ``Hecho'', el flujo de trabajo ha funcionado de la siguiente manera:
+\begin{itemize}
+\tightlist
+    \item En la columna de \textbf{\textit{``To do''}} se han ido creando las tareas a medida que se iban necesitando realizarlas. Muchos elementos en el proyecto no son necesarios hasta que se realizan otras tareas previas, a la vez que pueden ir surgiendo a medida que van necesitándose en el momento o acaban siendo pensadas. La tarea correspondiente tendrá una descripción, una duración estimada de tiempo que puede conllevar realizarla y una duración real en la que se marca el tiempo que se ha tardado en realizarla.
+    \item En \textbf{\textit{``In progress''}} se tienen todas las tareas que se están realizando. Puede haber varias a la vez, pues se pueden compaginar tengan correlación entre ellas o no, aunque lo ideal es dedicarse a unas pocas que, al menos, dependan entre ellas para no tener una carga de trabajo que no se pueda abarcar. Las tareas irán asignadas a uno o varios usuarios que estén realizándolas.
+    \item En la columna de \textbf{\textit{``QA/Testing''}} se tienen todas las tareas tentativamente completadas y listas para su validación. El usuario habrá marcado el tiempo que le ha llevado realmente realizarla. Si cumple el objetivo de la tarea correctamente, se da por finalizada. En caso de tener fallos o de requerir cambios, se devuelve a ``En progreso'', devolviendo la asignación al usuario o usuarios encargados de la misma.
+    \item Finalmente, en \textbf{\textit{``Done''}} se tienen todas las tareas dadas por finalizadas. El control de calidad habrá decidido que está correctamente terminada.
+\end{itemize}
+
+Una idea fundamental de Kanban es medir los tiempos. En este proyecto, aunque no se ha hecho uso de SCRUM, se han empleado \textit{sprints} de dos semanas de duración para hacer una división de tareas por tiempo, calculando el tiempo empleado en cada una de ellas. 
+
+Con estos datos, por una parte, puede ser un punto de referencia para ajustar en el futuro las estimaciones que se hagan, y por otra para aquellas personas que realicen hacer proyectos similares, al haber utilizado esta taxonomía de tareas, pueden tomar este histórico de valores como referencia para el coste de cuánto supondría una tarea referida a ese tipo de
+tareas (si son tareas de mejora, calcular cuánto se podría tardar).
+
+(incluir horas de duración estimada vs. horas de duración real, ¿diagrama de Gantt?, ¿tabla de mediciones?)
+
+Previa a la planificación, hubo una gran cantidad de tiempo dedicada al aprendizaje respecto al uso de Unity, sus funcionalidades y otros aspectos, como se indicó en la memoria. La mayor parte de las tareas del proyecto fueron dirigidas a la implementación de las nuevas funciones, así como a la corrección, mejora y optimización de las mismas.
+
 \section{Estudio de viabilidad}
 
+En todo proyecto se requiere de un estudio de viabilidad para asegurar su realización completa. Es necesario analizar su viabilidad económica, con los costes del proyecto que puede conllevar, así como su viabilidad legal, haciendo mención a las licencias que pueda tener.
+
 \subsection{Viabilidad económica}
+
+
 
 \subsection{Viabilidad legal}
 
