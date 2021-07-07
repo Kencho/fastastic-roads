@@ -25,10 +25,11 @@ Mediante un tablero de proyecto con cuatro columnas, correspondientes a \textit{
 
 Una idea fundamental de Kanban es medir los tiempos. En este proyecto, aunque no se ha hecho uso de SCRUM, se han empleado \textit{sprints} de dos semanas de duración para hacer una división de tareas por tiempo, calculando el tiempo empleado en cada una de ellas. 
 
-Con estos datos, por una parte, puede ser un punto de referencia para ajustar en el futuro las estimaciones que se hagan, y por otra para aquellas personas que realicen hacer proyectos similares, al haber utilizado esta taxonomía de tareas, pueden tomar este histórico de valores como referencia para el coste de cuánto supondría una tarea referida a ese tipo de
-tareas (si son tareas de mejora, calcular cuánto se podría tardar).
+Con estos datos, por una parte, puede ser un punto de referencia para ajustar en el futuro las estimaciones que se hagan, y por otra para aquellas personas que realicen hacer proyectos similares, al haber utilizado esta taxonomía de tareas, pueden tomar este histórico de valores como referencia para el coste de cuánto supondría una tarea referida a ese tipo de tareas (si son tareas de mejora, calcular cuánto se podría tardar).
 
-(incluir horas de duración estimada vs. horas de duración real, ¿diagrama de Gantt?, ¿tabla de mediciones?)
+\imagen{issues-ratio}{Gráfico del ratio de horas estimadas vs. horas reales empleadas.}
+
+El tiempo estimado en total para las tareas ha sido de aproximadamente 170 horas, y las horas reales empleadas han sido aproximadamente 267. El ratio por tareas se puede comprobar en la gráfica previa. Esta gran diferencia entre las distintas tareas, así como entre la duración calculada total y la real total, viene dada por la magnitud del proyecto y la inexperiencia al respecto. Un videojuego se compone de una gran cantidad de elementos y funciones que no siempre son fácilmente implementables, y la gran mayoría de veces que puede aparentar ser sencillo acaba llevando más tiempo por la investigación adicional correspondiente, la corrección de fallos, la posterior optimización, etc. Es por ello que Kanban ha sido la metodología de planificación ideal, permitiendo esa flexibilidad ante cálculos incorrectos y otros imprevistos.
 
 Previa a la planificación, hubo una gran cantidad de tiempo dedicada al aprendizaje respecto al uso de Unity, sus funcionalidades y otros aspectos, como se indicó en la memoria. La mayor parte de las tareas del proyecto fueron dirigidas a la implementación de las nuevas funciones, así como a la corrección, mejora y optimización de las mismas.
 
@@ -91,7 +92,7 @@ Los costes directos son los que vienen derivados del desarrollo del proyecto (co
 
 \textbf{\textit{Costes indirectos}}
 
-Los costes indirectos son aquellos que no dependen del desarrollo del proyecto de manera directa (licencias \textit{software} adquiridas, componentes \textit{hardware} y otros). El cálculo de los costes amortizados se ha realizado tomando como base un plazo de 4 años.
+Los costes indirectos son aquellos que no dependen del desarrollo del proyecto de manera directa (licencias \textit{software} adquiridas, componentes \textit{hardware} y otros). El cálculo de los costes amortizados se ha realizado tomando como base los 4 meses de trabajo mencionados atrás a lo largo de un plazo de 4 años.
 
 \begin{table}[H]
 	\centering
@@ -99,10 +100,10 @@ Los costes indirectos son aquellos que no dependen del desarrollo del proyecto d
 		\toprule
 		\textbf{{Concepto}}  & \textbf{{Coste}} & \textbf{{Coste amortizado}} \\
 		\midrule
-		\small{\scriptsize Ordenador personal} & \small{1999,00 €} & \small{916,21 €} \\
-		\small{\scriptsize Licencia Windows 10 Home} & \small{145,00 €} & \small{66,46 €} \\
+		\small{\scriptsize Ordenador personal} & \small{1999,00 €} & \small{166.58 €} \\
+		\small{\scriptsize Licencia Windows 10 Home} & \small{145,00 €} & \small{12,08 €} \\
 		\bottomrule
-		\textbf{{\scriptsize TOTAL}}  & \textbf{\small 2144,00 €} & \textbf{\small 982,67 €} \\
+		\textbf{{\scriptsize TOTAL}}  & \textbf{\small 2144,00 €} & \textbf{\small 178,66 €} \\
 		\bottomrule
 	\end{tabular}
 	\caption{Tabla de costes indirectos.}
@@ -110,9 +111,7 @@ Los costes indirectos son aquellos que no dependen del desarrollo del proyecto d
 
 \subsubsection{Beneficios}
 
-Al tratarse de un proyecto de carácter educativo sin un objetivo de mercado, no se obtiene ningún beneficio económico de explotación. 
-
-No obstante, la exposición y el impacto social impulsa a la extensión del proyecto, favoreciendo al centro encargado.
+Al tratarse de un proyecto de carácter educativo sin un objetivo de mercado, no se obtiene ningún beneficio económico de explotación. No obstante, tantea ciertos escenarios que, en el futuro con nuevos proyectos, será necesario explorarlos
 
 \subsection{Viabilidad legal}
 
@@ -120,7 +119,7 @@ Para poder distribuir el \textit{software}, se tienen que cumplir determinadas o
 
 \subsubsection{Licencias}
 
-El proyecto no tiene una finalidad comercial. No obstante, esto no lo exime de derechos de autor y distribución. Es por ello que la licencia de distribución escogida ha sido ``Creative Commons'', concretamente la licencia de ``Reconocimiento - No Comercial - Sin Obra Derivada 2.5 España'' (CC BY-NC-ND 2.5 ES)\footnote{Consultable en: \url{https://creativecommons.org/licenses/by-nc-nd/2.5/es/}}. Esta licencia permite compartir la obra en cualquier medio o formato bajo el reconocimiento de la autoría del producto, sin que se pueda utilizar para una finalidad comercial y sin posibilidad de difundir material remezclado o transformado a partir de este.
+El proyecto no tiene una finalidad comercial. No obstante, esto no lo despoja de derechos de autor y distribución. Es por ello que la licencia de distribución escogida ha sido ``Creative Commons'', concretamente la licencia de ``Reconocimiento - No Comercial - Sin Obra Derivada 2.5 España'' (CC BY-NC-ND 2.5 ES)\footnote{Consultable en: \url{https://creativecommons.org/licenses/by-nc-nd/2.5/es/}}. Esta licencia permite compartir la obra en cualquier medio o formato bajo el reconocimiento de la autoría del producto, sin que se pueda utilizar para una finalidad comercial y sin posibilidad de difundir material remezclado o transformado a partir de este.
 
 Respecto al resto de \textit{software} utilizado, estas son sus correspondientes licencias:
 
@@ -134,9 +133,13 @@ Respecto al resto de \textit{software} utilizado, estas son sus correspondientes
 		\midrule
 		\small{\textbf{Blender}} & \small{\textit{Software} de modelaje.} & \small{GPL} \\
 		\midrule
-		\small{\textbf{Texmaker}} & \small{Editor multiplataforma de texto.} & \small{GNU} \\
+		\small{\textbf{Texmaker}} & \small{Editor multiplataforma de texto.} & \small{GPL 2} \\
 		\midrule
-		\small{\textbf{GitHub}} & \small{Repositorio de código.} & \small{GNU} \\
+		\small{\textbf{Git}} & \small{Repositorio de código.} & \small{GPL 2} \\
+		\midrule
+		\small{\textbf{GitHub}} & \small{Repositorio de código.} & \small{Propietaria/Privativa} \\
+		\midrule
+		\small{\textbf{StarUML}} & \small{Herramienta de diseño UML.} & \small{GNU/GPL} \\
 		\bottomrule
 	\end{tabular}
 	\caption{Herramientas con sus respectivas licencias.}
