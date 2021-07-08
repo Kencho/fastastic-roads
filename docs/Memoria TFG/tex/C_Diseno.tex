@@ -6,9 +6,7 @@ En este anexo se recogen las características de diseño de \textit{software} qu
 
 \section{Diseño de datos}
 
-En ``Fastastic Roads'' no hay ningún tipo de base de datos o elementos que se le asemejen, pues se trata de un videojuego. De igual manera, cuenta con diferentes entidades, especialmente controladores, que conforman el buen funcionamiento del juego como uno de carreras contrarreloj.
-
-Entre los principales controladores esenciales se encuentra el controlador de carrera. Con ``RaceController'' se ha mantenido una relación directa con los \textit{checkpoints} para el control de los mismos y su correcto funcionamiento en el circuito. Estos \textit{checkpoints} dependen entre sí para el debido transcurso de la carerra, permitiendo al vehículo bifurcaciones por distintos caminos donde pudiese haber puntos de control diferentes sin que esto afectara a la imposibilidad de finalizar una partida. 
+En ``Fastastic Roads'' no hay ningún tipo de base de datos o elementos que se le asemejen, al no ser necesario para los requisitos de este proyecto. De igual manera, cuenta con diferentes entidades, especialmente controladores, que conforman el buen funcionamiento del juego como uno de carreras contrarreloj.
 
 \imagen{race-con-check}{Diagrama de clases de ``Race Controller'' y ``Checkpoint''.}
 
@@ -23,7 +21,9 @@ La ejecución de la aplicación es sencilla, puesto que la aplicación se ejecut
 	\label{fig:seq-diag}
 \end{figure}
 
-El usuario, con la aplicación ejecutada, selecciona las distintas opciones a través de los botones mostrados en pantalla que le llevarán a nuevos menús hasta acabar en una partida, pudiendo salir posteriormente de ella.
+Entre los principales controladores esenciales se encuentra el controlador de carrera. Con ``RaceController'' se ha mantenido una relación directa con los \textit{checkpoints} para el control de los mismos y su correcto funcionamiento en el circuito. Los \textit{checkpoints} actúan a su vez tanto como puntos de control como línea de meta/salida. Éstos dependen entre sí para el debido transcurso de la carerra, permitiendo al vehículo bifurcaciones por distintos caminos donde pudiese haber puntos de control diferentes sin que esto afectara a la imposibilidad de finalizar una partida. 
+
+\imagen{dia-obj-cpoints}{Diagrama de objetos del grafo de Checkpoints.}
 
 \section{Diseño arquitectónico}
 
@@ -35,17 +35,11 @@ Mediante la implementación de este patrón de comportamiento, se permite al alg
 
 \imagen{patron-estrategia}{Estructura del patrón de comportamiento estrategia.}
 
-\subsection{Patrón método fábrica}
-
-El método fábrica es un patrón creacional que nos permite definir una interfaz para crear un objeto, pero son las subclases quienes deciden la clase a instanciar, i.e., se delega la instanciación a las subclases \cite{disman:metfab}. En el caso de ``Fastastic Roads'', hemos requerido de su uso en algunos métodos relacionados con el controlador de \textit{karts}.
-
-\imagen{patron-metodo-fabrica}{Estructura del patrón creacional método fábrica}
-
 \subsection{Patrón método plantilla}
 
 En el patrón de comportamiento método plantilla se define el esqueleto de un algoritmo en una operación, dejando algunos de los pasos para las subclases, para que éstas redefinan ciertos pasos del algoritmo sin cambiar su estructura general \cite{disman:metplan}.
 
-En este proyecto, por una parte se utilizan controles universales, donde cada uno tendrá una implementación específica que no interfiera con el resto de jugadores, y así se abstraen los controles a niveles altos.
+En este proyecto, en el nivel abstracto de ``BaseInput'' se implementaban controles de bloqueo de las entradas comunes para todos los tipos de entradas y se delegaba a las subclases la captura de las entradas específicas. 
 
 \imagen{patron-metodo-plantilla}{Estructura del patrón creacional método plantilla.}
 
